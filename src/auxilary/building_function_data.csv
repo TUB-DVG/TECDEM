@@ -1,0 +1,599 @@
+gml_building_function,gml_id,teaser_id,building_function_alkis,alkis_code
+residential building,1000,"[SFH, TH, MFH, AB]",Wohngebäude,1000
+tenement,1010,,Wohnhaus,1010
+tenement,1010,,Förderturm,1010
+hostel,1020,,Wohnheim,1020
+residential- and administration building,1030,,,
+residential- and office building,1040,,,
+residential- and business building,1050,,,
+residential- and plant building,1060,,,
+agrarian- and forestry building,1070,,,
+residential- and commercial building,1080,,,
+forester's lodge,1090,,,
+holiday house,1100,,Gemischt genutztes Gebäude mit Wohnen,1100
+summer house,1110,,Wohngebäude mit Gemeinbedarf,1110
+office building,1120,,Wohngebäude mit Handel und Dienstleistungen,1120
+credit institution,1130,,Wohngebäude mit Gewerbe und Industrie,1130
+insurance,1140,,,
+business building,1150,,,
+department store,1160,,,
+shopping centre,1170,,,
+kiosk,1180,,,
+pharmacy,1190,,,
+pavilion,1200,,,
+hotel,1210,,Land- und forstwirtschaftliches Wohngebäude,1210
+hotel,1210,,Wachturm,1210
+youth hostel,1220,,Land- und forstwirtschaftliches Wohn- und Betriebsgebäude,1220
+youth hostel,1220,,Windrad,1220
+campsite building,1230,,Solarzellen,1230
+restaurant,1240,,,
+cantine,1250,,Mast,1250
+recreational site,1260,,Funkmast,1260
+function room,1270,,,
+cinema,1280,,Radioteleskop,1280
+bowling alley,1290,,Schornstein,1290
+casino,1300,,,
+industrial building,1310,,Gebäude zur Freizeitgestaltung,1310
+factory,1320,,,
+workshop,1330,,Kran,1330
+petrol / gas station,1340,,,
+washing plant,1350,,Hochofen,1350
+cold store,1360,,,
+depot,1370,,,
+building for research purposes,1380,,,
+quarry,1390,,,
+salt works,1400,,Umformer,1400
+salt works,1400,,Befestigung (Burgruine),1400
+miscellaneous industrial building,1410,,,
+mill,1420,,,
+windmill,1430,,Zuschauertribüne,1430
+water mill,1440,,Stadion,1440
+bucket elevator,1450,,,
+weather station,1460,,,
+traffic assets office,1470,,Sprungschanze (Anlauf),1470
+street maintenance,1480,,,
+waiting hall,1490,,Gradierwerk,1490
+signal control box,1500,,Historische Mauer,1500
+engine shed,1510,,Stadtmauer,1510
+signal box or stop signal,1520,,Sonstige historische Mauer,1520
+plant building for air traffic,1530,,,
+hangar,1540,,,
+plant building for shipping,1550,,,
+shipyard,1560,,,
+dock,1570,,,
+plant building for canal lock,1580,,,
+boathouse,1590,,,
+plant building for cablecar,1600,,,
+multi-storey car park,1610,,Überdachung,1610
+parking level,1620,,,
+garage,1630,,,
+vehicle hall,1640,,,
+underground garage,1650,,,
+building for supply,1660,,,
+waterworks,1670,,,
+pump station,1680,,,
+water basin,1690,,,
+electric power station,1700,,,
+transformer station,1710,,,
+converter,1720,,,
+reactor,1730,,,
+turbine house,1740,,,
+boiler house,1750,,Denkmal,1750
+building for telecommunications,1760,,,
+gas works,1770,,,
+heat plant,1780,,,
+pumping station,1790,,,
+building for disposal,1800,,,
+building for effluent disposal,1810,,,
+building for filter plant,1820,,,
+toilet,1830,,,
+rubbish bunker,1840,,,
+building for rubbish incineration,1850,,,
+building for rubbish disposal,1860,,,
+building for agrarian and forestry,1870,,,
+barn,1880,,,
+stall,1890,,,
+equestrian hall,1900,,,
+alpine cabin,1910,,,
+hunting lodge,1920,,,
+arboretum,1930,,,
+glass house,1940,,,
+moveable glass house,1950,,,
+public building,1960,,,
+administration building,1970,,,
+parliament,1980,,,
+guildhall,1990,,,
+post office,2000,,Gebäude für Wirtschaft oder Gewerbe,2000
+customs office,2010,,Gebäude für Handel und Dienstleistungen,2010
+court,2020,,Bürogebäude,2020
+embassy or consulate,2030,,Kreditinstitut,2030
+district administration,2040,,Versicherung,2040
+district government,2050,,Geschäftsgebäude,2050
+tax office,2060,,Messehalle,2060
+building for education and research,2070,,Gebäude für Beherbergung,2070
+comprehensive school,2080,,Gebäude für Bewirtung,2080
+vocational school,2090,,Freizeit- und Vergnügungsstätte,2090
+college or university,2100,,Gebäude für Gewerbe und Industrie,2100
+research establishment,2110,,Produktionsgebäude,2110
+building for cultural purposes,2120,,Werkstatt,2120
+castle,2130,,Tankstelle,2130
+theatre or opera,2140,,Gebäude für Vorratshaltung,2140
+concert building,2150,,Speditionsgebäude,2150
+museum,2160,,Gebäude für Forschungszwecke,2160
+broadcasting building,2170,,Gebäude für Grundstoffgewinnung,2170
+activity building,2180,,Gebäude für betriebliche Sozialeinrichtung,2180
+library,2190,,,
+fort,2200,,Sonstiges Gebäude für Gewerbe und Industrie,2200
+religious building,2210,,Mühle,2210
+church,2220,,Wetterstation,2220
+synagogue,2230,,,
+chapel,2240,,,
+community center ,2250,,,
+place of worship,2260,,,
+mosque,2270,,,
+temple,2280,,,
+convent,2290,,,
+building for health care,2300,,,
+hospital,2310,,Gebäude für Handel und Dienstleistung mit Wohnen,2310
+healing centre or care home,2320,,Gebäude für Gewerbe und Industrie mit Wohnen,2320
+health centre or outpatients clinic,2330,,,
+building for social purposes,2340,,,
+youth centre,2350,,,
+seniors centre,2360,,,
+homeless shelter,2370,,,
+kindergarten or nursery,2380,,,
+asylum seekers home,2390,,,
+police station,2400,,Betriebsgebäude zu Verkehrsanlagen (allgemein),2400
+fire station,2410,,Betriebsgebäude für Straßenverkehr,2410
+barracks,2420,,Betriebsgebäude für Schienenverkehr,2420
+bunker,2430,,Betriebsgebäude für Flugverkehr,2430
+penitentiary or prison,2440,,Betriebsgebäude für Schiffsverkehr,2440
+cemetery building,2450,,Betriebsgebäude zur Seilbahn,2450
+funeral parlor,2460,,Gebäude zum Parken,2460
+crematorium,2470,,,
+train station,2480,,,
+airport building,2490,,,
+building for underground station,2500,,Gebäude zur Versorgung,2500
+building for tramway,2510,,Gebäude zur Wasserversorgung,2510
+building for bus station,2520,,Gebäude zur Elektrizitätsversorgung,2520
+shipping terminal,2530,,,
+building for recuperation purposes,2540,,Gebäude für Fernmeldewesen,2540
+building for sport purposes,2550,,,
+sports hall,2560,,Gebäude an unterirdischen Leitungen,2560
+building for sports field,2570,,Gebäude zur Gasversorgung,2570
+swimming baths,2580,,Heizwerk,2580
+indoor swimming pool,2590,,Gebäude zur Versorgungsanlage,2590
+sanatorium,2600,,Gebäude zur Entsorgung,2600
+zoo building,2610,,Gebäude zur Abwasserbeseitigung,2610
+green house,2620,,Gebäude zur Abfallbehandlung,2620
+botanical show house,2630,,,
+bothy,2640,,,
+tourist information centre,2650,,,
+others,2700,,Gebäude für Land- und Forstwirtschaft,2700
+,,,Kinderheim,1021
+,,,Seniorenheim,1022
+,,,Schwesternwohnheim,1023
+,,,"Studenten-, Schülerwohnheim",1024
+,,,Schullandheim,1025
+,,,Wohn- und Verwaltungsgebäude,1121
+,,,Allgemeinbildende Schule,1121
+,,,Wohn- und Bürogebäude,1122
+,,,"Berufsschule,Fachschule, Volkshochschule",1122
+,,,Wohn- und Geschäftsgebäude,1123
+,,,"Fachhochschule, Universität",1123
+,,,Wohn- und Betriebsgebäude,1131
+,,,"Schloss, Burg",1131
+,,,Bauernhaus,1221
+,,,Freistehender Wohnblock,1221
+,,,Wohn- und Wirtschaftsgebäude,1222
+,,,Forsthaus,1223
+,,,Ferienhaus,1311
+,,,Einzelhaus,1311
+,,,Wochenendhaus,1312
+,,,Gartenhaus,1313
+,,,Kaufhaus,2051
+,,,Einkaufszentrum,2052
+,,,Markthalle,2053
+,,,Laden,2054
+,,,Kiosk,2055
+,,,Apotheke,2056
+,,,"Hotel, Motel, Pension",2071
+,,,Jugendherberge,2072
+,,,Hütte (mit Übernachtungsmöglichkeit),2073
+,,,Campingplatzgebäude,2074
+,,,"Gaststätte, Restaurant",2081
+,,,Hütte (ohne Übernachtungsmöglichkeit),2082
+,,,Kantine,2083
+,,,Festsaal,2091
+,,,Kino,2092
+,,,"Kegel-, Bowlinghalle",2093
+,,,Spielkasino,2094
+,,,Fabrik,2111
+,,,Betriebsgebäude,2112
+,,,Brauerei,2113
+,,,Brennerei,2114
+,,,Sägewerk,2121
+,,,Wohngebäude mit Handel und Dienstleistungen,2121
+,,,"Waschstraße, Waschanlage, Waschhalle",2131
+,,,Wohngebäude mit Gewerbe und Industrie,2131
+,,,Kühlhaus,2141
+,,,Öffentliches Gebäude mit Wohnungen,2141
+,,,Speichergebäude,2142
+,,,"Lagerhalle, Lagerschuppen, Lagerhaus",2143
+,,,Bergwerk,2171
+,,,Saline,2172
+,,,Windmühle,2211
+,,,Wassermühle,2212
+,,,Schöpfwerk,2213
+,,,Straßenmeisterei,2411
+,,,Wartehalle,2412
+,,,Bahnwärterhaus,2421
+,,,"Lokschuppen, Wagenhalle",2422
+,,,"Stellwerk, Blockstelle",2423
+,,,Betriebsgebäude des Güterbahnhofs,2424
+,,,Flugzeughalle,2431
+,,,Werft (Halle),2441
+,,,Dock (Halle),2442
+,,,Betriebsgebäude zur Schleuse,2443
+,,,Bootshaus,2444
+,,,Spannwerk zur Drahtseilbahn,2451
+,,,Parkhaus,2461
+,,,Parkdeck,2462
+,,,Garage,2463
+,,,Fahrzeughalle,2464
+,,,Tiefgarage,2465
+,,,Gebäude zur Energieversorgung,2501
+,,,Gebäude für Versorgung (allgemein),2501
+,,,Wasserwerk,2511
+,,,Wasserwerk,2511
+,,,Pumpstation,2512
+,,,Pumpwerk,2512
+,,,Wasserbehälter,2513
+,,,Elektrizitätswerk,2521
+,,,Elektrizitätswerk,2521
+,,,Umspannwerk,2522
+,,,Umspannwerk,2522
+,,,Umformer,2523
+,,,"Umformer (soweit nicht in Folie 065/066, OS 3447)",2523
+,,,Reaktorgebäude,2527
+,,,Turbinenhaus,2528
+,,,Gebäude für Elektrizitätsversorgung (allgemein),2528
+,,,Kesselhaus,2529
+,,,Gaswerk,2571
+,,,Gaswerk,2571
+,,,Pumpwerk (nicht für Wasserversorgung),2591
+,,,Pumpwerk (nicht für Wasserversorgung),2591
+,,,Gebäude der Kläranlage,2611
+,,,Kläranlage,2611
+,,,Toilette,2612
+,,,Bedürfnisanstalt,2612
+,,,Müllbunker,2621
+,,,Abfall (Lagergebäude),2621
+,,,Gebäude zur Müllverbrennung,2622
+,,,Abfallverbrennungsanlage,2622
+,,,Gebäude der Abfalldeponie,2623
+,,,Betriebsgebäude einer Abfalldeponie,2623
+,,,Land- und forstwirtschaftliches Betriebsgebäude,2720
+,,,Scheune,2721
+,,,Scheune,2721
+,,,Schuppen,2723
+,,,Schuppen,2723
+,,,Stall,2724
+,,,Stall,2724
+,,,Scheune und Stall,2726
+,,,Scheune und Stall,2726
+,,,Stall für Tiergroßhaltung,2727
+,,,Gebäude für Tiergroßhaltung,2727
+,,,Reithalle,2728
+,,,Landwirtschaftliches Betriebsgebäude (allgemein),2728
+,,,Wirtschaftsgebäude,2729
+,,,Almhütte,2732
+,,,"Jagdhaus, Jagdhütte",2735
+,,,"Treibhaus, Gewächshaus",2740
+,,,Treibhaus,2741
+,,,"Gewächshaus, Treibhaus",2741
+,,,"Gewächshaus, verschiebbar",2742
+,,,Auf Schienen verschiebbares Gewächshaus,2742
+,,,Gebäude für öffentliche Zwecke,3000
+,,,Verwaltungsgebäude,3010
+,,,Parlament,3011
+,,,Rathaus,3012
+,,,Post,3013
+,,,Zollamt,3014
+,,,Gericht,3015
+,,,"Botschaft, Konsulat",3016
+,,,Kreisverwaltung,3017
+,,,Bezirksregierung,3018
+,,,Finanzamt,3019
+,,,Gebäude für Bildung und Forschung,3020
+,,,Allgemein bildende Schule,3021
+,,,Berufsbildende Schule,3022
+,,,"Hochschulgebäude (Fachhochschule, Universität)",3023
+,,,Forschungsinstitut,3024
+,,,Gebäude für kulturelle Zwecke,3030
+,,,Schloss,3031
+,,,"Theater, Oper",3032
+,,,Konzertgebäude,3033
+,,,Museum,3034
+,,,"Rundfunk, Fernsehen",3035
+,,,Veranstaltungsgebäude,3036
+,,,"Bibliothek, Bücherei",3037
+,,,"Burg, Festung",3038
+,,,Gebäude für religiöse Zwecke,3040
+,,,Kirche,3041
+,,,Synagoge,3042
+,,,Kapelle,3043
+,,,Gemeindehaus,3044
+,,,Gotteshaus,3045
+,,,Moschee,3046
+,,,Tempel,3047
+,,,Kloster,3048
+,,,Gebäude für Gesundheitswesen,3050
+,,,Krankenhaus,3051
+,,,"Heilanstalt, Pflegeanstalt, Pflegestation",3052
+,,,"Ärztehaus, Poliklinik",3053
+,,,Gebäude für soziale Zwecke,3060
+,,,Jugendfreizeitheim,3061
+,,,"Freizeit-, Vereinsheim, Dorfgemeinschafts-, Bürgerhaus",3062
+,,,Seniorenfreizeitstätte,3063
+,,,Obdachlosenheim,3064
+,,,"Kinderkrippe, Kindergarten, Kindertagesstätte",3065
+,,,Asylbewerberheim,3066
+,,,Gebäude für Sicherheit und Ordnung,3070
+,,,Polizei,3071
+,,,Feuerwehr,3072
+,,,Kaserne,3073
+,,,Schutzbunker,3074
+,,,Justizvollzugsanstalt,3075
+,,,Friedhofsgebäude,3080
+,,,Trauerhalle,3081
+,,,Krematorium,3082
+,,,Empfangsgebäude,3090
+,,,Bahnhofsgebäude,3091
+,,,Flughafengebäude,3092
+,,,Gebäude zum U-Bahnhof,3094
+,,,Gebäude zum S-Bahnhof,3095
+,,,Gebäude zum Busbahnhof,3097
+,,,Empfangsgebäude Schifffahrt,3098
+,,,Gebäude für öffentliche Zwecke mit Wohnen,3100
+,,,Gebäude für Erholungszwecke,3200
+,,,Gebäude für Sportzwecke,3210
+,,,"Sport-, Turnhalle",3211
+,,,Gebäude zum Sportplatz,3212
+,,,Badegebäude,3220
+,,,Hallenbad,3221
+,,,Gebäude im Freibad,3222
+,,,Gebäude im Stadion,3230
+,,,Gebäude für Kurbetrieb,3240
+,,,Badegebäude für medizinische Zwecke,3241
+,,,Sanatorium,3242
+,,,Gebäude im Zoo,3260
+,,,Empfangsgebäude des Zoos,3261
+,,,"Aquarium, Terrarium, Voliere",3262
+,,,Tierschauhaus,3263
+,,,Stall im Zoo,3264
+,,,Gebäude im botanischen Garten,3270
+,,,Empfangsgebäude des botanischen Gartens,3271
+,,,Gewächshaus (Botanik),3272
+,,,Pflanzenschauhaus,3273
+,,,Gebäude für andere Erholungseinrichtung,3280
+,,,Schutzhütte,3281
+,,,Touristisches Informationszentrum,3290
+,,,Nach Quellenlage nicht zu spezifizieren,9998
+,,,Nach Quellenlage nicht zu spezifizieren,9998
+,,,Wasserturm,1001
+,,,Gebäude (allgemein),1001
+,,,Kirchturm,1002
+,,,Reservierte Hausnummer,1002
+,,,Aussichtsturm,1003
+,,,Wohn- oder öffentliches Gebäude (allgemein),1003
+,,,Kontrollturm,1004
+,,,Wirtschafts- oder Industriegebäude (allgemein),1004
+,,,Kühlturm,1005
+,,,Unterirdisches Gebäude (soweit nicht OS 2363),1005
+,,,Leuchtturm,1006
+,,,Kleines untergeordnetes Gebäude,1006
+,,,Feuerwachturm,1007
+,,,"Sende-,Funkturm",1008
+,,,"Stadt-,Torturm",1009
+,,,Bohrturm,1011
+,,,"Schloss-, Burgturm",1012
+,,,Sonstiges,9999
+,,,Sonstiges,9999
+,,,Sonstiges,9999
+,,,Sonstiges,9999
+,,,Sonstiges,9999
+,,,Sonstiges,9999
+,,,Biogasanlage,1215
+,,,Drehkran,1331
+,,,Reihenhaus,1331
+,,,Portalkran,1332
+,,,Laufkran,1333
+,,,Silo,1201
+,,,Tank,1205
+,,,Gasometer,1206
+,,,"Zuschauertribüne, überdacht",1431
+,,,Versicherungsgebäude,1431
+,,,"Zuschauertribüne, nicht überdacht",1432
+,,,Carport,1611
+,,,"vorhandenes, nichteingemessenes Gebäude",1036
+,,,Öffentliches Gebäude (allg.),1101
+,,,Parlament,1111
+,,,Rathaus,1112
+,,,Postamt,1113
+,,,Zollamt,1114
+,,,Gericht,1115
+,,,"Botschaft, Konsulat",1116
+,,,Öffentliche Verwaltung (allgemein),1118
+,,,Forschungsinstitut,1124
+,,,"Bildungs-, Forschungseinrichtung (allgemein)",1128
+,,,"Theater, Oper",1132
+,,,Konzertgebäude,1133
+,,,Museum,1134
+,,,"Rundfunkanstalt, Fernsehanstalt",1135
+,,,Veranstaltungsgebäude,1136
+,,,"Bibliothek, Bücherei",1137
+,,,Kulturelle Einrichtung (allgemein),1138
+,,,Christliche Kirche,1141
+,,,Synagoge,1142
+,,,Kapelle,1143
+,,,"Gemeindehaus, Küsterei",1144
+,,,Gotteshaus einer anderen Religionsgemeinschaft,1145
+,,,Kirchliche Einrichtung (allgemein),1148
+,,,Krankenhaus,1151
+,,,"Heilanstalt, Pflegeanstalt",1152
+,,,Gesundheitseinrichtung (allgemein),1158
+,,,Jugendfreizeitheim,1161
+,,,"Freizeitheim, Dorfgemeinschaftshaus, Bürgerhaus",1162
+,,,Seniorenfreizeitstätte,1163
+,,,Fremdenheim,1164
+,,,"Kindergarten, Kindertagesstätte",1165
+,,,Sozialeinrichtung (allgemein),1168
+,,,Polizei,1171
+,,,Feuerwehr,1172
+,,,Kaserne,1173
+,,,Schutzbunker,1174
+,,,Justizvollzugsanstalt,1175
+,,,Sicherheitseinrichtung (allgemein),1178
+,,,Trauerhalle,1181
+,,,Krematorium,1182
+,,,Friedhofsgebäude (allgemein),1188
+,,,Bahnhofsgebäude,1191
+,,,Flughafengebäude,1192
+,,,U-Bahnhof,1194
+,,,S-Bahnhof,1195
+,,,Kontrollturm,1196
+,,,Omnibusbahnhof,1197
+,,,Empfangsgebäude für Verkehrsteilnehmer (allgemein),1198
+,,,Wohnhaus in Reihe,1211
+,,AB,Wohnblock in geschlossener Bauweise,1231
+,,,Wohnhaus (allgemein),1301
+,,,Doppelhaus,1321
+,,,Gruppenhaus,1341
+,,,Hochhaus,1361
+,,,Kinderheim,1371
+,,,"Seniorenwohnhaus, Seniorenheim",1372
+,,,"Arbeitnehmerwohnheim, Schwesternwohnheim",1373
+,,,"Studentenwohnheim, Schülerwohnheim",1374
+,,,Schullandheim,1375
+,,,Wohnheim (allgemein),1378
+,,,Behelfsmäßiges Wohngebäude,1381
+,,,Wohngebäude (soweit nicht OS 1311 - 1398),1399
+,,,Gebäude für Handel und Dienstleistungen (allgemein),1401
+,,,"Verwaltungsgebäude, Bürogebäude",1411
+,,,"Kreditinstitutsgebäude, Bankgebäude",1421
+,,,Kaufhaus,1441
+,,,Einkaufszentrum,1442
+,,,Markthalle,1443
+,,,Ladengebäude,1444
+,,,Kiosk,1445
+,,,Handel (allgemein),1448
+,,,"Gebäude für Messe, Ausstellung",1451
+,,,"Hotel, Pension",1461
+,,,Jugendherberge,1462
+,,,Hütte mit Übernachtungsmöglichkeit,1463
+,,,Beherbergung (allgemein),1468
+,,,Gaststätte,1471
+,,,Raststätte an Autobahn oder Fernstraße,1472
+,,,Hütte ohne Übernachtungsmöglichkeit,1473
+,,,Kantine,1474
+,,,Restauration (allgemein),1478
+,,,Festsaal,1481
+,,,Kino,1482
+,,,"Kegelhalle, Bowlinghalle",1483
+,,,Spielkasino,1484
+,,,Vergnügungsstätte (allgemein),1488
+,,,Gebäude für Gewerbe und Industrie (allgemein),1701
+,,,Fabrik,1711
+,,,Werkstatt,1721
+,,,Tankstelle,1731
+,,,Kühlhaus,1741
+,,,"Speicher (soweit nicht OS 2725, 3931)",1742
+,,,Lagerhalle,1743
+,,,Lagerung (allgemein),1748
+,,,Transportgebäude,1751
+,,,Forschungsgebäude,1761
+,,,"Bergwerk, in Betrieb",1771
+,,,"Bergwerk, außer Betrieb",1772
+,,,"Bergwerk, vorübergehend stillgelegt",1773
+,,,"Gradierwerk, Saline (soweit nicht OS 3912)",1774
+,,,Grundstoff (allgemein),1778
+,,,Betriebliche Sozialeinrichtung (Gebäude),1781
+,,,Windmühle,1911
+,,,"Wassermühle, Schöpfwerk",1913
+,,,Gemischt genutztes Gebäude mit Wohnungen (allgemein),2101
+,,,Gebäude für Verkehr (allgemein),2301
+,,,Straßenmeisterei,2311
+,,,Wartehalle,2312
+,,,Fahrzeughalle,2313
+,,,Straßenverkehrsgebäude (allgemein),2318
+,,,Bahnwärterhaus,2321
+,,,"Lokschuppen, Wagenhalle",2322
+,,,"Stellwerk, Blockstellengebäude",2323
+,,,Güterbahnhofsgebäude,2324
+,,,Schienenverkehrsgebäude (allgemein),2328
+,,,Flugzeughalle,2332
+,,,Gebäude für Luftfahrt (allgemein),2338
+,,,Werft,2341
+,,,Dock,2342
+,,,Schleuse,2343
+,,,Bootshaus,2344
+,,,Schiffahrtsgebäude (allgemein),2348
+,,,Spannwerk,2351
+,,,Gebäude für Seilbahn (allgemein),2358
+,,,Parkhaus,2361
+,,,Parkdeck,2362
+,,,Tiefgarage,2363
+,,,Sammelgarage,2364
+,,,Doppelgarage,2365
+,,,Einzelgarage,2366
+,,,"Überdachter Stellplatz (soweit nicht Folie 082, OS 5315)",2367
+,,,Gebäude für Parken (allgemein),2368
+,,,Wasserturm,2514
+,,,Wasserbehälter,2515
+,,,Gebäude für Wasserversorgung (allgemein),2518
+,,,"Sendeturm, Fernmeldeturm",2541
+,,,Gebäude für Funk- und Fernmeldewesen (allgemein),2548
+,,,Öltank,2551
+,,,Oberirdisches Gebäude an unterirdischen Leitungen,2561
+,,,Gasometer,2572
+,,,Heizwerk,2581
+,,,Gebäude für Entsorgung (allgemein),2601
+,,,Abwasserbeseitigung (soweit nicht OS 2611-2617),2619
+,,,Gebäude für Abfallbeseitigung (allgemein),2628
+,,,Gebäude für Land- und Forstwirtschaft (allgemein),2701
+,,,Landwirtschaftliches Wohngebäude,2711
+,,,"Futtersilo (soweit nicht OS 1742, 3931)",2725
+,,,Landwirtschaftliches Wohn- und Betriebsgebäude,2731
+,,,Forsthaus,2736
+,,,"Jagdhaus, Jagdhütte",2737
+,,,Landwirtschaftliches Wohn- und Betriebsgebäude (allgemein),2738
+,,,Gewächshaus (allgemein),2748
+,,,Gebäude für Erholung (allgemein),2801
+,,,Sporthalle,2811
+,,,Sportplatzgebäude,2812
+,,,Gebäude für Sport (allgemein),2818
+,,,Hallenbad,2821
+,,,Gebäude der Freibadanlage,2822
+,,,Badegebäude (allgemein),2828
+,,,Tribüne,2831
+,,,Badegebäude für medizinische Zwecke,2841
+,,,Sanatorium,2842
+,,,Kurgebäude (allgemein),2848
+,,,Campingplatzgebäude,2851
+,,,Ferienhaus,2861
+,,,Wochenendhaus,2862
+,,,Gartenhaus,2863
+,,,Freizeithaus (allgemein),2868
+,,,Empfangsgebäude,2871
+,,,"Aquarium, Terrarium",2872
+,,,Tierschauhaus,2873
+,,,Stall,2874
+,,,Gebäude für Zoologie (allgemein),2878
+,,,Empfangsgebäude,2881
+,,,Gewächshaus,2882
+,,,Pflanzenschauhaus,2883
+,,,Gebäude für Botanik (allgemein),2888
+,,,Aussichtsturm,2891
+,,,Schutzhütte,2894
+,,,Ungenutztes Gebäude,2921

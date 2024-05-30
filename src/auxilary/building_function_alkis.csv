@@ -1,0 +1,502 @@
+building_function_alkis,alkis_code
+Wohngebäude,31001_1000
+Wohnhaus,31001_1010
+Wohnheim,31001_1020
+Kinderheim,31001_1021
+Seniorenheim,31001_1022
+Schwesternwohnheim,31001_1023
+"Studenten-, Schülerwohnheim",31001_1024
+Schullandheim,31001_1025
+Gemischt genutztes Gebäude mit Wohnen,31001_1100
+Wohngebäude mit Gemeinbedarf,31001_1110
+Wohngebäude mit Handel und Dienstleistungen,31001_1120
+Wohn- und Verwaltungsgebäude,31001_1121
+Wohn- und Bürogebäude,31001_1122
+Wohn- und Geschäftsgebäude,31001_1123
+Wohngebäude mit Gewerbe und Industrie,31001_1130
+Wohn- und Betriebsgebäude,31001_1131
+Land- und forstwirtschaftliches Wohngebäude,31001_1210
+Land- und forstwirtschaftliches Wohn- und Betriebsgebäude,31001_1220
+Bauernhaus,31001_1221
+Wohn- und Wirtschaftsgebäude,31001_1222
+Forsthaus,31001_1223
+Gebäude zur Freizeitgestaltung,31001_1310
+Ferienhaus,31001_1311
+Wochenendhaus,31001_1312
+Gartenhaus,31001_1313
+Gebäude für Wirtschaft oder Gewerbe,31001_2000
+Gebäude für Handel und Dienstleistungen,31001_2010
+Bürogebäude,31001_2020
+Kreditinstitut,31001_2030
+Versicherung,31001_2040
+Geschäftsgebäude,31001_2050
+Kaufhaus,31001_2051
+Einkaufszentrum,31001_2052
+Markthalle,31001_2053
+Laden,31001_2054
+Kiosk,31001_2055
+Apotheke,31001_2056
+Messehalle,31001_2060
+Gebäude für Beherbergung,31001_2070
+"Hotel, Motel, Pension",31001_2071
+Jugendherberge,31001_2072
+Hütte (mit Übernachtungsmöglichkeit),31001_2073
+Campingplatzgebäude,31001_2074
+Gebäude für Bewirtung,31001_2080
+"Gaststätte, Restaurant",31001_2081
+Hütte (ohne Übernachtungsmöglichkeit),31001_2082
+Kantine,31001_2083
+Freizeit- und Vergnügungsstätte,31001_2090
+Festsaal,31001_2091
+Kino,31001_2092
+"Kegel-, Bowlinghalle",31001_2093
+Spielkasino,31001_2094
+Gebäude für Gewerbe und Industrie,31001_2100
+Produktionsgebäude,31001_2110
+Fabrik,31001_2111
+Betriebsgebäude,31001_2112
+Brauerei,31001_2113
+Brennerei,31001_2114
+Werkstatt,31001_2120
+Sägewerk,31001_2121
+Tankstelle,31001_2130
+"Waschstraße, Waschanlage, Waschhalle",31001_2131
+Gebäude für Vorratshaltung,31001_2140
+Kühlhaus,31001_2141
+Speichergebäude,31001_2142
+"Lagerhalle, Lagerschuppen, Lagerhaus",31001_2143
+Speditionsgebäude,31001_2150
+Gebäude für Forschungszwecke,31001_2160
+Gebäude für Grundstoffgewinnung,31001_2170
+Bergwerk,31001_2171
+Saline,31001_2172
+Gebäude für betriebliche Sozialeinrichtung,31001_2180
+Sonstiges Gebäude für Gewerbe und Industrie,31001_2200
+Mühle,31001_2210
+Windmühle,31001_2211
+Wassermühle,31001_2212
+Schöpfwerk,31001_2213
+Wetterstation,31001_2220
+Gebäude für Handel und Dienstleistung mit Wohnen,31001_2310
+Gebäude für Gewerbe und Industrie mit Wohnen,31001_2320
+Betriebsgebäude zu Verkehrsanlagen (allgemein),31001_2400
+Betriebsgebäude für Straßenverkehr,31001_2410
+Straßenmeisterei,31001_2411
+Wartehalle,31001_2412
+Betriebsgebäude für Schienenverkehr,31001_2420
+Bahnwärterhaus,31001_2421
+"Lokschuppen, Wagenhalle",31001_2422
+"Stellwerk, Blockstelle",31001_2423
+Betriebsgebäude des Güterbahnhofs,31001_2424
+Betriebsgebäude für Flugverkehr,31001_2430
+Flugzeughalle,31001_2431
+Betriebsgebäude für Schiffsverkehr,31001_2440
+Werft (Halle),31001_2441
+Dock (Halle),31001_2442
+Betriebsgebäude zur Schleuse,31001_2443
+Bootshaus,31001_2444
+Betriebsgebäude zur Seilbahn,31001_2450
+Spannwerk zur Drahtseilbahn,31001_2451
+Gebäude zum Parken,31001_2460
+Parkhaus,31001_2461
+Parkdeck,31001_2462
+Garage,31001_2463
+Fahrzeughalle,31001_2464
+Tiefgarage,31001_2465
+Gebäude zur Versorgung,31001_2500
+Gebäude zur Energieversorgung,31001_2501
+Gebäude zur Wasserversorgung,31001_2510
+Wasserwerk,31001_2511
+Pumpstation,31001_2512
+Wasserbehälter,31001_2513
+Gebäude zur Elektrizitätsversorgung,31001_2520
+Elektrizitätswerk,31001_2521
+Umspannwerk,31001_2522
+Umformer,31001_2523
+Reaktorgebäude,31001_2527
+Turbinenhaus,31001_2528
+Kesselhaus,31001_2529
+Gebäude für Fernmeldewesen,31001_2540
+Gebäude an unterirdischen Leitungen,31001_2560
+Gebäude zur Gasversorgung,31001_2570
+Gaswerk,31001_2571
+Heizwerk,31001_2580
+Gebäude zur Versorgungsanlage,31001_2590
+Pumpwerk (nicht für Wasserversorgung),31001_2591
+Gebäude zur Entsorgung,31001_2600
+Gebäude zur Abwasserbeseitigung,31001_2610
+Gebäude der Kläranlage,31001_2611
+Toilette,31001_2612
+Gebäude zur Abfallbehandlung,31001_2620
+Müllbunker,31001_2621
+Gebäude zur Müllverbrennung,31001_2622
+Gebäude der Abfalldeponie,31001_2623
+Gebäude für Land- und Forstwirtschaft,31001_2700
+Land- und forstwirtschaftliches Betriebsgebäude,31001_2720
+Scheune,31001_2721
+Schuppen,31001_2723
+Stall,31001_2724
+Scheune und Stall,31001_2726
+Stall für Tiergroßhaltung,31001_2727
+Reithalle,31001_2728
+Wirtschaftsgebäude,31001_2729
+Almhütte,31001_2732
+"Jagdhaus, Jagdhütte",31001_2735
+"Treibhaus, Gewächshaus",31001_2740
+Treibhaus,31001_2741
+"Gewächshaus, verschiebbar",31001_2742
+Gebäude für öffentliche Zwecke,31001_3000
+Verwaltungsgebäude,31001_3010
+Parlament,31001_3011
+Rathaus,31001_3012
+Post,31001_3013
+Zollamt,31001_3014
+Gericht,31001_3015
+"Botschaft, Konsulat",31001_3016
+Kreisverwaltung,31001_3017
+Bezirksregierung,31001_3018
+Finanzamt,31001_3019
+Gebäude für Bildung und Forschung,31001_3020
+Allgemein bildende Schule,31001_3021
+Berufsbildende Schule,31001_3022
+"Hochschulgebäude (Fachhochschule, Universität)",31001_3023
+Forschungsinstitut,31001_3024
+Gebäude für kulturelle Zwecke,31001_3030
+Schloss,31001_3031
+"Theater, Oper",31001_3032
+Konzertgebäude,31001_3033
+Museum,31001_3034
+"Rundfunk, Fernsehen",31001_3035
+Veranstaltungsgebäude,31001_3036
+"Bibliothek, Bücherei",31001_3037
+"Burg, Festung",31001_3038
+Gebäude für religiöse Zwecke,31001_3040
+Kirche,31001_3041
+Synagoge,31001_3042
+Kapelle,31001_3043
+Gemeindehaus,31001_3044
+Gotteshaus,31001_3045
+Moschee,31001_3046
+Tempel,31001_3047
+Kloster,31001_3048
+Gebäude für Gesundheitswesen,31001_3050
+Krankenhaus,31001_3051
+"Heilanstalt, Pflegeanstalt, Pflegestation",31001_3052
+"Ärztehaus, Poliklinik",31001_3053
+Gebäude für soziale Zwecke,31001_3060
+Jugendfreizeitheim,31001_3061
+"Freizeit-, Vereinsheim, Dorfgemeinschafts-, Bürgerhaus",31001_3062
+Seniorenfreizeitstätte,31001_3063
+Obdachlosenheim,31001_3064
+"Kinderkrippe, Kindergarten, Kindertagesstätte",31001_3065
+Asylbewerberheim,31001_3066
+Gebäude für Sicherheit und Ordnung,31001_3070
+Polizei,31001_3071
+Feuerwehr,31001_3072
+Kaserne,31001_3073
+Schutzbunker,31001_3074
+Justizvollzugsanstalt,31001_3075
+Friedhofsgebäude,31001_3080
+Trauerhalle,31001_3081
+Krematorium,31001_3082
+Empfangsgebäude,31001_3090
+Bahnhofsgebäude,31001_3091
+Flughafengebäude,31001_3092
+Gebäude zum U-Bahnhof,31001_3094
+Gebäude zum S-Bahnhof,31001_3095
+Gebäude zum Busbahnhof,31001_3097
+Empfangsgebäude Schifffahrt,31001_3098
+Gebäude für öffentliche Zwecke mit Wohnen,31001_3100
+Gebäude für Erholungszwecke,31001_3200
+Gebäude für Sportzwecke,31001_3210
+"Sport-, Turnhalle",31001_3211
+Gebäude zum Sportplatz,31001_3212
+Badegebäude,31001_3220
+Hallenbad,31001_3221
+Gebäude im Freibad,31001_3222
+Gebäude im Stadion,31001_3230
+Gebäude für Kurbetrieb,31001_3240
+Badegebäude für medizinische Zwecke,31001_3241
+Sanatorium,31001_3242
+Gebäude im Zoo,31001_3260
+Empfangsgebäude des Zoos,31001_3261
+"Aquarium, Terrarium, Voliere",31001_3262
+Tierschauhaus,31001_3263
+Stall im Zoo,31001_3264
+Gebäude im botanischen Garten,31001_3270
+Empfangsgebäude des botanischen Gartens,31001_3271
+Gewächshaus (Botanik),31001_3272
+Pflanzenschauhaus,31001_3273
+Gebäude für andere Erholungseinrichtung,31001_3280
+Schutzhütte,31001_3281
+Touristisches Informationszentrum,31001_3290
+Nach Quellenlage nicht zu spezifizieren,31001_9998
+Wasserturm,51001_1001
+Kirchturm,51001_1002
+Aussichtsturm,51001_1003
+Kontrollturm,51001_1004
+Kühlturm,51001_1005
+Leuchtturm,51001_1006
+Feuerwachturm,51001_1007
+"Sende-,Funkturm",51001_1008
+"Stadt-,Torturm",51001_1009
+Förderturm,51001_1010
+Bohrturm,51001_1011
+"Schloss-, Burgturm",51001_1012
+Nach Quellenlage nicht zu spezifizieren,51001_9998
+Sonstiges,51001_9999
+Biogasanlage,51002_1215
+Windrad,51002_1220
+Solarzellen,51002_1230
+Mast,51002_1250
+Funkmast,51002_1260
+Radioteleskop,51002_1280
+Schornstein,51002_1290
+Kran,51002_1330
+Drehkran,51002_1331
+Portalkran,51002_1332
+Laufkran,51002_1333
+Hochofen,51002_1350
+Umformer,51002_1400
+Sonstiges,51002_9999
+Silo,51003_1201
+Tank,51003_1205
+Gasometer,51003_1206
+Sonstiges,51003_9999
+Zuschauertribüne,51006_1430
+"Zuschauertribüne, überdacht",51006_1431
+"Zuschauertribüne, nicht überdacht",51006_1432
+Stadion,51006_1440
+Sprungschanze (Anlauf),51006_1470
+Gradierwerk,51006_1490
+Sonstiges,51006_9999
+Wachturm,51007_1210
+Befestigung (Burgruine),51007_1400
+Historische Mauer,51007_1500
+Stadtmauer,51007_1510
+Sonstige historische Mauer,51007_1520
+Sonstiges,51007_9999
+Überdachung,51009_1610
+Carport,51009_1611
+Denkmal,51009_1750
+Sonstiges,51009_9999
+Gebäude (allgemein),11_1001
+Reservierte Hausnummer,11_1002
+Wohn- oder öffentliches Gebäude (allgemein),11_1003
+Wirtschafts- oder Industriegebäude (allgemein),11_1004
+Unterirdisches Gebäude (soweit nicht OS 2363),11_1005
+Kleines untergeordnetes Gebäude,11_1006
+"vorhandenes, nichteingemessenes Gebäude",11_1036
+Öffentliches Gebäude (allg.),11_1101
+Parlament,11_1111
+Rathaus,11_1112
+Postamt,11_1113
+Zollamt,11_1114
+Gericht,11_1115
+"Botschaft, Konsulat",11_1116
+Öffentliche Verwaltung (allgemein),11_1118
+Allgemeinbildende Schule,11_1121
+"Berufsschule,Fachschule, Volkshochschule",11_1122
+"Fachhochschule, Universität",11_1123
+Forschungsinstitut,11_1124
+"Bildungs-, Forschungseinrichtung (allgemein)",11_1128
+"Schloss, Burg",11_1131
+"Theater, Oper",11_1132
+Konzertgebäude,11_1133
+Museum,11_1134
+"Rundfunkanstalt, Fernsehanstalt",11_1135
+Veranstaltungsgebäude,11_1136
+"Bibliothek, Bücherei",11_1137
+Kulturelle Einrichtung (allgemein),11_1138
+Christliche Kirche,11_1141
+Synagoge,11_1142
+Kapelle,11_1143
+"Gemeindehaus, Küsterei",11_1144
+Gotteshaus einer anderen Religionsgemeinschaft,11_1145
+Kirchliche Einrichtung (allgemein),11_1148
+Krankenhaus,11_1151
+"Heilanstalt, Pflegeanstalt",11_1152
+Gesundheitseinrichtung (allgemein),11_1158
+Jugendfreizeitheim,11_1161
+"Freizeitheim, Dorfgemeinschaftshaus, Bürgerhaus",11_1162
+Seniorenfreizeitstätte,11_1163
+Fremdenheim,11_1164
+"Kindergarten, Kindertagesstätte",11_1165
+Sozialeinrichtung (allgemein),11_1168
+Polizei,11_1171
+Feuerwehr,11_1172
+Kaserne,11_1173
+Schutzbunker,11_1174
+Justizvollzugsanstalt,11_1175
+Sicherheitseinrichtung (allgemein),11_1178
+Trauerhalle,11_1181
+Krematorium,11_1182
+Friedhofsgebäude (allgemein),11_1188
+Bahnhofsgebäude,11_1191
+Flughafengebäude,11_1192
+U-Bahnhof,11_1194
+S-Bahnhof,11_1195
+Kontrollturm,11_1196
+Omnibusbahnhof,11_1197
+Empfangsgebäude für Verkehrsteilnehmer (allgemein),11_1198
+Wohnhaus in Reihe,11_1211
+Freistehender Wohnblock,11_1221
+Wohnblock in geschlossener Bauweise,11_1231
+Wohnhaus (allgemein),11_1301
+Einzelhaus,11_1311
+Doppelhaus,11_1321
+Reihenhaus,11_1331
+Gruppenhaus,11_1341
+Hochhaus,11_1361
+Kinderheim,11_1371
+"Seniorenwohnhaus, Seniorenheim",11_1372
+"Arbeitnehmerwohnheim, Schwesternwohnheim",11_1373
+"Studentenwohnheim, Schülerwohnheim",11_1374
+Schullandheim,11_1375
+Wohnheim (allgemein),11_1378
+Behelfsmäßiges Wohngebäude,11_1381
+Wohngebäude (soweit nicht OS 1311 - 1398),11_1399
+Gebäude für Handel und Dienstleistungen (allgemein),11_1401
+"Verwaltungsgebäude, Bürogebäude",11_1411
+"Kreditinstitutsgebäude, Bankgebäude",11_1421
+Versicherungsgebäude,11_1431
+Kaufhaus,11_1441
+Einkaufszentrum,11_1442
+Markthalle,11_1443
+Ladengebäude,11_1444
+Kiosk,11_1445
+Handel (allgemein),11_1448
+"Gebäude für Messe, Ausstellung",11_1451
+"Hotel, Pension",11_1461
+Jugendherberge,11_1462
+Hütte mit Übernachtungsmöglichkeit,11_1463
+Beherbergung (allgemein),11_1468
+Gaststätte,11_1471
+Raststätte an Autobahn oder Fernstraße,11_1472
+Hütte ohne Übernachtungsmöglichkeit,11_1473
+Kantine,11_1474
+Restauration (allgemein),11_1478
+Festsaal,11_1481
+Kino,11_1482
+"Kegelhalle, Bowlinghalle",11_1483
+Spielkasino,11_1484
+Vergnügungsstätte (allgemein),11_1488
+Gebäude für Gewerbe und Industrie (allgemein),11_1701
+Fabrik,11_1711
+Werkstatt,11_1721
+Tankstelle,11_1731
+Kühlhaus,11_1741
+"Speicher (soweit nicht OS 2725, 3931)",11_1742
+Lagerhalle,11_1743
+Lagerung (allgemein),11_1748
+Transportgebäude,11_1751
+Forschungsgebäude,11_1761
+"Bergwerk, in Betrieb",11_1771
+"Bergwerk, außer Betrieb",11_1772
+"Bergwerk, vorübergehend stillgelegt",11_1773
+"Gradierwerk, Saline (soweit nicht OS 3912)",11_1774
+Grundstoff (allgemein),11_1778
+Betriebliche Sozialeinrichtung (Gebäude),11_1781
+Windmühle,11_1911
+"Wassermühle, Schöpfwerk",11_1913
+Gemischt genutztes Gebäude mit Wohnungen (allgemein),11_2101
+Wohngebäude mit Handel und Dienstleistungen,11_2121
+Wohngebäude mit Gewerbe und Industrie,11_2131
+Öffentliches Gebäude mit Wohnungen,11_2141
+Gebäude für Verkehr (allgemein),11_2301
+Straßenmeisterei,11_2311
+Wartehalle,11_2312
+Fahrzeughalle,11_2313
+Straßenverkehrsgebäude (allgemein),11_2318
+Bahnwärterhaus,11_2321
+"Lokschuppen, Wagenhalle",11_2322
+"Stellwerk, Blockstellengebäude",11_2323
+Güterbahnhofsgebäude,11_2324
+Schienenverkehrsgebäude (allgemein),11_2328
+Flugzeughalle,11_2332
+Gebäude für Luftfahrt (allgemein),11_2338
+Werft,11_2341
+Dock,11_2342
+Schleuse,11_2343
+Bootshaus,11_2344
+Schiffahrtsgebäude (allgemein),11_2348
+Spannwerk,11_2351
+Gebäude für Seilbahn (allgemein),11_2358
+Parkhaus,11_2361
+Parkdeck,11_2362
+Tiefgarage,11_2363
+Sammelgarage,11_2364
+Doppelgarage,11_2365
+Einzelgarage,11_2366
+"Überdachter Stellplatz (soweit nicht Folie 082, OS 5315)",11_2367
+Gebäude für Parken (allgemein),11_2368
+Gebäude für Versorgung (allgemein),11_2501
+Wasserwerk,11_2511
+Pumpwerk,11_2512
+Wasserturm,11_2514
+Wasserbehälter,11_2515
+Gebäude für Wasserversorgung (allgemein),11_2518
+Elektrizitätswerk,11_2521
+Umspannwerk,11_2522
+"Umformer (soweit nicht in Folie 065/066, OS 3447)",11_2523
+Gebäude für Elektrizitätsversorgung (allgemein),11_2528
+"Sendeturm, Fernmeldeturm",11_2541
+Gebäude für Funk- und Fernmeldewesen (allgemein),11_2548
+Öltank,11_2551
+Oberirdisches Gebäude an unterirdischen Leitungen,11_2561
+Gaswerk,11_2571
+Gasometer,11_2572
+Heizwerk,11_2581
+Pumpwerk (nicht für Wasserversorgung),11_2591
+Gebäude für Entsorgung (allgemein),11_2601
+Kläranlage,11_2611
+Bedürfnisanstalt,11_2612
+Abwasserbeseitigung (soweit nicht OS 2611-2617),11_2619
+Abfall (Lagergebäude),11_2621
+Abfallverbrennungsanlage,11_2622
+Betriebsgebäude einer Abfalldeponie,11_2623
+Gebäude für Abfallbeseitigung (allgemein),11_2628
+Gebäude für Land- und Forstwirtschaft (allgemein),11_2701
+Landwirtschaftliches Wohngebäude,11_2711
+Scheune,11_2721
+Schuppen,11_2723
+Stall,11_2724
+"Futtersilo (soweit nicht OS 1742, 3931)",11_2725
+Scheune und Stall,11_2726
+Gebäude für Tiergroßhaltung,11_2727
+Landwirtschaftliches Betriebsgebäude (allgemein),11_2728
+Landwirtschaftliches Wohn- und Betriebsgebäude,11_2731
+Forsthaus,11_2736
+"Jagdhaus, Jagdhütte",11_2737
+Landwirtschaftliches Wohn- und Betriebsgebäude (allgemein),11_2738
+"Gewächshaus, Treibhaus",11_2741
+Auf Schienen verschiebbares Gewächshaus,11_2742
+Gewächshaus (allgemein),11_2748
+Gebäude für Erholung (allgemein),11_2801
+Sporthalle,11_2811
+Sportplatzgebäude,11_2812
+Gebäude für Sport (allgemein),11_2818
+Hallenbad,11_2821
+Gebäude der Freibadanlage,11_2822
+Badegebäude (allgemein),11_2828
+Tribüne,11_2831
+Badegebäude für medizinische Zwecke,11_2841
+Sanatorium,11_2842
+Kurgebäude (allgemein),11_2848
+Campingplatzgebäude,11_2851
+Ferienhaus,11_2861
+Wochenendhaus,11_2862
+Gartenhaus,11_2863
+Freizeithaus (allgemein),11_2868
+Empfangsgebäude,11_2871
+"Aquarium, Terrarium",11_2872
+Tierschauhaus,11_2873
+Stall,11_2874
+Gebäude für Zoologie (allgemein),11_2878
+Empfangsgebäude,11_2881
+Gewächshaus,11_2882
+Pflanzenschauhaus,11_2883
+Gebäude für Botanik (allgemein),11_2888
+Aussichtsturm,11_2891
+Schutzhütte,11_2894
+Ungenutztes Gebäude,11_2921

@@ -1,0 +1,5 @@
+,gml_id,dg_id,address,building_type_gml,year_of_construction,renovation_status,floor_area,height,storeys_above_ground,average_floor_height
+0,BLDG_0003000f0032da1b,0,"Berlin,39,Olbersstr.",1231,,,310.3056640625,16.76726,,2.8
+1,BLDG_0003000b0054e8af,1,"Berlin,11,Scheinerweg",1231,,,279.171630859375,14.51,,2.8
+2,BLDG_0003000f0032da49,2,"Berlin,3,Scheinerweg",1231,,,157.244140625,14.02,,2.8
+3,DEB_LOD2_UUID_78483539-d1ab-4680-9f61-e9e80f71290f,3,"Germany,Berlin",,,,1024.814697265625,16.902,,2.8

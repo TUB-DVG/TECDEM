@@ -1,0 +1,168 @@
+gml_building_function;gml_id;teaser_id
+residential building;1000;[SF, TH, MF, AB]
+tenement;1010;nan
+hostel;1020;nan
+residential- and administration building;1030;nan
+residential- and office building;1040;nan
+residential- and business building;1050;nan
+residential- and plant building;1060;nan
+agrarian- and forestry building;1070;nan
+residential- and commercial building;1080;nan
+forester's lodge;1090;nan
+holiday house;1100;nan
+summer house;1110;nan
+office building;1120;nan
+credit institution;1130;nan
+insurance;1140;nan
+business building;1150;nan
+department store;1160;nan
+shopping centre;1170;nan
+kiosk;1180;nan
+pharmacy;1190;nan
+pavilion;1200;nan
+hotel;1210;nan
+youth hostel;1220;nan
+campsite building;1230;nan
+restaurant;1240;nan
+cantine;1250;nan
+recreational site;1260;nan
+function room;1270;nan
+cinema;1280;nan
+bowling alley;1290;nan
+casino;1300;nan
+industrial building;1310;nan
+factory;1320;nan
+workshop;1330;nan
+petrol / gas station;1340;nan
+washing plant;1350;nan
+cold store;1360;nan
+depot;1370;nan
+building for research purposes;1380;nan
+quarry;1390;nan
+salt works;1400;nan
+miscellaneous industrial building;1410;nan
+mill;1420;nan
+windmill;1430;nan
+water mill;1440;nan
+bucket elevator;1450;nan
+weather station;1460;nan
+traffic assets office;1470;nan
+street maintenance;1480;nan
+waiting hall;1490;nan
+signal control box;1500;nan
+engine shed;1510;nan
+signal box or stop signal;1520;nan
+plant building for air traffic;1530;nan
+hangar;1540;nan
+plant building for shipping;1550;nan
+shipyard;1560;nan
+dock;1570;nan
+plant building for canal lock;1580;nan
+boathouse;1590;nan
+plant building for cablecar;1600;nan
+multi-storey car park;1610;nan
+parking level;1620;nan
+garage;1630;nan
+vehicle hall;1640;nan
+underground garage;1650;nan
+building for supply;1660;nan
+waterworks;1670;nan
+pump station;1680;nan
+water basin;1690;nan
+electric power station;1700;nan
+transformer station;1710;nan
+converter;1720;nan
+reactor;1730;nan
+turbine house;1740;nan
+boiler house;1750;nan
+building for telecommunications;1760;nan
+gas works;1770;nan
+heat plant;1780;nan
+pumping station;1790;nan
+building for disposal;1800;nan
+building for effluent disposal;1810;nan
+building for filter plant;1820;nan
+toilet;1830;nan
+rubbish bunker;1840;nan
+building for rubbish incineration;1850;nan
+building for rubbish disposal;1860;nan
+building for agrarian and forestry;1870;nan
+barn;1880;nan
+stall;1890;nan
+equestrian hall;1900;nan
+alpine cabin;1910;nan
+hunting lodge;1920;nan
+arboretum;1930;nan
+glass house;1940;nan
+moveable glass house;1950;nan
+public building;1960;nan
+administration building;1970;nan
+parliament;1980;nan
+guildhall;1990;nan
+post office;2000;nan
+customs office;2010;nan
+court;2020;nan
+embassy or consulate;2030;nan
+district administration;2040;nan
+district government;2050;nan
+tax office;2060;nan
+building for education and research;2070;nan
+comprehensive school;2080;nan
+vocational school;2090;nan
+college or university;2100;nan
+research establishment;2110;nan
+building for cultural purposes;2120;nan
+castle;2130;nan
+theatre or opera;2140;nan
+concert building;2150;nan
+museum;2160;nan
+broadcasting building;2170;nan
+activity building;2180;nan
+library;2190;nan
+fort;2200;nan
+religious building;2210;nan
+church;2220;nan
+synagogue;2230;nan
+chapel;2240;nan
+community center ;2250;nan
+place of worship;2260;nan
+mosque;2270;nan
+temple;2280;nan
+convent;2290;nan
+building for health care;2300;nan
+hospital;2310;nan
+healing centre or care home;2320;nan
+health centre or outpatients clinic;2330;nan
+building for social purposes;2340;nan
+youth centre;2350;nan
+seniors centre;2360;nan
+homeless shelter;2370;nan
+kindergarten or nursery;2380;nan
+asylum seekers home;2390;nan
+police station;2400;nan
+fire station;2410;nan
+barracks;2420;nan
+bunker;2430;nan
+penitentiary or prison;2440;nan
+cemetery building;2450;nan
+funeral parlor;2460;nan
+crematorium;2470;nan
+train station;2480;nan
+airport building;2490;nan
+building for underground station;2500;nan
+building for tramway;2510;nan
+building for bus station;2520;nan
+shipping terminal;2530;nan
+building for recuperation purposes;2540;nan
+building for sport purposes;2550;nan
+sports hall;2560;nan
+building for sports field;2570;nan
+swimming baths;2580;nan
+indoor swimming pool;2590;nan
+sanatorium;2600;nan
+zoo building;2610;nan
+green house;2620;nan
+botanical show house;2630;nan
+bothy;2640;nan
+tourist information centre;2650;nan
+others;2700;nan

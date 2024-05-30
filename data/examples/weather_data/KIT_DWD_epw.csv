@@ -1,0 +1,13 @@
+kit_file,dwd,epw
+Datum,,Year;Month;Day;Hour;Minute
+Temperatur,t,Dry Bulb Temperature
+Windgeschwindigkeit,WG,Wind Speed
+Bedeckungsgrad,N,
+Rel. Feuchte,RF,Relative Humidity
+Solare Direktstraklung,B,Direct Normal Radiation
+Solere Diffusstrahlung,D,Diffuse Horizontal Radiation
+Athmosph. Gegenstrahlung,A,
+Terrestr. Wärmestrahlung,E,
+,X,
+,WR,Wind Direction
+,,Albedo
