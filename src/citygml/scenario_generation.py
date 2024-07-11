@@ -3,11 +3,7 @@
 # change import statement https://github.com/RWTH-EBC/districtgenerator/issues/6 
 import os 
 import pandas as pd 
-import numpy as np 
-from districtgenerator import Datahandler
-
-
-
+import numpy as np
 
 
 def create_scenario(sheet_file: str, scenario_name: str,
