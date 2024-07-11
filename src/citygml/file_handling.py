@@ -48,7 +48,6 @@ def get_address(file_path):
 
     # Find all buildings 
     buildings = root.findall('.//bldg:Building', ns)
-    print(buildings)
     address_list = []
     for building in root.findall('.//{*}Building'):
         # Get all IDs 
@@ -97,10 +96,10 @@ def get_building_type(file_path):
         # Get all IDs and building types 
         building_id = building.get('{http://www.opengis.net/gml}id')
         bt_node = building.find('.//{*}function', ns)
-        if bt_node is None:
-            building_type = ""
+        if bt_node is not None:
+            building_type = bt_node.text
         else:
-            building_type = building.find('bldg:function', ns).text
+            building_type = ""
         building_type_list.append((building_id, building_type))
                 
     return building_type_list 
@@ -181,10 +180,10 @@ def get_height(file_path):
         # Get all IDs and yoc 
         building_id = building.get('{http://www.opengis.net/gml}id')
         height_node = building.find('.//{*}measuredHeight', ns)
-        if height_node is None:
-            building_height = ""
+        if height_node is not None:
+            building_height = height_node.text
         else:
-            building_height = building.find('bldg:measuredHeight', ns).text
+            building_height = ""
         building_height_list.append((building_id, building_height))
                 
     return building_height_list
