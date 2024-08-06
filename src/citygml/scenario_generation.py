@@ -129,6 +129,7 @@ def parse_building_types(df: pd.DataFrame, default_building_type: str ="SFH"):
 
     df_copy = df.copy()
     # Fehler, da unterschiedliche types vorliegen, e.g. int64 oder float 
+    df_copy["building_type_gml"] = df_copy["building_type_gml"].astype(int)
     
     conditions = [ 
                 ( df_copy["building_type_gml"] == 1000) & (df_copy["area"] <= 140),
