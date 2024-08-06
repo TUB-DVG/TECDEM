@@ -23,7 +23,6 @@ def get_ids(file_path):
 
     # Find all buildings at LoD3
     buildings = root.findall('.//bldg:Building', ns)
-    print(buildings)
     gml_ids = []
     for building in root.findall('.//{*}Building'):
             # Get all IDs 
