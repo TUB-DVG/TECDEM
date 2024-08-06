@@ -145,15 +145,15 @@ def parse_building_types(df: pd.DataFrame, default_building_type: str ="SFH"):
                 ( df_copy["building_type_gml"] == 31001_1000)& (df_copy["area"] <= 140),
                 ( df_copy["building_type_gml"] == 31001_1000) & (df_copy["area"] > 140) & (df_copy["area"] <= 280),
                 ( df_copy["building_type_gml"] == 31001_1000) & (df_copy["area"] > 280) & (df_copy["area"] <= 800),
-                ( df_copy["building_type_gml"] == 31001_1000) & (df_copy["area"] > 800),,
+                ( df_copy["building_type_gml"] == 31001_1000) & (df_copy["area"] > 800),
                 ( df_copy["building_type_gml"] == 31001_1010)& (df_copy["area"] <= 140),
                 ( df_copy["building_type_gml"] == 31001_1010) & (df_copy["area"] > 140) & (df_copy["area"] <= 280),
                 ( df_copy["building_type_gml"] == 31001_1010) & (df_copy["area"] > 280) & (df_copy["area"] <= 800),
-                ( df_copy["building_type_gml"] == 31001_1010) & (df_copy["area"] > 800),,
+                ( df_copy["building_type_gml"] == 31001_1010) & (df_copy["area"] > 800),
                 ( df_copy["building_type_gml"] == 31001_1120) & (df_copy["area"] <= 140),
                 ( df_copy["building_type_gml"] == 31001_1120) & (df_copy["area"] > 140) & (df_copy["area"] <= 280),
                 ( df_copy["building_type_gml"] == 31001_1120) & (df_copy["area"] > 280) & (df_copy["area"] <= 800),
-                ( df_copy["building_type_gml"] == 31001_1120) & (df_copy["area"] > 800),,
+                ( df_copy["building_type_gml"] == 31001_1120) & (df_copy["area"] > 800),
                 ( df_copy["building_type_gml"] == 31001_1130) & (df_copy["area"] <= 140),
                 ( df_copy["building_type_gml"] == 31001_1130) & (df_copy["area"] > 140) & (df_copy["area"] <= 280),
                 ( df_copy["building_type_gml"] == 31001_1130) & (df_copy["area"] > 280) & (df_copy["area"] <= 800),
@@ -266,8 +266,8 @@ def parse_building_types(df: pd.DataFrame, default_building_type: str ="SFH"):
             ]
         
         
-        # As default, set the most likely type in a given model 
-        df_copy["building"] = np.select(conditions, choices, default=default_building_type)
+    # As default, set the most likely type in a given model 
+    df_copy["building"] = np.select(conditions, choices, default=default_building_type)
 
 
     return df_copy
