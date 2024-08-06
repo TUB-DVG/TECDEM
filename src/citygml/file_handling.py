@@ -2,7 +2,7 @@
 # files contains all function to gather data from the provided GML files 
 import lxml.etree as ET
 import pandas as pd 
-# from shapely.geometry import Polygon
+from shapely.geometry import Polygon
 import geometric_strings as gs
 
 
@@ -127,13 +127,8 @@ def get_floor_area(file_path):
         building_id = building.get('{http://www.opengis.net/gml}id')
         bp_gC = getGroundSurfaceCoorOfBuild(building, ns)
         bp_gC_2d = [(x, y) for x, y, z in bp_gC]
-        polygon = geom.Polygon(bp_gC_2d)
-        temp_data.append({
-                'geometry': polygon, 
-                'coordinates': bp_gC,
-                'gml_id': building_id, 
-                'building_part_id': ""
-            })
+        polygon = Polygon(bp_gC_2d)
+        floor_area = polygon.area 
 
         
         for co_bp_E in building.findall('.//{*}consistsOfBuildingPart', ns):
@@ -141,40 +136,9 @@ def get_floor_area(file_path):
             bp_gC = getGroundSurfaceCoorOfBuild(bp_E, ns)
             building_part_id = bp_E.get('{http://www.opengis.net/gml}id')
             bp_gC_2d = [(x, y) for x, y, z in bp_gC]
-            polygon = geom.Polygon(bp_gC_2d)
-
-            temp_data.append({
-                'geometry': polygon, 
-                'coordinates': bp_gC,
-                'gml_id': building_id, 
-                'building_part_id': building_part_id
-            })
-
-    for building in root.findall('.//{*}Building'):
-        # Get all IDs and yoc 
-        building_id = building.get('{http://www.opengis.net/gml}id')
-        # 
-        gs_node = building.find('.//{*}GroundSurface', ns)
-        if gs_node is None:
-                floor_area = ""
-        else:
-            pos_tags = gs_node.findall('.//gml:pos', ns)
-            if len(pos_tags) == 0:
-                # Try if the posList is used instead
-                pos_list_tag = gs_node.find('.//gml:posList', ns)
-                pos_list_text = pos_list_tag.text.strip()
-                pos_list_values = pos_list_text.split(' ')
-                # Convert the list of strings to the correct types (float or int)
-                pos_list = [float(value) if '.' in value else int(value) for value in pos_list_values]
-                #pos_tags =pos_tags_1.text
-                polygon_data_str = [pos_list[i:i + 3] for i in range(0, len(pos_list), 3)]
-                floor_area = polygon_area(polygon_data_str)
-            else: 
-                polygon_data_str = [pos.text.strip() for pos in pos_tags]
-                polygon_data_flattened =  [float(num) for elem in polygon_data_str for num in elem.split(' ')]
-                polygon_data_grouped = [polygon_data_flattened[i:i + 3] for i in range(0, len(polygon_data_flattened), 3)]
-                floor_area = polygon_area(polygon_data_grouped)
-            floor_list.append((building_id, floor_area))
+            polygon = Polygon(bp_gC_2d)
+            floor_area += polygon.area
+        floor_list.append((building_id, floor_area))
                 
     return floor_list
 
@@ -198,6 +162,7 @@ def get_storeys_above(file_path):
                 
     return building_height_list 
 
+
 def get_height(file_path):
      # Parse the XML file
     tree = ET.parse(file_path)
@@ -216,6 +181,7 @@ def get_height(file_path):
         building_height_list.append((building_id, building_height))
                 
     return building_height_list
+
 
 # Function to calculate the area of a polygon given its vertices
 def polygon_area(coords):
@@ -242,30 +208,13 @@ def polygon_area(coords):
     return area 
 
 
-def addLoD0FootPrint(targetElement, nss, geomIndex, coordinates):
-    # ToDo, figure out how this function really works 
-    """ Function taken from: 
-    https://gitlab.e3d.rwth-aachen.de/e3d-software-tools/cityldt/-/blob/main/LDTtransformation.py?ref_type=heads#L4 
-    
-    adds a LoD0 footprint form the coordinates to the target element using the namespaces"""
-    footPrint_E = ET.Element(ET.QName(nss["bldg"], 'lod0FootPrint'))
-    multiSurface_E = ET.SubElement(footPrint_E, ET.QName(nss["gml"], 'MultiSurface'))
-    surfaceMember_E = ET.SubElement(multiSurface_E, ET.QName(nss["gml"], 'surfaceMember'))
-    polygon_E = ET.SubElement(surfaceMember_E, ET.QName(nss["gml"], 'Polygon'))
-    exterior_E = ET.SubElement(polygon_E, ET.QName(nss["gml"], 'exterior'))
-    linearRing_E = ET.SubElement(exterior_E, ET.QName(nss["gml"], 'LinearRing'))
-    for point in coordinates:
-        # converting floats to string to join
-        stringed = [str(j) for j in point]
-        ET.SubElement(linearRing_E, ET.QName(nss["gml"], 'pos')).text = ' '.join(stringed)
-    targetElement.insert(geomIndex, footPrint_E)
-
-
 def getGroundSurfaceCoorOfBuild(element, nss):
-    """returns the ground surface coordinates from an element in a citygml file"""
+    """returns the ground surface coordinates from an element in a citygml file
+    Function take and adapted from: https://gitlab.e3d.rwth-aachen.de/e3d-software-tools/cityldt/-/blob/main/LDTselection.py?ref_type=heads
+    """
 
     # LoD0
-    if element:
+    if element is not None:
         for tagName in ['bldg:lod0FootPrint', 'bldg:lod0RoofEdge']:
             LoD_zero_E = element.find(tagName, nss)
             if LoD_zero_E != None:
@@ -374,7 +323,24 @@ def calculate_lod3_building_area(file_path):
 
     return total_area
 
-     
+
+def addLoD0FootPrint(targetElement, nss, geomIndex, coordinates):
+    # ToDo, figure out how this function really works 
+    """ Function taken from: 
+    https://gitlab.e3d.rwth-aachen.de/e3d-software-tools/cityldt/-/blob/main/LDTtransformation.py?ref_type=heads#L4 
+    
+    adds a LoD0 footprint form the coordinates to the target element using the namespaces"""
+    footPrint_E = ET.Element(ET.QName(nss["bldg"], 'lod0FootPrint'))
+    multiSurface_E = ET.SubElement(footPrint_E, ET.QName(nss["gml"], 'MultiSurface'))
+    surfaceMember_E = ET.SubElement(multiSurface_E, ET.QName(nss["gml"], 'surfaceMember'))
+    polygon_E = ET.SubElement(surfaceMember_E, ET.QName(nss["gml"], 'Polygon'))
+    exterior_E = ET.SubElement(polygon_E, ET.QName(nss["gml"], 'exterior'))
+    linearRing_E = ET.SubElement(exterior_E, ET.QName(nss["gml"], 'LinearRing'))
+    for point in coordinates:
+        # converting floats to string to join
+        stringed = [str(j) for j in point]
+        ET.SubElement(linearRing_E, ET.QName(nss["gml"], 'pos')).text = ' '.join(stringed)
+    targetElement.insert(geomIndex, footPrint_E)
 
 if __name__ == '__main__':
    #  Test functions 
