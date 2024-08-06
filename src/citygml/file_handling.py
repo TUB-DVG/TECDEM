@@ -3,6 +3,7 @@
 import lxml.etree as ET
 import pandas as pd 
 # from shapely.geometry import Polygon
+import geometric_strings as gs
 
 
 # Define the namespaces used in the CityGML file
@@ -105,6 +106,7 @@ def get_building_type(file_path):
     return building_type_list 
 
 
+
 def get_floor_area(file_path):
     """" 
     Parameters: 
@@ -121,6 +123,33 @@ def get_floor_area(file_path):
     root = tree.getroot()
     # Find all buildings and get the data 
     floor_list = []
+    for building in root.findall('.//{*}Building'):
+        building_id = building.get('{http://www.opengis.net/gml}id')
+        bp_gC = getGroundSurfaceCoorOfBuild(building, ns)
+        bp_gC_2d = [(x, y) for x, y, z in bp_gC]
+        polygon = geom.Polygon(bp_gC_2d)
+        temp_data.append({
+                'geometry': polygon, 
+                'coordinates': bp_gC,
+                'gml_id': building_id, 
+                'building_part_id': ""
+            })
+
+        
+        for co_bp_E in building.findall('.//{*}consistsOfBuildingPart', ns):
+            bp_E = co_bp_E.find('.//{*}BuildingPart', ns)
+            bp_gC = getGroundSurfaceCoorOfBuild(bp_E, ns)
+            building_part_id = bp_E.get('{http://www.opengis.net/gml}id')
+            bp_gC_2d = [(x, y) for x, y, z in bp_gC]
+            polygon = geom.Polygon(bp_gC_2d)
+
+            temp_data.append({
+                'geometry': polygon, 
+                'coordinates': bp_gC,
+                'gml_id': building_id, 
+                'building_part_id': building_part_id
+            })
+
     for building in root.findall('.//{*}Building'):
         # Get all IDs and yoc 
         building_id = building.get('{http://www.opengis.net/gml}id')
@@ -147,7 +176,7 @@ def get_floor_area(file_path):
                 floor_area = polygon_area(polygon_data_grouped)
             floor_list.append((building_id, floor_area))
                 
-    return floor_list 
+    return floor_list
 
 def get_storeys_above(file_path):
     # Get the number of storeys above ground 
@@ -231,6 +260,74 @@ def addLoD0FootPrint(targetElement, nss, geomIndex, coordinates):
         ET.SubElement(linearRing_E, ET.QName(nss["gml"], 'pos')).text = ' '.join(stringed)
     targetElement.insert(geomIndex, footPrint_E)
 
+
+def getGroundSurfaceCoorOfBuild(element, nss):
+    """returns the ground surface coordinates from an element in a citygml file"""
+
+    # LoD0
+    if element:
+        for tagName in ['bldg:lod0FootPrint', 'bldg:lod0RoofEdge']:
+            LoD_zero_E = element.find(tagName, nss)
+            if LoD_zero_E != None:
+                posList_E = LoD_zero_E.find('.//{*}gml:posList', nss)
+                
+                if posList_E != None:
+                    return gs.get_3dPosList_from_str(posList_E.text)
+
+                else:                           # case hamburg lod2 2020
+                    pos_Es = LoD_zero_E.findall('.//{*}gml:pos', nss)
+                    polygon = []
+                    for pos_E in pos_Es:
+                        polygon.append(pos_E.text)
+                    polyStr = ' '.join(polygon)
+                    return gs.get_3dPosList_from_str(polyStr)
+
+        groundSurface_E = element.find('.//{*}boundedBy/.//{*}GroundSurface', nss)
+        if groundSurface_E != None:
+            posList_E = groundSurface_E.find('.//gml:posList', nss)       # searching for list of coordinates
+
+            if posList_E != None:           # case aachen lod2
+                return gs.get_3dPosList_from_str(posList_E.text)
+                
+            else:                           # case hamburg lod2 2020
+                pos_Es = groundSurface_E.findall('.//gml:pos', nss)
+                polygon = []
+                for pos_E in pos_Es:
+                    polygon.append(pos_E.text)
+                polyStr = ' '.join(polygon)
+                return gs.get_3dPosList_from_str(polyStr)
+    
+        #  checking if no groundSurface element has been found
+        else:               # case for lod1 files
+            geometry = element.find('bldg:lod1Solid', nss)
+            if geometry != None:
+                poly_Es = geometry.findall('.//gml:Polygon', nss)
+                all_poylgons = []
+                for poly_E in poly_Es:
+                    polygon = []
+                    posList_E = element.find('.//gml:posList', nss)       # searching for list of coordinates
+                    if posList_E != None:
+                        polyStr = posList_E.text
+                    else:
+                        pos_Es = poly_E.findall('.//gml:pos', nss)        # searching for individual coordinates in polygon
+                        for pos_E in pos_Es:
+                            polygon.append(pos_E.text)
+                        polyStr = ' '.join(polygon)
+                    coor_list = gs.get_3dPosList_from_str(polyStr)
+                    all_poylgons.append(coor_list)
+                
+                # to get the groundSurface polygon, the average height of each polygon is calculated and the polygon with the lowest average height is considered the groundsurface
+                averages = []
+                for polygon in all_poylgons:
+                    # need to get polygon with lowest z coordinate here
+                    average = 0
+                    for i in range(len(polygon)-1):
+                        average -=- polygon[i][2]
+                    averages.append(average/(len(polygon)-1))
+
+                return all_poylgons[averages.index(min(averages))]
+            else:
+                return ''
 
 # Function to parse the CityGML file and calculate the area of a building at LoD3
 def calculate_lod3_building_area(file_path):
