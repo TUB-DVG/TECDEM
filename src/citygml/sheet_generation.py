@@ -37,6 +37,7 @@ def create_sheet(file_path:str):
 
     #Extract data from the provided GML file 
     list_ids = get_ids(file_path)
+    print(list_ids)
     address_tuple = get_address(file_path)
     yoc_tuple = get_yoc(file_path)
     type_tuple = get_building_type(file_path) 
@@ -60,6 +61,7 @@ def create_sheet(file_path:str):
     df["height"] = df["gml_id"].map(dict(height))
     df["storeys_above_ground"] = df["gml_id"].map(dict(storeys_above_ground))
     
+    print(df.head())
     # Fuctions to caluclate data or assume data 
     # get the average floor height 
     df = get_average_floor_height(df)
@@ -68,34 +70,36 @@ def create_sheet(file_path:str):
     # Idea if data not present here but in the final sheet add term - Estimated 
     return df 
 
-
 def get_average_floor_height(df):
-    # Assume the average floor height is 3.15 in DG 
-    # https://de.wikipedia.org/wiki/Raumh%C3%B6he 
-    # Assume 20cm for floor height and 260cm for minimum height -> 280cm is more realistic 
-    # See also: https://www.immobiliensachverstaendige-netzwerk.de/immobilienbegriffe-verstaendlich-gemacht/geschosshoehe 
-    floor_height = 2.8 
-    df_copy = df.copy()
+    """
+    Calculates the average floor height of buildings based on total height and number of storeys.
 
-     # Ensure 'height' and 'storeys_above_ground' are of float type
-    if not np.issubdtype(df_copy['height'].dtype, np.number):
-        df_copy['height'] = pd.to_numeric(df_copy['height'], errors='coerce')
-    if not np.issubdtype(df_copy['storeys_above_ground'].dtype, np.number):
-        df_copy['storeys_above_ground'] = pd.to_numeric(df_copy['storeys_above_ground'], errors='coerce')
+    Parameters:
+        df (pd.DataFrame): DataFrame containing the building heights and storeys.
 
+    Returns:
+        pd.DataFrame: Updated DataFrame with the 'average_floor_height' column added.
+    """
+    # Set a default floor height assumption
+    default_floor_height = 2.8
 
-    # Create a new column 'area' based on the conditions
-    df_copy['average_floor_height'] = np.where(
-        (df_copy['storeys_above_ground'].notna()) & (df_copy['height'].notna()),
-        df_copy['height'] / df_copy['storeys_above_ground'],
-        floor_height)
-    
-    return df_copy
+    # Ensure 'height' and 'storeys_above_ground' are numeric and handle missing data
+    df['height'] = pd.to_numeric(df['height'], errors='coerce')
+    df['storeys_above_ground'] = pd.to_numeric(df['storeys_above_ground'], errors='coerce')
+
+    # Calculate average floor height with a conditional fallback to the default
+    df['average_floor_height'] = df.apply(
+        lambda x: x['height'] / x['storeys_above_ground'] if pd.notnull(x['height']) and pd.notnull(x['storeys_above_ground']) else default_floor_height,
+        axis=1
+    )
+
+    return df
+
 
 if __name__ == '__main__':
 
     # Path to the CityGM'L file
-    file_path = r'C:\Users\felix\Programmieren\tecdm\data\examples\gml_data\partialMierendorffInselLoD2.gml'
+    file_path = r'C:\Users\felix\Programmieren\TECDEM\data\berlin\LoD2_33_384_5820_1_BE.xml'
     
 
     ids = create_sheet(file_path)
