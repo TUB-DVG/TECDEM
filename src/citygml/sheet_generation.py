@@ -37,7 +37,6 @@ def create_sheet(file_path:str):
 
     #Extract data from the provided GML file 
     list_ids = get_ids(file_path)
-    print(list_ids)
     address_tuple = get_address(file_path)
     yoc_tuple = get_yoc(file_path)
     type_tuple = get_building_type(file_path) 
@@ -50,7 +49,7 @@ def create_sheet(file_path:str):
     # Set up a dictionary and map the attributes based on the gml_id 
     # Data is parsed from the GML File 
     df = pd.DataFrame({"gml_id":list_ids})
-    df["dg_id"] = df.index 
+    df["dg_id"] = range(len(df))
     df["address"] = df["gml_id"].map(dict(address_tuple))
     df["building_type_gml"] = df["gml_id"].map(dict(type_tuple))
     df["year_of_construction"] = df["gml_id"].map(dict(yoc_tuple))
@@ -61,14 +60,12 @@ def create_sheet(file_path:str):
     df["height"] = df["gml_id"].map(dict(height))
     df["storeys_above_ground"] = df["gml_id"].map(dict(storeys_above_ground))
     
-    print(df.head())
     # Fuctions to caluclate data or assume data 
     # get the average floor height 
     df = get_average_floor_height(df)
     
-
-    # Idea if data not present here but in the final sheet add term - Estimated 
-    return df 
+    # Idea if data not present here but in the final sheet add term - Estimated bvalue
+    return df
 
 def get_average_floor_height(df):
     """

@@ -23,16 +23,18 @@ def create_scenario(sheet_file: str, scenario_name: str,
     df = calculate_area(df)
     df = parse_building_types(df, default_building_type)
 
-    model_df = df.filter(["dg_id", "building", "year_of_construction", "renovation_status", "retrofit", "area"]) 
+    model_df = df.filter(["dg_id", "building", "year_of_construction", "renovation_status", "retrofit", "area"])
     rename_dict = {
         "dg_id" : "id",
         "year_of_construction" : "year",
         "renovation_status": "retrofit",
     }
-    model_df.rename(columns=rename_dict, inplace=True) 
+    model_df.rename(columns=rename_dict, inplace=True)
+    model_df["year"] = model_df["year"].astype("Int64")
     scenario_folder = scenario_folder
     scenario_path = os.path.join(scenario_folder, f'{scenario_name}.csv')   
-    try: model_df.to_csv(scenario_path, index=False, sep=";")
+    try: 
+        model_df.to_csv(scenario_path, index=False, sep=";")
     except OSError:
         cwd_path = os.path.dirname(os.getcwd())
         scenario_folder = scenario_folder
