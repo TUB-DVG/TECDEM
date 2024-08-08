@@ -5,11 +5,6 @@ This is the Tool for Efficient CityGML District Energy Modelling (TECDM). It is 
 
 The tools can be used for quickly analyzing districts. We consider such tools relevant, as districs provide an important scale in the energy transition. They provide more flexibility than a single building an hence can be considered the smallest cell of energy transition. 
 
-## Further Helpful Reading and Materials
-
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
-
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
 
 
 ## Installation
@@ -18,10 +13,11 @@ For installation, clone this repo and run:
 
 '' pip install requirements.txt ''
 
-Then got to the src folder and clone my branch of the [Districtgenerator](https://github.com/c0nb4/districtgenerator)
+Then got to the src folder and clone this branch of the [Districtgenerator](https://github.com/c0nb4/districtgenerator)
 
 ## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+
+
 
 ## Project Structure 
 
