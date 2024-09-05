@@ -2,6 +2,7 @@
 # files contains all function to gather data from the provided GML files 
 import lxml.etree as ET
 import pandas as pd 
+import shapely
 from shapely.geometry import Polygon
 import geometric_strings as gs
 
