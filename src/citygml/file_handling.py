@@ -4,7 +4,10 @@ import lxml.etree as ET
 import pandas as pd 
 import shapely
 from shapely.geometry import Polygon
-import citygml.geometric_strings as gs
+try: 
+    import citygml.geometric_strings as gs
+except ModuleNotFoundError: 
+    import geometric_strings as gs
 
 
 # Define the namespaces used in the CityGML file
@@ -67,6 +70,7 @@ def get_address(file_path):
     return address_list
 
 def get_yoc(file_path):
+    """Extract year of construction from CityGML file."""
     # Parse the XML file
     tree = ET.parse(file_path)
     root = tree.getroot()
@@ -254,18 +258,21 @@ def getGroundSurfaceCoorOfBuild(element, nss):
                 all_poylgons = []
                 for poly_E in poly_Es:
                     polygon = []
-                    posList_E = element.find('.//gml:posList', nss)       # searching for list of coordinates
+                    posList_E = element.find('.//gml:posList', nss)       
+                    # searching for list of coordinates
                     if posList_E != None:
                         polyStr = posList_E.text
                     else:
-                        pos_Es = poly_E.findall('.//gml:pos', nss)        # searching for individual coordinates in polygon
+                        pos_Es = poly_E.findall('.//gml:pos', nss)       
+                        # searching for individual coordinates in polygon
                         for pos_E in pos_Es:
                             polygon.append(pos_E.text)
                         polyStr = ' '.join(polygon)
                     coor_list = gs.get_3dPosList_from_str(polyStr)
                     all_poylgons.append(coor_list)
                 
-                # to get the groundSurface polygon, the average height of each polygon is calculated and the polygon with the lowest average height is considered the groundsurface
+                # to get the groundSurface polygon, the average height of each polygon is calculated 
+                # and the polygon with the lowest average height is considered the groundsurface
                 averages = []
                 for polygon in all_poylgons:
                     # need to get polygon with lowest z coordinate here

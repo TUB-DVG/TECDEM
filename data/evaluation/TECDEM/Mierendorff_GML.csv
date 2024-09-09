@@ -1,0 +1,674 @@
+,gml_id,dg_id,address,building_type_gml,year_of_construction,renovation_status,floor_area,height,storeys_above_ground,average_floor_height
+5,DEBE3D04YY50000BlO,5,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Mierendorffplatz",31001_1010,1900,,820.1560389983282,23.22,,2.8
+8,DEBE3D04YY50000Rac,8,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Kamminer Straße",31001_1010,1905,,724.3931230128894,24.421,,2.8
+10,DEBE3D04YY50000DCT,10,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2463,1905,,23.834601003363808,2.867,,2.8
+12,DEBE3D04YY50000Lev,12,"Germany,Berlin,Charlottenburg-Wilmersdorf,Tegeler Weg",31001_1010,1905,,196.1674960029115,22.963,,2.8
+14,DEBE3D04YY500002JB,14,"Germany,Berlin,Charlottenburg-Wilmersdorf,Mierendorffstraße",31001_1010,1905,,501.7985349944482,24.448,,2.8
+15,DEBE3D04YY5000035o,15,"Germany,Berlin,Charlottenburg-Wilmersdorf,Kamminer Straße",31001_1010,1955,,614.7399379895135,20.377,,2.8
+16,DEBE3D04YY50000Neh,16,"Germany,Berlin,Charlottenburg-Wilmersdorf,Tegeler Weg",31001_1010,1905,,587.6659060033014,23.152,,2.8
+17,DEBE3D04YY50000R2f,17,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2460,1905,,58.42307000131772,3.0,,2.8
+21,DEBE3D04YY50000Gm5,21,"Germany,Berlin,Charlottenburg-Wilmersdorf,Osnabrücker Straße",31001_1010,,,244.4644394965103,20.888,,2.8
+24,DEBE3D04YY50000IyF,24,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2523,1905,,7.448012000011559,2.341,,2.8
+25,DEBE3D04YY500002ZF,25,"Germany,Berlin,Charlottenburg-Wilmersdorf,Mierendorffplatz",31001_1010,1905,,190.98690049744056,20.682,,2.8
+27,DEBE3D04YY50000AcP,27,"Germany,Berlin,Charlottenburg-Wilmersdorf,Tauroggener Straße",31001_1010,1905,,520.6718939900413,22.458,,2.8
+29,DEBE3D04YY50000Kt1,29,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2460,,,20.770464999859684,0.424,,2.8
+31,DEBE3D04YY50000GXe,31,"Germany,Berlin,Charlottenburg-Wilmersdorf,Mindener Straße",31001_1010,1905,,273.1380239947886,22.792,,2.8
+32,DEBE3D04YY500005l3,32,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2055,1905,,40.14258349713131,3.448,,2.8
+35,DEBE3D04YY50000Ct5,35,"Germany,Berlin,Charlottenburg-Wilmersdorf,Mindener Straße",31001_1010,1905,,786.8541650070263,21.187,,2.8
+40,DEBE3D00YY1Y50004P,40,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,1905,,24.537459501740432,25.449,,2.8
+42,DEBE3D04YY50000Peo,42,"Germany,Berlin,Charlottenburg-Wilmersdorf,Tauroggener Straße",31001_1010,1905,,356.9747314920342,16.302,,2.8
+44,DEBE3D04YY50002bU7,44,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,1905,,5.899059000332791,0.138,,2.8
+53,DEBE3D04YY50000Ncz,53,"Germany,Berlin,Charlottenburg-Wilmersdorf,Tauroggener Straße",31001_1010,1905,,804.8592220084569,24.418,,2.8
+54,DEBE3D04YY500005Oq,54,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Osnabrücker Straße",31001_1010,1905,,808.8503479991485,22.752,,2.8
+61,DEBE3D04YY500001GY,61,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_3044,1905,,430.7947000018561,10.764,,2.8
+62,DEBE3D04YY50000GZe,62,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Brahestraße",31001_1010,1955,,759.8762620019337,22.09,,2.8
+67,DEBE3D04YY50000CMU,67,"Germany,Berlin,Charlottenburg-Wilmersdorf,Kamminer Straße",31001_1010,1955,,659.2186355050069,20.359,,2.8
+69,DEBE3D04YY50000KSa,69,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2463,,,18.355885001250087,5.778,,2.8
+77,DEBE3D04YY50000QXO,77,"Germany,Berlin,Charlottenburg-Wilmersdorf,Mierendorffplatz",31001_1010,1900,,923.3559699880587,22.912,,2.8
+78,DEBE3D04YY500005Lc,78,"Germany,Berlin,Charlottenburg-Wilmersdorf,Tauroggener Straße",31001_1010,1905,,482.9667599880776,22.735,,2.8
+79,DEBE3D04YY50000HML,79,"Germany,Berlin,Charlottenburg-Wilmersdorf,Osnabrücker Straße",31001_1010,1905,,199.68267400505343,17.707,,2.8
+81,DEBE3D04YY50000RXk,81,"Germany,Berlin,Charlottenburg-Wilmersdorf,Kamminer Straße",31001_1010,1905,,805.3166299963569,21.889,,2.8
+85,DEBE3D04YY50000L1T,85,"Germany,Berlin,Charlottenburg-Wilmersdorf,Brahestraße",31001_1010,,,636.5186219921402,28.987,,2.8
+87,DEBE3D04YY50000Cyx,87,"Germany,Berlin,Charlottenburg-Wilmersdorf,Tegeler Weg",31001_1010,1905,,810.8376264921219,24.863,,2.8
+88,DEBE3D04YY500008VN,88,"Germany,Berlin,Charlottenburg-Wilmersdorf,Mierendorffstraße",31001_1010,1905,,624.9656410090042,23.364,,2.8
+91,DEBE3D04YY500000uD,91,"Germany,Berlin,Charlottenburg-Wilmersdorf,Tauroggener Straße",31001_1010,1905,,361.99778550447246,16.202,,2.8
+92,DEBE3D04YY50000JUQ,92,"Germany,Berlin,Charlottenburg-Wilmersdorf,Mierendorffstraße",31001_1010,1905,,557.6678859941246,23.445,,2.8
+93,DEBE3D04YY50000Jzy,93,"Germany,Berlin,Charlottenburg-Wilmersdorf,Mindener Straße",31001_1010,1905,,823.8873199891932,22.278,,2.8
+95,DEBE3D04YY50002bng,95,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,1905,,88.87738600097497,3.384,,2.8
+96,DEBE3D04YY50000PNl,96,"Germany,Berlin,Charlottenburg-Wilmersdorf,Osnabrücker Straße",31001_1010,1905,,845.5997035168054,21.463,,2.8
+97,DEBE3D04YY500008AI,97,"Germany,Berlin,Charlottenburg-Wilmersdorf,Brahestraße",31001_1010,1955,,1062.5424770001111,19.83,,2.8
+101,DEBE3D04YY50000G12,101,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Kamminer Straße",31001_1010,1905,,896.9812439936514,23.73,,2.8
+102,DEBE3D04YY50000PyU,102,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_1010,1955,,350.3538870018361,15.193,,2.8
+103,DEBE3D04YY50000IeR,103,"Germany,Berlin,Charlottenburg-Wilmersdorf,Sömmeringstraße",31001_3211,1905,,4180.849890504021,8.009,,2.8
+104,DEBE3D04YY500005Xu,104,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2143,1905,,12.7559499971929,3.157,,2.8
+106,DEBE3D04YY50000Lg8,106,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_1010,1905,,108.74968450010574,3.329,,2.8
+109,DEBE3D04YY500008pH,109,"Germany,Berlin,Charlottenburg-Wilmersdorf,Tegeler Weg",31001_1010,1905,,413.3083675002807,20.046,,2.8
+112,DEBE3D04YY500003I0,112,"Germany,Berlin,Charlottenburg-Wilmersdorf,Mindener Straße",31001_3060,1905,,394.7915374980206,22.108,,2.8
+113,DEBE3D04YY50000IJD,113,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Kamminer Straße",31001_1010,1905,,1046.440052512486,22.437,,2.8
+114,DEBE3D04YY500004xw,114,"Germany,Berlin,Charlottenburg-Wilmersdorf,Brahestraße",31001_1010,,,974.3912540119109,1.051,,2.8
+115,DEBE3D04YY50002ceG,115,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,1905,,24.821663000173576,17.135,,2.8
+120,DEBE3D00YY1Ha0003w,120,"Germany,Berlin,Charlottenburg-Wilmersdorf,Tegeler Weg",31001_1010,1905,,497.8312629862616,14.846,,2.8
+122,DEBE3D04YY50000PO8,122,"Germany,Berlin,Charlottenburg-Wilmersdorf,Mierendorffplatz",31001_1010,1900,,515.4904859903614,8.857,,2.8
+123,DEBE3D04YY5000058C,123,"Germany,Berlin,Charlottenburg-Wilmersdorf,Mierendorffstraße",31001_1010,1905,,1193.724650004899,21.638,,2.8
+125,DEBE3D04YY500007Wv,125,"Germany,Berlin,Charlottenburg-Wilmersdorf,Tegeler Weg",31001_1010,1905,,805.4718454973853,24.236,,2.8
+128,DEBE3D04YY500005a4,128,"Germany,Berlin,Charlottenburg-Wilmersdorf,Mierendorffstraße",31001_1010,1905,,236.73811899958065,23.27,,2.8
+129,DEBE3D04YY500001MA,129,"Germany,Berlin,Charlottenburg-Wilmersdorf,Tauroggener Straße",31001_1010,1905,,774.3621295103252,24.672,,2.8
+130,DEBE3D04YY50000GBo,130,"Germany,Berlin,Charlottenburg-Wilmersdorf,Tegeler Weg",31001_1010,1905,,353.2779270141898,24.262,,2.8
+133,DEBE3D04YY50002cQp,133,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,1905,,3.2008274997536934,1.023,,2.8
+135,DEBE3D04YY50002cQh,135,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,,,17.227502497783398,3.282,,2.8
+136,DEBE3D04YY50002bj7,136,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,,,48.77935799958604,4.622,,2.8
+137,DEBE3D04YY500002Vz,137,"Germany,Berlin,Charlottenburg-Wilmersdorf,Tauroggener Straße",31001_1010,1905,,597.7245254984387,23.719,,2.8
+138,DEBE3D04YY50002cb6,138,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,,,51.607011502368664,5.114,,2.8
+140,DEBE3D04YY500003Pf,140,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Brahestraße",31001_1010,,,619.4526144977635,19.846,,2.8
+145,DEBE3D04YY500002lt,145,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Kamminer Straße",31001_1010,1905,,726.2229665009801,19.283,,2.8
+147,DEBE3D04YY50002blL,147,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,1905,,17.578064000783733,3.542,,2.8
+150,DEBE3D04YY500009jQ,150,"Germany,Berlin,Charlottenburg-Wilmersdorf,Mierendorffstraße",31001_1010,1905,,844.1903545005481,23.644,,2.8
+151,DEBE3D04YY500009Qd,151,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Mindener Straße",31001_1010,1905,,759.663165003359,21.427,,2.8
+154,DEBE3D04YY50000DEj,154,"Germany,Berlin,Charlottenburg-Wilmersdorf,Tauroggener Straße",31001_1010,1905,,420.78816000845126,16.251,,2.8
+155,DEBE3D04YY500009Fz,155,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2143,1905,,23.059046501451665,17.89,,2.8
+156,DEBE3D04YY50000COa,156,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Mindener Straße",31001_1010,1905,,1273.8037750269477,21.662,,2.8
+159,DEBE3D04YY50000PBN,159,"Germany,Berlin,Charlottenburg-Wilmersdorf,Mindener Straße",31001_1010,1905,,958.2819045104939,22.591,,2.8
+163,DEBE3D04YY50000IVk,163,"Germany,Berlin,Charlottenburg-Wilmersdorf,Kamminer Straße",31001_1010,1905,,466.6974844988272,24.289,,2.8
+166,DEBE3D04YY500004IA,166,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Mindener Straße",31001_1010,1905,,1019.7213070314393,22.283,,2.8
+170,DEBE3D04YY500006JC,170,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Kamminer Straße",31001_1010,1905,,1099.291576480548,22.639,,2.8
+172,DEBE3D04YY50002cVL,172,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,,,3.4922440001117714,15.733,,2.8
+174,DEBE3D04YY500006oB,174,"Germany,Berlin,Charlottenburg-Wilmersdorf,Mierendorffstraße",31001_1010,1905,,493.9089494968082,22.625,,2.8
+175,DEBE3D04YY500001FC,175,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Mindener Straße",31001_1010,1905,,930.9114169883554,24.116,,2.8
+178,DEBE3D04YY50000BBT,178,"Germany,Berlin,Charlottenburg-Wilmersdorf,Mierendorffplatz",31001_2591,,,152.08302749414332,7.946,,2.8
+179,DEBE3D04YY500006na,179,"Germany,Berlin,Charlottenburg-Wilmersdorf,Tegeler Weg",31001_1010,1905,,788.2765175049597,3.0,,2.8
+180,DEBE3D04YY50000Mls,180,"Germany,Berlin,Charlottenburg-Wilmersdorf,Osnabrücker Straße",31001_1010,1955,,578.5279965188626,17.267,,2.8
+182,DEBE3D04YY50000PbF,182,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2460,1905,,84.51456049687758,17.561,,2.8
+183,DEBE3D04YY50000MFN,183,"Germany,Berlin,Charlottenburg-Wilmersdorf,Tegeler Weg",31001_1010,1905,,671.1577084898558,23.636,,2.8
+184,DEBE3D04YY50000ImQ,184,"Germany,Berlin,Charlottenburg-Wilmersdorf,Osnabrücker Straße",31001_1010,1905,,562.7686850071055,20.883,,2.8
+185,DEBE3D04YY50000Rfo,185,"Germany,Berlin,Charlottenburg-Wilmersdorf,Bonhoefferufer",31001_1010,1905,,196.4189119955427,21.315,,2.8
+186,DEBE3D04YY50000AJm,186,"Germany,Berlin,Charlottenburg-Wilmersdorf,Bonhoefferufer",31001_1010,1905,,404.84584751065904,24.924,,2.8
+187,DEBE3D04YY50000Rt0,187,"Germany,Berlin,Charlottenburg-Wilmersdorf,Mierendorffstraße",31001_1010,1905,,317.4277150041844,21.501,,2.8
+189,DEBE3D04YY50000Qyp,189,"Germany,Berlin,Charlottenburg-Wilmersdorf,Keplerstraße",31001_2200,,,1596.9517095005403,25.969,,2.8
+191,DEBE3D04YY50000ERg,191,"Germany,Berlin,Charlottenburg-Wilmersdorf,Bonhoefferufer",31001_1010,1905,,233.75987950516011,22.3,,2.8
+192,DEBE3D04YY500001Wu,192,"Germany,Berlin,Charlottenburg-Wilmersdorf,Osnabrücker Straße",31001_1010,1905,,832.0092090092699,22.598,,2.8
+193,DEBE3D04YY50000LDg,193,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2460,1905,,58.4776115023449,2.388,,2.8
+195,DEBE3D04YY500006iV,195,"Germany,Berlin,Charlottenburg-Wilmersdorf,Tauroggener Straße",31001_1010,1905,,261.0322275063533,20.967,,2.8
+196,DEBE3D04YY50002bxT,196,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,,,2.501219499736565,3.912,,2.8
+200,DEBE3D04YY500002jr,200,"Germany,Berlin,Charlottenburg-Wilmersdorf,Tauroggener Straße",31001_1010,1905,,422.6954709981292,15.768,,2.8
+203,DEBE3D04YY50000FQS,203,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Bonhoefferufer",31001_1010,1905,,867.3448234948,25.08,,2.8
+204,DEBE3D04YY50000JjD,204,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2460,1905,,73.32324850101043,2.207,,2.8
+206,DEBE3D04YY50000Hsc,206,"Germany,Berlin,Charlottenburg-Wilmersdorf,Mindener Straße",31001_1010,1905,,684.7956949922695,21.315,,2.8
+209,DEBE3D04YY50000Cyt,209,"Germany,Berlin,Charlottenburg-Wilmersdorf,Tauroggener Straße",31001_1010,1905,,283.07757349707833,22.18,,2.8
+211,DEBE3D04YY50000POZ,211,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_1010,1905,,455.83757449702466,21.528,,2.8
+214,DEBE3D04YY500002cG,214,"Germany,Berlin,Charlottenburg-Wilmersdorf,Tegeler Weg",31001_1010,1905,,616.6277914917961,24.666,,2.8
+215,DEBE3D04YY50000NMB,215,"Germany,Berlin,Charlottenburg-Wilmersdorf,Osnabrücker Straße",31001_1010,1905,,335.5379614958529,23.647,,2.8
+217,DEBE3D04YY500008PC,217,"Germany,Berlin,Charlottenburg-Wilmersdorf,Tauroggener Straße",31001_1010,1955,,247.14534299961397,17.336,,2.8
+218,DEBE3D04YY500002HX,218,"Germany,Berlin,Charlottenburg-Wilmersdorf,Osnabrücker Straße",31001_2071,1955,,522.9549285021095,22.281,,2.8
+219,DEBE3D04YY50000D1X,219,"Germany,Berlin,Charlottenburg-Wilmersdorf,Brahestraße",31001_1010,,,254.48930949506078,24.761,,2.8
+220,DEBE3D04YY50000Oju,220,"Germany,Berlin,Charlottenburg-Wilmersdorf,Mindener Straße",31001_1010,1905,,742.4213729801027,21.437,,2.8
+221,DEBE3D04YY50002bpa,221,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,1905,,6.682110499024313,2.799,,2.8
+223,DEBE3D04YY50000GQP,223,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2460,1905,,94.77068250107834,2.493,,2.8
+225,DEBE3D04YY50000Nwi,225,"Germany,Berlin,Charlottenburg-Wilmersdorf,Tauroggener Straße",31001_1010,1905,,769.5706875051804,21.718,,2.8
+226,DEBE3D04YY5000065F,226,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2460,1955,,79.51630149974508,2.682,,2.8
+227,DEBE3D04YY50000EY7,227,"Germany,Berlin,Charlottenburg-Wilmersdorf,Tauroggener Straße",31001_1010,1905,,523.4790985007687,24.332,,2.8
+228,DEBE3D04YY50000GTB,228,"Germany,Berlin,Charlottenburg-Wilmersdorf,Tegeler Weg",31001_1010,1905,,578.447216999356,22.714,,2.8
+229,DEBE3D04YY50000Cxk,229,"Germany,Berlin,Charlottenburg-Wilmersdorf,Tegeler Weg",31001_1010,1905,,549.6103569993578,23.469,,2.8
+230,DEBE3D04YY50000CuT,230,"Germany,Berlin,Charlottenburg-Wilmersdorf,Mierendorffplatz",31001_1010,,,677.7209484833584,24.01,,2.8
+231,DEBE3D04YY50000A3t,231,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2460,1955,,59.11565249879314,2.632,,2.8
+232,DEBE3D04YY50000AJb,232,"Germany,Berlin,Charlottenburg-Wilmersdorf,Tauroggener Straße",31001_1010,1905,,284.9601675046269,21.961,,2.8
+234,DEBE3D04YY50000NEy,234,"Germany,Berlin,Charlottenburg-Wilmersdorf,Mierendorffstraße",31001_1010,1905,,477.8079514934256,20.679,,2.8
+236,DEBE3D04YY50000HGP,236,"Germany,Berlin,Charlottenburg-Wilmersdorf,Tegeler Weg",31001_1010,1905,,993.9101915019414,21.57,,2.8
+238,DEBE3D04YY50000JZF,238,"Germany,Berlin,Charlottenburg-Wilmersdorf,Bonhoefferufer",31001_1010,1905,,596.483145002363,21.421,,2.8
+239,DEBE3D04YY50000CEY,239,"Germany,Berlin,Charlottenburg-Wilmersdorf,Kamminer Straße",31001_1010,1905,,651.521960002294,21.879,,2.8
+243,DEBE3D04YY50000HK8,243,"Germany,Berlin,Charlottenburg-Wilmersdorf,Bonhoefferufer",31001_1010,1905,,601.7627245057728,29.006,,2.8
+245,DEBE3D04YY50000Q97,245,"Germany,Berlin,Charlottenburg-Wilmersdorf,Mierendorffplatz",31001_1010,1905,,636.5841324862774,22.707,,2.8
+248,DEBE3D04YY50000GKb,248,"Germany,Berlin,Charlottenburg-Wilmersdorf,Tauroggener Straße",31001_1010,1905,,823.5868054855033,25.322,,2.8
+249,DEBE3D04YY50000KBl,249,"Germany,Berlin,Charlottenburg-Wilmersdorf,Bonhoefferufer",31001_1010,1905,,460.4502085014411,23.035,,2.8
+250,DEBE3D04YY50002Xut,250,"Germany,Berlin,Charlottenburg-Wilmersdorf,Tegeler Weg",31001_1010,1905,,567.4082994918356,25.556,,2.8
+251,DEBE3D04YY5000085H,251,"Germany,Berlin,Charlottenburg-Wilmersdorf,Mindener Straße",31001_1010,1905,,822.3460370165283,22.362,,2.8
+257,DEBE3D04YY50000JuW,257,"Germany,Berlin,Charlottenburg-Wilmersdorf,Osnabrücker Straße",31001_1010,1905,,822.2468984908082,22.429,,2.8
+258,DEBE3D04YY500001tj,258,"Germany,Berlin,Charlottenburg-Wilmersdorf,Kamminer Straße",31001_1010,1955,,163.86800999352897,20.209,,2.8
+261,DEBE3D04YY50000FEP,261,"Germany,Berlin,Charlottenburg-Wilmersdorf,Mierendorffplatz",31001_1010,1900,,373.52593650715096,21.255,,2.8
+263,DEBE3D04YY50000EAO,263,"Germany,Berlin,Charlottenburg-Wilmersdorf,Mierendorffplatz",31001_1010,,,398.32431301678395,24.013,,2.8
+264,DEBE3D04YY500006zT,264,"Germany,Berlin,Charlottenburg-Wilmersdorf,Nordhauser Straße",31001_3021,1905,,966.3965680028149,18.441,,2.8
+265,DEBE3D04YY50000LtY,265,"Germany,Berlin,Charlottenburg-Wilmersdorf,Bonhoefferufer",31001_1010,1905,,607.5554259977789,24.531,,2.8
+266,DEBE3D04YY50000Gtj,266,"Germany,Berlin,Charlottenburg-Wilmersdorf,Brahestraße",31001_1010,,,624.6156284939926,25.421,,2.8
+268,DEBE3D04YY50000G7N,268,"Germany,Berlin,Charlottenburg-Wilmersdorf,Tegeler Weg",31001_1010,1905,,486.46392850111863,23.07,,2.8
+269,DEBE3D04YY50000Gpp,269,"Germany,Berlin,Charlottenburg-Wilmersdorf,Kamminer Straße",31001_1010,1955,,180.54853300483276,20.247,,2.8
+270,DEBE3D04YY50000JNM,270,"Germany,Berlin,Charlottenburg-Wilmersdorf,Kamminer Straße",31001_1010,1905,,283.5942250013139,23.584,,2.8
+271,DEBE3D04YY50000Czk,271,"Germany,Berlin,Charlottenburg-Wilmersdorf,Osnabrücker Straße",31001_1010,1905,,182.86683200132876,21.693,,2.8
+272,DEBE3D04YY500004c9,272,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2460,1905,,48.387038001397244,1.923,,2.8
+274,DEBE3D04YY50000GqT,274,"Germany,Berlin,Charlottenburg-Wilmersdorf,Osnabrücker Straße",31001_1010,,,876.0873240139518,21.887,,2.8
+276,DEBE3D04YY50000Exo,276,"Germany,Berlin,Charlottenburg-Wilmersdorf,Tauroggener Straße",31001_1010,,,750.4750094845325,27.037,,2.8
+277,DEBE3D04YY50000ICL,277,"Germany,Berlin,Charlottenburg-Wilmersdorf,Bonhoefferufer",31001_1010,1905,,593.7348784918428,20.696,,2.8
+278,DEBE3D04YY5000024v,278,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Bonhoefferufer",31001_1010,1905,,731.7877545014661,23.616,,2.8
+281,DEBE3D04YY500008Rf,281,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_1010,1905,,399.5975665117619,20.213,,2.8
+286,DEBE3D04YY50000A3p,286,"Germany,Berlin,Charlottenburg-Wilmersdorf,Mierendorffplatz",31001_3010,,,84.56856150662449,5.226,,2.8
+290,DEBE3D04YY50000R1u,290,"Germany,Berlin,Charlottenburg-Wilmersdorf,Tegeler Weg",31001_1010,1905,,753.217909511194,23.395,,2.8
+291,DEBE3D04YY500007YH,291,"Germany,Berlin,Charlottenburg-Wilmersdorf,Kamminer Straße",31001_1010,1905,,845.9627659837242,23.384,,2.8
+292,DEBE3D04YY50000IcJ,292,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2030,,,226.4734715002774,4.192,,2.8
+293,DEBE3D04YY50000PTk,293,"Germany,Berlin,Charlottenburg-Wilmersdorf,Bonhoefferufer",31001_1010,1905,,367.0680954941123,23.029,,2.8
+294,DEBE3D04YY500006VZ,294,"Germany,Berlin,Charlottenburg-Wilmersdorf,Mierendorffplatz",31001_1010,1905,,494.7544499971719,21.515,,2.8
+295,DEBE3D04YY50000Itw,295,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2054,1905,,118.17492500458371,4.105,,2.8
+297,DEBE3D04YY50000QjM,297,"Germany,Berlin,Charlottenburg-Wilmersdorf,Kamminer Straße",31001_1010,1905,,661.7855854884522,20.989,,2.8
+300,DEBE3D04YY500002tg,300,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Mierendorffstraße",31001_1010,1905,,545.0497470015774,19.986,,2.8
+301,DEBE3D04YY50000RqS,301,"Germany,Berlin,Charlottenburg-Wilmersdorf,Bonhoefferufer",31001_1010,1905,,226.44890250872666,21.046,,2.8
+304,DEBE3D04YY50000Fkp,304,"Germany,Berlin,Charlottenburg-Wilmersdorf,Bonhoefferufer",31001_1010,1905,,365.2694724996744,22.516,,2.8
+306,DEBE3D04YY50000EoG,306,"Germany,Berlin,Charlottenburg-Wilmersdorf,Osnabrücker Straße",31001_1010,1905,,194.0547625038021,23.685,,2.8
+308,DEBE3D04YY50000FW2,308,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2120,,,51.2698570006482,4.395,,2.8
+309,DEBE3D04YY500003Mn,309,"Germany,Berlin,Charlottenburg-Wilmersdorf,Bonhoefferufer",31001_1010,1905,,202.51793699828872,19.638,,2.8
+310,DEBE3D04YY500009MX,310,"Germany,Berlin,Charlottenburg-Wilmersdorf,Tegeler Weg",31001_1010,1905,,599.8344009964574,26.552,,2.8
+314,DEBE3D00YY1Y50004M,314,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,1905,,29.72545500038397,22.889,,2.8
+317,DEBE3D04YY5000037N,317,"Germany,Berlin,Charlottenburg-Wilmersdorf,Tauroggener Straße",31001_1010,,,194.90980099943908,21.414,,2.8
+318,DEBE3D04YY500000pJ,318,"Germany,Berlin,Charlottenburg-Wilmersdorf,Mierendorffstraße",31001_3021,1905,,6594.190575008172,10.164,,2.8
+319,DEBE3D04YY50000Plp,319,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2140,1905,,51.14815799791359,1.627,,2.8
+322,DEBE3D04YY50000RdA,322,"Germany,Berlin,Charlottenburg-Wilmersdorf,Tauroggener Straße",31001_1010,1905,,206.4646784991922,16.136,,2.8
+324,DEBE3D04YY50000PvY,324,"Germany,Berlin,Charlottenburg-Wilmersdorf,Osnabrücker Straße",31001_1010,1955,,482.5753004940524,25.165,,2.8
+325,DEBE3D04YY500005mD,325,"Germany,Berlin,Charlottenburg-Wilmersdorf,Tegeler Weg",31001_1120,1905,,784.733114502385,24.429,,2.8
+328,DEBE3D04YY500004DN,328,"Germany,Berlin,Charlottenburg-Wilmersdorf,Mierendorffstraße",31001_3023,1905,,1269.094616995054,25.083,,2.8
+329,DEBE3D04YY50002cFP,329,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,1905,,62.14756399958314,2.741,,2.8
+330,DEBE3D04YY500002Ap,330,"Germany,Berlin,Charlottenburg-Wilmersdorf,Mierendorffplatz",31001_1010,,,631.8866189948862,23.909,,2.8
+333,DEBE3D04YY500001cl,333,"Germany,Berlin,Charlottenburg-Wilmersdorf,Bonhoefferufer",31001_1010,1905,,461.2096560071142,24.932,,2.8
+334,DEBE3D04YY500002Cb,334,"Germany,Berlin,Charlottenburg-Wilmersdorf,Mierendorffstraße",31001_1010,1905,,912.5731765070398,19.057,,2.8
+338,DEBE3D04YY500005S1,338,"Germany,Berlin,Charlottenburg-Wilmersdorf,Tegeler Weg",31001_1010,1905,,708.4873844979262,24.128,,2.8
+339,DEBE3D04YY500002Bm,339,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_1010,1905,,94.66568899869976,24.883,,2.8
+340,DEBE3D04YY50000419,340,"Germany,Berlin,Charlottenburg-Wilmersdorf,Tauroggener Straße",31001_1010,1905,,223.7307130005882,23.998,,2.8
+345,DEBE3D04YY50000R1k,345,"Germany,Berlin,Charlottenburg-Wilmersdorf,Kamminer Straße",31001_1010,1905,,605.6132205013981,21.423,,2.8
+347,DEBE3D04YY5000077W,347,"Germany,Berlin,Charlottenburg-Wilmersdorf,Tauroggener Straße",31001_1010,1905,,604.0789719991735,21.966,,2.8
+348,DEBE3D04YY500002HZ,348,"Germany,Berlin,Charlottenburg-Wilmersdorf,Nordhauser Straße",31001_1010,1900,,601.3593304960991,20.999,,2.8
+349,DEBE3D04YY5000079k,349,"Germany,Berlin,Charlottenburg-Wilmersdorf,Tauroggener Straße",31001_1010,1955,,252.5955155021143,21.358,,2.8
+350,DEBE3D04YY50000JNV,350,"Germany,Berlin,Charlottenburg-Wilmersdorf,Mindener Straße",31001_1010,1905,,580.782678498352,22.712,,2.8
+351,DEBE3D04YY500009hf,351,"Germany,Berlin,Charlottenburg-Wilmersdorf,Mindener Straße",31001_1010,1905,,249.5911459969802,21.902,,2.8
+353,DEBE3D04YY50000PV4,353,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Osnabrücker Straße",31001_1010,,,831.946399005298,19.469,,2.8
+354,DEBE3D04YY50000II3,354,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Kamminer Straße",31001_1010,1905,,1049.7890325092808,22.235,,2.8
+358,DEBE3D04YY50000RgT,358,"Germany,Berlin,Charlottenburg-Wilmersdorf,Osnabrücker Straße",31001_1010,1905,,684.3649530060464,9.454,,2.8
+359,DEBE3D04YY500006C3,359,"Germany,Berlin,Charlottenburg-Wilmersdorf,Mierendorffstraße",31001_1010,1905,,1111.6169740077612,20.1,,2.8
+361,DEBE3D04YY50000NA7,361,"Germany,Berlin,Charlottenburg-Wilmersdorf,Mierendorffstraße",31001_1010,1905,,646.2751140046432,21.273,,2.8
+364,DEBE3D04YY5000070z,364,"Germany,Berlin,Charlottenburg-Wilmersdorf,Kamminer Straße",31001_1010,1955,,163.15202199411212,20.256,,2.8
+367,DEBE3D04YY50000AgW,367,"Germany,Berlin,Charlottenburg-Wilmersdorf,Tauroggener Straße",31001_1010,1955,,173.34973949605646,16.735,,2.8
+371,DEBE3D04YY50000Jei,371,"Germany,Berlin,Charlottenburg-Wilmersdorf,Bonhoefferufer",31001_1010,1905,,235.53980150034877,21.928,,2.8
+373,DEBE3D04YY500007B5,373,"Germany,Berlin,Charlottenburg-Wilmersdorf,Osnabrücker Straße",31001_1010,1905,,596.165461508816,22.143,,2.8
+374,DEBE3D04YY50000Awx,374,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2140,1905,,78.57274000060913,0.477,,2.8
+376,DEBE3D04YY500007Us,376,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Mierendorffplatz",31001_1010,,,810.1254839929143,16.564,,2.8
+377,DEBE3D04YY50000RWR,377,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_1010,,,246.65924349831528,23.894,,2.8
+380,DEBE3D04YY5000006x,380,"Germany,Berlin,Charlottenburg-Wilmersdorf,Mindener Straße",31001_3041,1905,,545.0977205014171,14.453,,2.8
+381,DEBE3D04YY50000Pqq,381,"Germany,Berlin,Charlottenburg-Wilmersdorf,Osnabrücker Straße",31001_1010,1905,,814.220751495618,23.46,,2.8
+382,DEBE3D04YY500007uo,382,"Germany,Berlin,Charlottenburg-Wilmersdorf,Bonhoefferufer",31001_1010,1905,,433.9525179965822,23.634,,2.8
+387,DEBE3D04YY50000CE7,387,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_1010,1905,,423.5009504928969,20.245,,2.8
+389,DEBE3D04YY500005tB,389,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_3020,1905,,31.584837001342905,2.758,,2.8
+391,DEBE3D04YY500003zw,391,"Germany,Berlin,Charlottenburg-Wilmersdorf,Mindener Straße",31001_1010,1905,,207.75956700192822,18.473,,2.8
+393,DEBE3D04YY500009yQ,393,"Germany,Berlin,Charlottenburg-Wilmersdorf,Kamminer Straße",31001_1010,1905,,604.672700493601,24.493,,2.8
+395,DEBE3D04YY50000N0K,395,"Germany,Berlin,Charlottenburg-Wilmersdorf,Kamminer Straße",31001_1010,1905,,591.4174009942038,21.718,,2.8
+397,DEBE3D04YY50002auP,397,"Germany,Berlin,Charlottenburg-Wilmersdorf",51006_1440,1905,,7868.050416490432,1.286,,2.8
+400,DEBE3D04YY50000Kfl,400,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Mindener Straße",31001_1010,1905,,823.867544493713,17.092,,2.8
+401,DEBE3D04YY500008YZ,401,"Germany,Berlin,Charlottenburg-Wilmersdorf,/  /,Herschelstraße",31001_3015,1925,,6463.176223493033,20.949,,2.8
+402,DEBE3D04YY50002cUB,402,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,,,4.837812000073411,2.206,,2.8
+405,DEBE3D04YY50002bXF,405,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,1905,,22.129934002328234,0.601,,2.8
+407,DEBE3D04YY500005TE,407,"Germany,Berlin,Charlottenburg-Wilmersdorf,Kamminer Straße",31001_1010,1905,,752.8147924925456,23.197,,2.8
+408,DEBE3D04YY50000NTF,408,"Germany,Berlin,Charlottenburg-Wilmersdorf,Tegeler Weg",31001_1010,1905,,959.0874565010967,23.267,,2.8
+409,DEBE3D04YY500005W0,409,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Mierendorffstraße",31001_1010,1905,,1363.3448604957725,22.968,,2.8
+410,DEBE3D04YY50000B14,410,"Germany,Berlin,Charlottenburg-Wilmersdorf,Tegeler Weg",31001_1010,1905,,400.02112449803315,25.324,,2.8
+411,DEBE3D04YY500009pj,411,"Germany,Berlin,Charlottenburg-Wilmersdorf,/  /,Herschelstraße",31001_1010,1925,,10941.80513746644,20.769,,2.8
+0,DEBE3D04YY50000Hvj,0,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2621,1925,,18.131596499462013,13.407,,2.8
+2,DEBE3D04YY50002cra,2,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,1925,,27.65350650109021,2.855,,2.8
+3,DEBE3D04YY50002cHI,3,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,1955,,17.685387998558614,5.187,,2.8
+5,DEBE3D04YY5000023o,5,"Germany,Berlin,Charlottenburg-Wilmersdorf,Olbersstraße",31001_1010,1905,,776.3731770046264,14.318,,2.8
+9,DEBE3D04YY50000OO9,9,"Germany,Berlin,Charlottenburg-Wilmersdorf,Olbersstraße",31001_1010,1925,,664.1171284915852,22.683,,2.8
+10,DEBE3D04YY500001Fz,10,"Germany,Berlin,Charlottenburg-Wilmersdorf,Olbersstraße",31001_3065,1955,,1518.7843284955532,4.274,,2.8
+11,DEBE3D04YY5000044Q,11,"Germany,Berlin,Charlottenburg-Wilmersdorf,Olbersstraße",31001_1010,1905,,487.7652209969417,14.126,,2.8
+16,DEBE3D04YY50000BTD,16,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_3021,1955,,59.92037899556216,3.814,,2.8
+17,DEBE3D04YY50000LKR,17,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2055,,,16.794966499627286,3.054,,2.8
+18,DEBE3D04YY500004PP,18,"Germany,Berlin,Charlottenburg-Wilmersdorf,Keplerstraße",31001_1010,1955,,276.066153999246,20.715,,2.8
+20,DEBE3D04YY50000Bwg,20,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2460,1955,,227.43273899889112,3.708,,2.8
+26,DEBE3D04YY50002bas,26,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,,,9.979626998700471,3.116,,2.8
+28,DEBE3D04YY50002cmn,28,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,,,6.245733000749206,3.236,,2.8
+37,DEBE3D04YY50002clJ,37,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,,,9.662255999439157,3.023,,2.8
+41,DEBE3D04YY50000OXV,41,"Germany,Berlin,Charlottenburg-Wilmersdorf,Olbersstraße",31001_1010,1925,,664.5557944950866,23.369,,2.8
+44,DEBE3D04YY50000Q0Q,44,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2621,1905,,19.050586998960323,2.348,,2.8
+45,DEBE3D04YY500001oc,45,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2621,1905,,19.383832998508833,15.291,,2.8
+54,DEBE3D04YY50000Pat,54,"Germany,Berlin,Charlottenburg-Wilmersdorf,Herschelstraße",31001_3044,,,225.57394799656026,12.091,,2.8
+57,DEBE3D04YY500008bB,57,"Germany,Berlin,Charlottenburg-Wilmersdorf,Olbersstraße",31001_1010,1955,,808.4556555108825,20.496,,2.8
+58,DEBE3D04YY50000Bmu,58,"Germany,Berlin,Charlottenburg-Wilmersdorf,Olbersstraße",31001_1010,1925,,853.2777909865358,21.314,,2.8
+60,DEBE3D04YY500002Wm,60,"Germany,Berlin,Charlottenburg-Wilmersdorf,Keplerstraße",31001_1010,1955,,928.6070339952521,20.779,,2.8
+61,DEBE3D04YY50000JHW,61,"Germany,Berlin,Charlottenburg-Wilmersdorf,Herschelstraße",31001_2462,1925,,1158.2985145007908,2.196,,2.8
+62,DEBE3D04YY50000AVo,62,"Germany,Berlin,Charlottenburg-Wilmersdorf,Olbersstraße",31001_1010,1905,,879.3536820029761,11.598,,2.8
+64,DEBE3D04YY50000K8V,64,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2621,1955,,10.394329999625059,2.318,,2.8
+65,DEBE3D04YY500005Wi,65,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Olbersstraße",31001_1010,1925,,747.6464080108371,22.397,,2.8
+67,DEBE3D04YY50000OIJ,67,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Lambertstraße",31001_1010,1955,,979.3183164983179,13.761,,2.8
+68,DEBE3D04YY50000RPu,68,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Brahestraße",31001_1010,1925,,1611.0172080045982,22.685,,2.8
+71,DEBE3D04YY500004K2,71,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Brahestraße",31001_1010,1925,,12551.738813002316,3.0,,2.8
+76,DEBE3D04YY50002blu,76,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,1905,,117.21377949973346,3.502,,2.8
+77,DEBE3D04YY50000D7w,77,"Germany,Berlin,Charlottenburg-Wilmersdorf,/  /,Gallesteig",31001_1010,1935,,2307.203831996586,24.816,,2.8
+79,DEBE3D04YY50000IUG,79,"Germany,Berlin,Charlottenburg-Wilmersdorf,Olbersstraße",31001_1010,1925,,853.4634450024619,20.408,,2.8
+82,DEBE3D04YY50000M9T,82,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_3021,1955,,217.32795050015116,3.852,,2.8
+83,DEBE3D04YY500004Tf,83,"Germany,Berlin,Charlottenburg-Wilmersdorf,Scheinerweg",31001_1010,1905,,791.6569810001887,14.966,,2.8
+84,DEBE3D04YY50002cwP,84,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,1955,,10.935288999939504,22.518,,2.8
+95,DEBE3D04YY500003jz,95,"Germany,Berlin,Charlottenburg-Wilmersdorf,Keplerstraße",31001_1010,1955,,1148.2882315032807,20.372,,2.8
+96,DEBE3D04YY50000FAm,96,"Germany,Berlin,Charlottenburg-Wilmersdorf,Fabriciusstraße",31001_1010,,,175.61096949729827,11.973,,2.8
+98,DEBE3D04YY50000M82,98,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2460,1955,,176.9126449984466,3.422,,2.8
+99,DEBE3D04YY500001bt,99,"Germany,Berlin,Charlottenburg-Wilmersdorf,Tegeler Weg",31001_1120,1925,,730.4972395006407,23.201,,2.8
+103,DEBE3D04YY50002cGs,103,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,,,88.63660050618103,3.228,,2.8
+110,DEBE3D04YY5000087t,110,"Germany,Berlin,Charlottenburg-Wilmersdorf,Olbersstraße",31001_1010,1955,,310.3907104910879,16.755,,2.8
+113,DEBE3D04YY50002bV4,113,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,1925,,25.468567000704713,2.879,,2.8
+114,DEBE3D04YY50002bdb,114,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,,,23.473344498881758,4.247,,2.8
+132,DEBE3D04YY50002cTl,132,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,,,2.904925999562641,3.063,,2.8
+134,DEBE3D04YY50002cuR,134,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,,,85.38456649815016,3.424,,2.8
+138,DEBE3D04YY50000638,138,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2460,1955,,488.9744764892951,2.367,,2.8
+144,DEBE3D04YY50002c1P,144,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,1925,,30.828880001335673,0.968,,2.8
+145,DEBE3D04YY50000DVW,145,"Germany,Berlin,Charlottenburg-Wilmersdorf,Brahestraße",31001_3021,1955,,1029.288565992461,6.904,,2.8
+147,DEBE3D04YY50000D1C,147,"Germany,Berlin,Charlottenburg-Wilmersdorf,/  /,Brahestraße",31001_1010,1925,,2044.3805709860137,22.35,,2.8
+148,DEBE3D04YY500004wz,148,"Germany,Berlin,Charlottenburg-Wilmersdorf,Tegeler Weg",31001_3015,1925,,754.0564654933248,25.294,,2.8
+150,DEBE3D04YY50000REP,150,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Kamminer Straße",31001_1010,1925,,1089.2554055021187,17.649,,2.8
+154,DEBE3D04YY50002cOZ,154,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,1925,,4.804375000105036,4.869,,2.8
+155,DEBE3D04YY50000CDP,155,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Fabriciusstraße",31001_1010,1925,,4068.994998014612,20.852,,2.8
+157,DEBE3D04YY50000MYe,157,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Brahestraße",31001_1010,1955,,783.0643770001462,18.535,,2.8
+159,DEBE3D04YY50000QGI,159,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Brahestraße",31001_1010,1955,,817.5917639970563,21.146,,2.8
+160,DEBE3D04YY50000OwU,160,"Germany,Berlin,Charlottenburg-Wilmersdorf,Herschelstraße",31001_1010,1925,,446.47634250733256,18.846,,2.8
+161,DEBE3D04YY500005xe,161,"Germany,Berlin,Charlottenburg-Wilmersdorf,Keplerstraße",31001_2200,,,818.4777350024171,26.156,,2.8
+162,DEBE3D04YY50000435,162,"Germany,Berlin,Charlottenburg-Wilmersdorf,Keplerstraße",31001_1010,1955,,764.5148189933689,17.004,,2.8
+170,DEBE3D04YY5000030F,170,"Germany,Berlin,Charlottenburg-Wilmersdorf,Scheinerweg",31001_1010,1905,,498.3794890010035,14.841,,2.8
+172,DEBE3D04YY50000HmC,172,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2523,1955,,13.271756999535498,2.852,,2.8
+175,DEBE3D04YY50002csr,175,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,1925,,1.587487999728951,18.387,,2.8
+178,DEBE3D04YY50002bfr,178,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,1955,,7.654079000715075,21.726,,2.8
+179,DEBE3D04YY50002bsb,179,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,,,25.167325998320507,2.956,,2.8
+184,DEBE3D04YY50002buK,184,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,1925,,8.564691500289788,6.742,,2.8
+186,DEBE3D04YY50000Ro9,186,"Germany,Berlin,Charlottenburg-Wilmersdorf,Scheinerweg",31001_1010,1955,,464.30614649758786,14.167,,2.8
+192,DEBE3D04YY50000L9K,192,"Germany,Berlin,Charlottenburg-Wilmersdorf,Olbersstraße",31001_1010,1905,,498.92967000597514,17.375,,2.8
+193,DEBE3D04YY50000PWj,193,"Germany,Berlin,Charlottenburg-Wilmersdorf,Struvesteig",31001_1010,1955,,1618.749420000548,16.606,,2.8
+195,DEBE3D04YY500001Un,195,"Germany,Berlin,Charlottenburg-Wilmersdorf,Olbersstraße",31001_1010,1925,,1049.3300939659186,22.183,,2.8
+199,DEBE3D04YY500001V3,199,"Germany,Berlin,Charlottenburg-Wilmersdorf,Olbersstraße",31001_1010,1955,,793.6487590002096,20.53,,2.8
+200,DEBE3D04YY5000002J,200,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_3041,,,1645.5702864960099,17.942,,2.8
+201,DEBE3D04YY500006Bh,201,"Germany,Berlin,Charlottenburg-Wilmersdorf,Olbersstraße",31001_3065,,,435.62194850839785,5.776,,2.8
+203,DEBE3D04YY50002bgM,203,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,1925,,26.12023549607234,3.217,,2.8
+204,DEBE3D04YY50002cRk,204,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,,,3.125364000252333,3.078,,2.8
+210,DEBE3D04YY50002cpj,210,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,1925,,26.64755199649595,2.881,,2.8
+212,DEBE3D04YY500001z6,212,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Kamminer Straße",31001_3021,1955,,2978.2114954918416,29.302,,2.8
+216,DEBE3D04YY50002ciE,216,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,1925,,31.29080150234187,0.926,,2.8
+222,DEBE3D04YY50000PDF,222,"Germany,Berlin,Charlottenburg-Wilmersdorf,/  /,Brahestraße",31001_1010,1925,,2428.0587089900705,22.923,,2.8
+223,DEBE3D04YY500003fU,223,"Germany,Berlin,Charlottenburg-Wilmersdorf,/  /,Brahestraße",31001_1010,1925,,13525.25942855797,22.142,,2.8
+1,DEBE3D04YY50000F2F,1,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2200,2013,,32.11393399897603,4.151,,2.8
+2,DEBE3D04YY50000EkF,2,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2120,2005,,225.32200200317172,5.413,,2.8
+4,DEBE3D04YY50002cK2,4,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,1905,,170.55461301153417,4.619,,2.8
+5,DEBE3D04YY50000Emj,5,"Germany,Berlin,Charlottenburg-Wilmersdorf,Wernigeroder Straße",31001_1010,,,346.3832810006316,22.582,,2.8
+9,DEBE3D00YY1RC00049,9,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,1985,,38.23826849951889,3.0,,2.8
+10,DEBE3D04YY50000BAW,10,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2010,,,13.863682002543733,5.446,,2.8
+11,DEBE3D04YY500008cQ,11,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2100,,,434.4399010026351,7.648,,2.8
+12,DEBE3D04AL4tn00007,12,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,2013,,14.21728849871977,3.591,,2.8
+13,DEBE3D04YY500009vM,13,"Germany,Berlin,Charlottenburg-Wilmersdorf,Kaiserin-Augusta-Allee",31001_1010,2005,,936.8213754969083,22.793,,2.8
+14,DEBE3D04YY500008O4,14,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2460,,,168.8572120013431,3.217,,2.8
+17,DEBE3D04YY50000LrX,17,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2520,2013,,432.18511649933777,7.995,,2.8
+22,DEBE3D04YY50000KH8,22,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2142,1985,,46.38122000196725,3.082,,2.8
+24,DEBE3D04YY50000CHv,24,"Germany,Berlin,Charlottenburg-Wilmersdorf,Darwinstraße",31001_2020,,,89.83342400027149,7.56,,2.8
+26,DEBE3D04YY500004Nw,26,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2460,1900,,43.35201000132908,3.417,,2.8
+28,DEBE3D04YY50000OQA,28,"Germany,Berlin,Charlottenburg-Wilmersdorf,Quedlinburger Straße",31001_1000,1925,,99.85795500092891,7.432,,2.8
+31,DEBE3D04YY500007zU,31,"Germany,Berlin,Charlottenburg-Wilmersdorf,Nordhauser Straße",31001_1010,1900,,490.2116830104334,16.082,,2.8
+32,DEBE3D04YY50000966,32,"Germany,Berlin,Charlottenburg-Wilmersdorf,Goslarer Platz",31001_1010,,,891.3721655053135,25.06,,2.8
+33,DEBE3D04YY50000MzR,33,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2083,2005,,370.1525589958343,4.692,,2.8
+34,DEBE3D04YY50000Pvi,34,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2143,1925,,492.58952850666043,6.808,,2.8
+35,DEBE3D04YY50000Qk1,35,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2621,1925,,18.40814700080291,3.736,,2.8
+36,DEBE3D04YY500001B1,36,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2460,1955,,26.817045998891615,1.708,,2.8
+37,DEBE3D04YY50000Ijt,37,"Germany,Berlin,Charlottenburg-Wilmersdorf,Sömmeringstraße",31001_1010,2013,,657.4098095060738,15.985,,2.8
+38,DEBE3D04YY500001dN,38,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2521,2013,,3253.1143324987515,22.883,,2.8
+41,DEBE3D04YY500006pX,41,"Germany,Berlin,Charlottenburg-Wilmersdorf,Kaiserin-Augusta-Allee",31001_2020,1900,,841.6467880004467,25.593,,2.8
+42,DEBE3D00YY2oD0000i,42,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,1905,,2.3082449993585423,19.676,,2.8
+44,DEBE3D04YY50000RNm,44,"Germany,Berlin,Charlottenburg-Wilmersdorf,Quedlinburger Straße",31001_2120,1925,,843.3442469977592,4.818,,2.8
+46,DEBE3D04YY50000G7Y,46,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2000,2013,,1635.4477430015672,7.501,,2.8
+48,DEBE3D00YY2l50001y,48,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,2005,,45.66413799499619,2.58,,2.8
+49,DEBE3D04YY50002bZ4,49,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,,,20.728950000184632,0.957,,2.8
+50,DEBE3D04YY50000A5T,50,"Germany,Berlin,Charlottenburg-Wilmersdorf,Ilsenburger Straße",31001_1010,1905,,277.13354900315466,24.474,,2.8
+51,DEBE3D04YY50002cbB,51,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,,,153.28255250805202,4.765,,2.8
+53,DEBE3D04YY500004G4,53,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Nordhauser Straße",31001_1010,1905,,611.0093749950718,21.974,,2.8
+56,DEBE3D04YY50000OjQ,56,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2120,2005,,249.22795999659473,5.068,,2.8
+57,DEBE3D04YY500009qX,57,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2140,2013,,782.9041975001444,3.0,,2.8
+59,DEBE3D04YY50000PMr,59,"Germany,Berlin,Charlottenburg-Wilmersdorf,Sömmeringstraße",31001_1010,2013,,326.9056550014063,22.649,,2.8
+60,DEBE3D04YY50002c57,60,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,,,5.857251499127581,0.084,,2.8
+63,DEBE3D04YY500007gw,63,"Germany,Berlin,Charlottenburg-Wilmersdorf,Goslarer Ufer",31001_1000,,,1657.745121020213,23.007,,2.8
+66,DEBE3D04YY50000ImW,66,"Germany,Berlin,Charlottenburg-Wilmersdorf,Kaiserin-Augusta-Allee",31001_1010,2005,,924.5656945049326,22.14,,2.8
+76,DEBE3D04YY500003iH,76,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Kaiserin-Augusta-Allee",31001_1010,1905,,727.8819305119836,17.072,,2.8
+80,DEBE3D04YY50000Dno,80,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2140,2013,,444.1852129983763,13.386,,2.8
+82,DEBE3D04YY50002bUv,82,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,,,59.00234000067608,7.491,,2.8
+83,DEBE3D04YY5000024G,83,"Germany,Berlin,Charlottenburg-Wilmersdorf,Wernigeroder Straße",31001_1010,1905,,2070.697770488587,22.21,,2.8
+86,DEBE3D04YY50000J6N,86,"Germany,Berlin,Charlottenburg-Wilmersdorf,Goslarer Ufer",31001_1000,,,255.87019599606936,24.688,,2.8
+87,DEBE3D04YY50002cV9,87,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,1900,,4.191004500260062,3.074,,2.8
+90,DEBE3D04YY50002bw7,90,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,1985,,3.626077000006209,4.575,,2.8
+93,DEBE3D04YY50000NQI,93,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2600,2005,,21.79172999961993,13.772,,2.8
+96,DEBE3D04YY50002bbK,96,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,,,17.24668199955675,5.36,,2.8
+97,DEBE3D04YY50000O4o,97,"Germany,Berlin,Charlottenburg-Wilmersdorf,Darwinstraße",31001_1000,,,160.632927502654,24.775,,2.8
+98,DEBE3D04YY50000B1M,98,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2142,2013,,784.5725249992491,6.146,,2.8
+100,DEBE3D04YY50000QOl,100,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2120,1905,,177.77449700081925,4.269,,2.8
+105,DEBE3D04YY50002cnG,105,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,2005,,10.01099949981101,5.208,,2.8
+106,DEBE3D04YY50000MGa,106,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2140,2013,,159.60292050112625,12.675,,2.8
+108,DEBE3D04YY50002cGx,108,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,,,15.72105300055047,4.645,,2.8
+111,DEBE3D04YY500001fB,111,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2520,2013,,3408.3181139620606,47.004,,2.8
+116,DEBE3D04YY50002cJF,116,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,2005,,91.6371334997213,0.036,,2.8
+118,DEBE3D04YY50002d0j,118,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,2013,,93.5068065013128,2.256,,2.8
+119,DEBE3D04AL4WP0000P,119,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,1985,,20.68125000131721,8.99,,2.8
+120,DEBE3D04YY50000Rgg,120,"Germany,Berlin,Charlottenburg-Wilmersdorf,Nordhauser Straße",31001_1010,1905,,578.7164359929486,21.87,,2.8
+123,DEBE3D04YY50000RFq,123,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2111,1905,,758.3012024882446,23.436,,2.8
+125,DEBE3D04YY500003Ns,125,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2010,2013,,14.62600549943457,5.717,,2.8
+126,DEBE3D04YY50000HQZ,126,"Germany,Berlin,Charlottenburg-Wilmersdorf,Kaiserin-Augusta-Allee",31001_2310,2005,,111.62710849672784,8.747,,2.8
+130,DEBE3D04YY50002cOv,130,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,2005,,8.164678001258565,3.224,,2.8
+131,DEBE3D04YY50000FxA,131,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2520,2013,,878.8511895050058,11.512,,2.8
+134,DEBE3D04YY50000QML,134,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2120,2005,,283.4240074940336,8.453,,2.8
+136,DEBE3D04YY500002dK,136,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2143,1905,,88.03522099919081,4.961,,2.8
+137,DEBE3D04YY50002cQ8,137,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,1955,,4.329166500430022,2.6,,2.8
+140,DEBE3D04YY50002d3m,140,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,1905,,5.747554499179501,5.843,,2.8
+141,DEBE3D04YY50000B9g,141,"Germany,Berlin,Charlottenburg-Wilmersdorf,Kaiserin-Augusta-Allee",31001_1010,2005,,471.6410549930713,3.0,,2.8
+142,DEBE3D04YY50002cTc,142,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,2013,,20.430527998766564,2.563,,2.8
+143,DEBE3D04AL4WP0000O,143,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,1985,,10.531947998541789,6.494,,2.8
+145,DEBE3D04YY500006P0,145,"Germany,Berlin,Charlottenburg-Wilmersdorf,Sömmeringstraße",31001_1010,2013,,241.4023150005142,23.104,,2.8
+147,DEBE3D04YY500006eO,147,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2142,1905,,119.12046049197846,7.227,,2.8
+149,DEBE3D04YY50000PJ1,149,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2521,2013,,1332.036982498076,22.565,,2.8
+151,DEBE3D04YY5000071f,151,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2462,1900,,345.72011899265914,2.257,,2.8
+153,DEBE3D04YY50002bwW,153,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,1985,,38.23826849951889,3.0,,2.8
+155,DEBE3D04YY50000ABv,155,"Germany,Berlin,Charlottenburg-Wilmersdorf,Ilsenburger Straße",31001_2523,2005,,171.5385954959329,5.833,,2.8
+158,DEBE3D04YY500002Dc,158,"Germany,Berlin,Charlottenburg-Wilmersdorf,Goslarer Ufer",31001_2520,,,348.7855714905989,4.914,,2.8
+160,DEBE3D04YY500007pM,160,"Germany,Berlin,Charlottenburg-Wilmersdorf,Nordhauser Straße",31001_1010,1900,,249.28756400376065,23.199,,2.8
+162,DEBE3D04YY50000Cax,162,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2143,1905,,464.0347634997043,5.604,,2.8
+163,DEBE3D04YY500003Hl,163,"Germany,Berlin,Charlottenburg-Wilmersdorf,Kaiserin-Augusta-Allee",31001_1010,1900,,960.6284525074166,19.473,,2.8
+165,DEBE3D04YY50000ReH,165,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2621,2005,,299.96039899947687,7.417,,2.8
+166,DEBE3D04YY500009p6,166,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2120,2005,,1293.5237974873507,5.128,,2.8
+167,DEBE3D00YY2ZI0002c,167,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,2005,,172.52131600232667,5.236,,2.8
+168,DEBE3D04YY50000E79,168,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2460,1900,,42.66794450079007,11.524,,2.8
+169,DEBE3D04YY500002Qk,169,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Kaiserin-Augusta-Allee",31001_1010,1900,,1105.8560740164191,23.054,,2.8
+170,DEBE3D04YY50000B8K,170,"Germany,Berlin,Charlottenburg-Wilmersdorf,Nordhauser Straße",31001_1010,1900,,286.907208505523,15.418,,2.8
+171,DEBE3D04YY50000Pa5,171,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Ilsenburger Straße",31001_1010,1905,,846.0070475140719,22.831,,2.8
+175,DEBE3D04YY500006AI,175,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Kaiserin-Augusta-Allee",31001_1010,2005,,795.577957501994,22.159,,2.8
+177,DEBE3D04YY500006Xo,177,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2142,2013,,225.76656149963082,15.422,,2.8
+180,DEBE3D04YY50002cx7,180,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,2005,,2.6206959994225434,2.603,,2.8
+183,DEBE3D04YY50000308,183,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Goslarer Platz",31001_1010,,,835.2378070084732,22.078,,2.8
+184,DEBE3D04YY50000RhR,184,"Germany,Berlin,Charlottenburg-Wilmersdorf,Nordhauser Straße",31001_1010,1900,,282.72096700784425,15.342,,2.8
+188,DEBE3D04YY50002bXp,188,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,2013,,6.125993999587611,3.592,,2.8
+190,DEBE3D04YY50002cHW,190,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,2005,,24.4714860111638,3.271,,2.8
+191,DEBE3D04AL4WP0000Q,191,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,1985,,4.722605000123886,0.512,,2.8
+192,DEBE3D04YY50000OgZ,192,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Mierendorffplatz",31001_1010,1900,,1174.3900939890868,23.454,,2.8
+193,DEBE3D04YY500009BM,193,"Germany,Berlin,Charlottenburg-Wilmersdorf,Kaiserin-Augusta-Allee",31001_1010,2005,,936.3995810105962,22.635,,2.8
+194,DEBE3D04YY5000096c,194,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Ilsenburger Straße",31001_1010,1955,,935.0973235083961,22.958,,2.8
+195,DEBE3D04YY500007nb,195,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Goslarer Platz",31001_1010,,,662.739180995779,23.194,,2.8
+198,DEBE3D04YY500008uA,198,"Germany,Berlin,Charlottenburg-Wilmersdorf,Sömmeringstraße",31001_1010,1900,,307.3498265015944,17.825,,2.8
+199,DEBE3D04YY50000Cqv,199,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Kaiserin-Augusta-Allee",31001_1010,2005,,673.542059008128,22.717,,2.8
+200,DEBE3D04YY50000656,200,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2111,1925,,900.1915705290066,3.901,,2.8
+202,DEBE3D04YY50000HI4,202,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2463,1900,,8.356899001003189,1.384,,2.8
+203,DEBE3D04YY50000Hfk,203,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2142,1905,,345.8284910022923,5.087,,2.8
+204,DEBE3D04AL4tn00000,204,"Germany,Berlin,Charlottenburg-Wilmersdorf,Quedlinburger Straße",31001_2520,2013,,1026.7056865027014,21.229,,2.8
+208,DEBE3D04YY50000KUA,208,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2523,1900,,18.73479500090425,8.443,,2.8
+211,DEBE3D04YY500006ZN,211,"Germany,Berlin,Charlottenburg-Wilmersdorf,Sömmeringstraße",31001_1010,2013,,243.75937049920765,19.591,,2.8
+212,DEBE3D04YY50000Op0,212,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2520,2013,,217.99576550026615,11.493,,2.8
+215,DEBE3D04YY50000Oaj,215,"Germany,Berlin,Charlottenburg-Wilmersdorf,Lise-Meitner-Straße",31001_2054,2005,,538.6478109852056,4.736,,2.8
+216,DEBE3D04YY50000QEa,216,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2120,1905,,338.49860202445876,3.0,,2.8
+217,DEBE3D04YY50000M9i,217,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2142,2013,,26.56953249963137,1.681,,2.8
+218,DEBE3D04YY50000M6k,218,"Germany,Berlin,Charlottenburg-Wilmersdorf,Wernigeroder Straße",31001_2111,1925,,726.3009575003668,3.901,,2.8
+219,DEBE3D04YY50000Q0Z,219,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Ilsenburger Straße",31001_1010,2005,,928.7613670109588,23.859,,2.8
+220,DEBE3D04YY500007Es,220,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2522,2013,,1820.5832324813707,18.064,,2.8
+222,DEBE3D04YY50000RYE,222,"Germany,Berlin,Charlottenburg-Wilmersdorf,Klaustaler Straße",31001_1010,1905,,349.50032649298134,20.219,,2.8
+223,DEBE3D04YY50000CxY,223,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2461,1925,,627.1067629967735,8.245,,2.8
+224,DEBE3D04YY50000E2k,224,"Germany,Berlin,Charlottenburg-Wilmersdorf,Quedlinburger Straße",31001_2120,1905,,241.30292599724646,8.164,,2.8
+226,DEBE3D04YY50000HDy,226,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2520,2013,,33.033765996493344,10.645,,2.8
+227,DEBE3D04YY500001xw,227,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2000,2013,,111.11259449638487,2.791,,2.8
+228,DEBE3D04YY50000LiN,228,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2200,2013,,1186.0279840114515,19.471,,2.8
+229,DEBE3D04YY50002coY,229,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,1905,,11.487818000177764,4.671,,2.8
+234,DEBE3D04YY50000Ffk,234,"Germany,Berlin,Charlottenburg-Wilmersdorf,Ilsenburger Straße",31001_1010,2005,,385.9072775047021,12.605,,2.8
+236,DEBE3D04YY500007Zv,236,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2460,2013,,288.60795450568315,4.672,,2.8
+237,DEBE3D04YY50000Fli,237,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2100,1925,,477.75146650329225,8.065,,2.8
+238,DEBE3D04YY50002Xum,238,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2520,2013,,337.4582259931033,16.387,,2.8
+240,DEBE3D04YY50000QQy,240,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2142,2013,,14.284605000165127,6.324,,2.8
+242,DEBE3D04YY500002jO,242,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_9998,2005,,435.2322640036426,5.16,,2.8
+246,DEBE3D04YY50000FcR,246,"Germany,Berlin,Charlottenburg-Wilmersdorf,Kaiserin-Augusta-Allee",31001_1010,2005,,995.2955835039635,22.688,,2.8
+248,DEBE3D04YY50000GLi,248,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2463,,,535.2424020010958,3.319,,2.8
+250,DEBE3D04YY500009j0,250,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Klaustaler Straße",31001_1010,1905,,972.8606424957854,23.69,,2.8
+252,DEBE3D04YY50000OtW,252,"Germany,Berlin,Charlottenburg-Wilmersdorf,Nordhauser Straße",31001_1010,1900,,213.7378445030084,15.748,,2.8
+256,DEBE3D04YY50000QjQ,256,"Germany,Berlin,Charlottenburg-Wilmersdorf,Kaiserin-Augusta-Allee",31001_1010,2005,,856.6001914905881,22.209,,2.8
+257,DEBE3D04YY50000Gyq,257,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2142,2013,,22.369437998814476,1.394,,2.8
+258,DEBE3D04YY50002cRL,258,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,1925,,63.47703300147265,4.522,,2.8
+259,DEBE3D04YY50000PkN,259,"Germany,Berlin,Charlottenburg-Wilmersdorf,Mierendorffplatz",31001_3060,,,162.5300134910625,5.364,,2.8
+265,DEBE3D04YY50000KQ3,265,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2120,2013,,332.9222320005616,11.34,,2.8
+267,DEBE3D04YY50000MFB,267,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2520,2013,,274.94999949339694,1.891,,2.8
+269,DEBE3D04YY500001ES,269,"Germany,Berlin,Charlottenburg-Wilmersdorf,Quedlinburger Straße",31001_2100,1905,,264.7094810029928,7.724,,2.8
+270,DEBE3D04YY50000GFg,270,"Germany,Berlin,Charlottenburg-Wilmersdorf,Sömmeringstraße",31001_1010,1900,,748.3275435083785,22.509,,2.8
+271,DEBE3D04YY500002TA,271,"Germany,Berlin,Charlottenburg-Wilmersdorf,Am Spreebord",31001_2521,2013,,5785.026077996034,5.688,,2.8
+274,DEBE3D04YY500005H9,274,"Germany,Berlin,Charlottenburg-Wilmersdorf,Kaiserin-Augusta-Allee",31001_1010,2005,,790.9317839932453,22.218,,2.8
+276,DEBE3D04YY500001f9,276,"Germany,Berlin,Charlottenburg-Wilmersdorf,/  /,Darwinstraße",31001_2010,,,4063.929154014357,21.417,,2.8
+277,DEBE3D04YY50000IFv,277,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2200,2013,,625.0718409997917,12.635,,2.8
+279,DEBE3D04YY50000KAM,279,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2140,2013,,444.7385299979379,0.257,,2.8
+280,DEBE3D04YY50000LLO,280,"Germany,Berlin,Charlottenburg-Wilmersdorf,Nordhauser Straße",31001_1010,1900,,361.4045879968173,19.14,,2.8
+284,DEBE3D04YY500009gj,284,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2120,1905,,373.6642920034344,4.451,,2.8
+285,DEBE3D04YY500009KN,285,"Germany,Berlin,Charlottenburg-Wilmersdorf,Goslarer Ufer",31001_2310,1905,,393.9158625054006,11.743,,2.8
+286,DEBE3D04YY50000Pwh,286,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2140,2013,,447.53858349994016,13.885,,2.8
+288,DEBE3D00YY2ZI0002f,288,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,2005,,10.012799500114308,2.641,,2.8
+290,DEBE3D04YY500005tW,290,"Germany,Berlin,Charlottenburg-Wilmersdorf,Kaiserin-Augusta-Allee",31001_1010,1900,,503.5961855021602,21.841,,2.8
+291,DEBE3D04YY5000077d,291,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2520,2013,,184.34723750229898,4.505,,2.8
+294,DEBE3D04YY500007xW,294,"Germany,Berlin,Charlottenburg-Wilmersdorf,Nordhauser Straße",31001_1010,1985,,936.1115779926749,23.304,,2.8
+295,DEBE3D04YY5000009G,295,"Germany,Berlin,Charlottenburg-Wilmersdorf,Wernigeroder Straße",31001_3041,,,800.7920850087716,20.819,,2.8
+296,DEBE3D04YY500004br,296,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2020,2005,,806.5341114869506,11.128,,2.8
+297,DEBE3D04YY50000316,297,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2120,2005,,438.02305600528405,6.619,,2.8
+299,DEBE3D04YY500004uh,299,"Germany,Berlin,Charlottenburg-Wilmersdorf,Ilsenburger Straße",31001_1010,1955,,239.79684249967858,25.848,,2.8
+301,DEBE3D04YY500008wm,301,"Germany,Berlin,Charlottenburg-Wilmersdorf,Nordhauser Straße",31001_1010,1900,,583.6235515114473,22.761,,2.8
+303,DEBE3D04YY50000Brc,303,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Goslarer Platz",31001_1010,1905,,718.6264270142574,22.252,,2.8
+304,DEBE3D04YY50000654,304,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2140,2013,,800.2163040042029,16.202,,2.8
+305,DEBE3D04YY50000L0M,305,"Germany,Berlin,Charlottenburg-Wilmersdorf,Quedlinburger Straße",31001_2200,2013,,143.1002905037604,3.423,,2.8
+307,DEBE3D04YY500009gW,307,"Germany,Berlin,Charlottenburg-Wilmersdorf,Treseburger Straße",31001_2054,1955,,2556.3304344936405,10.907,,2.8
+310,DEBE3D04YY500007Xd,310,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2142,1905,,264.17413500116083,12.142,,2.8
+311,DEBE3D04YY50000JCt,311,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2200,2013,,135.20195999845816,2.993,,2.8
+314,DEBE3D04YY50000MpK,314,"Germany,Berlin,Charlottenburg-Wilmersdorf,Mierendorffplatz",31001_2120,2005,,2632.2007539943415,13.049,,2.8
+320,DEBE3D00YY2oD0000T,320,"Germany,Berlin,Charlottenburg-Wilmersdorf,Klaustaler Straße",31001_1010,1905,,1311.0356050003652,22.247,,2.8
+322,DEBE3D04YY500004k1,322,"Germany,Berlin,Charlottenburg-Wilmersdorf,Ilsenburger Straße",31001_1010,1955,,409.9446485057404,22.927,,2.8
+324,DEBE3D04YY500008Rt,324,"Germany,Berlin,Charlottenburg-Wilmersdorf,Goslarer Ufer",31001_2522,,,1299.942960496584,15.843,,2.8
+325,DEBE3D04YY500003zA,325,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Nordhauser Straße",31001_1010,1985,,1221.4644864975387,18.361,,2.8
+326,DEBE3D04YY50000I1y,326,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2120,2013,,206.3525870002803,13.225,,2.8
+327,DEBE3D04YY50000JkA,327,"Germany,Berlin,Charlottenburg-Wilmersdorf,Wernigeroder Straße",31001_1010,,,672.1876645036763,18.791,,2.8
+330,DEBE3D04YY500003vv,330,"Germany,Berlin,Charlottenburg-Wilmersdorf,Nordhauser Straße",31001_1010,,,668.5590645020925,24.203,,2.8
+331,DEBE3D04YY500003kD,331,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Quedlinburger Straße",31001_2071,1985,,4501.388649001693,3.0,,2.8
+332,DEBE3D04YY50000MXB,332,"Germany,Berlin,Charlottenburg-Wilmersdorf,Quedlinburger Straße",31001_2100,2013,,605.1926469989013,25.47,,2.8
+335,DEBE3D04YY50002d0q,335,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,2013,,414.4848630006489,9.041,,2.8
+338,DEBE3D04YY500003wK,338,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_1010,2013,,400.152302001557,14.485,,2.8
+341,DEBE3D04YY50000LMS,341,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2140,2013,,791.7745464964433,0.27,,2.8
+344,DEBE3D04YY50000Bxh,344,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2521,2013,,3752.0634824839526,21.455,,2.8
+351,DEBE3D04YY50000Baa,351,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2120,1905,,171.06507849615303,4.959,,2.8
+353,DEBE3D04YY50000BJ8,353,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2142,1925,,666.314489002561,3.847,,2.8
+356,DEBE3D04YY500009G7,356,"Germany,Berlin,Charlottenburg-Wilmersdorf,Kaiserin-Augusta-Allee",31001_1010,1900,,586.1406609835353,21.368,,2.8
+358,DEBE3D04YY500009nt,358,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2461,1985,,979.9653734971807,6.234,,2.8
+360,DEBE3D04YY500007AU,360,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2463,,,18.239514001326192,3.388,,2.8
+367,DEBE3D04YY500004VR,367,"Germany,Berlin,Charlottenburg-Wilmersdorf,/  /,Klaustaler Straße",31001_1010,1925,,2525.777141028714,25.287,,2.8
+369,DEBE3D04YY50000B6z,369,"Germany,Berlin,Charlottenburg-Wilmersdorf,Kaiserin-Augusta-Allee",31001_1010,2005,,1129.8637075152767,25.267,,2.8
+370,DEBE3D04YY500007aH,370,"Germany,Berlin,Charlottenburg-Wilmersdorf,Lise-Meitner-Straße",31001_2020,,,4419.751183500209,23.459,,2.8
+371,DEBE3D04YY50000Hcp,371,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2100,2005,,1294.51163600961,8.205,,2.8
+374,DEBE3D00YY2oD0000U,374,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,1905,,2.338596999976269,19.095,,2.8
+377,DEBE3D04YY500007TL,377,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Nordhauser Straße",31001_1010,1985,,1568.3314314897802,23.417,,2.8
+378,DEBE3D04YY500005Am,378,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2143,1900,,95.9779909988603,2.986,,2.8
+380,DEBE3D04YY50000HBS,380,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Harlingeroder Weg",31001_1010,1925,,3259.7656249930187,25.694,,2.8
+383,DEBE3D04YY500006FD,383,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2120,2013,,141.48782700358572,0.284,,2.8
+384,DEBE3D04YY50000Pv4,384,"Germany,Berlin,Charlottenburg-Wilmersdorf,Sömmeringstraße",31001_1010,2013,,239.4503220042344,19.993,,2.8
+385,DEBE3D04YY50000DUK,385,"Germany,Berlin,Charlottenburg-Wilmersdorf,Treseburger Straße",31001_1010,1955,,481.9558724969687,19.563,,2.8
+388,DEBE3D04YY500003cE,388,"Germany,Berlin,Charlottenburg-Wilmersdorf,Kaiserin-Augusta-Allee",31001_1010,1900,,667.5194279936804,21.23,,2.8
+389,DEBE3D04YY50000Lwj,389,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2120,2005,,90.90644150099855,3.421,,2.8
+391,DEBE3D04YY500005MN,391,"Germany,Berlin,Charlottenburg-Wilmersdorf,Goslarer Ufer",31001_2142,1905,,258.2197144966864,3.132,,2.8
+396,DEBE3D04YY50000PcM,396,"Germany,Berlin,Charlottenburg-Wilmersdorf,Ilsenburger Straße",31001_1010,1900,,865.4996120020232,23.078,,2.8
+397,DEBE3D04YY500001JV,397,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Ilsenburger Straße",31001_1010,2005,,762.7806154942282,22.422,,2.8
+400,DEBE3D04YY500004D7,400,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Darwinstraße",31001_2020,2013,,1936.5670519982843,23.852,,2.8
+401,DEBE3D04YY500008mc,401,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2200,2013,,9.331622000123406,8.207,,2.8
+403,DEBE3D04YY50000RLu,403,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2100,1925,,11.933021500703765,5.203,,2.8
+404,DEBE3D04YY50000QkM,404,"Germany,Berlin,Charlottenburg-Wilmersdorf,Goslarer Platz",31001_1010,,,440.4278519961258,23.276,,2.8
+406,DEBE3D04YY5000038E,406,"Germany,Berlin,Charlottenburg-Wilmersdorf,Quedlinburger Straße",31001_1010,2013,,928.8466690039492,24.007,,2.8
+408,DEBE3D04YY500004ib,408,"Germany,Berlin,Charlottenburg-Wilmersdorf,Kaiserin-Augusta-Allee",31001_1010,2005,,1124.0232329822366,23.182,,2.8
+409,DEBE3D04YY50000OPd,409,"Germany,Berlin,Charlottenburg-Wilmersdorf,Darwinstraße",31001_2050,,,553.9725619922751,15.436,,2.8
+410,DEBE3D04YY500006xH,410,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2460,1905,,116.91941850106525,4.26,,2.8
+411,DEBE3D04YY50002bYv,411,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,1905,,508.49980399445,5.885,,2.8
+414,DEBE3D04YY50000LLQ,414,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Ilsenburger Straße",31001_1010,1900,,1062.2397634971987,23.653,,2.8
+418,DEBE3D04YY5000070W,418,"Germany,Berlin,Charlottenburg-Wilmersdorf,Am Spreebord",31001_2111,2013,,3088.229841532696,13.709,,2.8
+419,DEBE3D04YY50000Pzz,419,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2120,2005,,361.45750449971587,8.068,,2.8
+420,DEBE3D04YY50000B2H,420,"Germany,Berlin,Charlottenburg-Wilmersdorf,Goslarer Platz",31001_2100,1905,,255.16746699762317,13.79,,2.8
+422,DEBE3D04YY50000G55,422,"Germany,Berlin,Charlottenburg-Wilmersdorf,Sömmeringstraße",31001_2522,2013,,689.9987489987964,12.197,,2.8
+424,DEBE3D04YY5000099k,424,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Harlingeroder Weg",31001_1010,1925,,3195.77038650426,24.582,,2.8
+425,DEBE3D04YY50000Aby,425,"Germany,Berlin,Charlottenburg-Wilmersdorf,Ilsenburger Straße",31001_1130,2005,,240.90008899987114,12.545,,2.8
+427,DEBE3D04YY500004aT,427,"Germany,Berlin,Charlottenburg-Wilmersdorf,Ilsenburger Straße",31001_1010,1900,,504.5309714944856,23.799,,2.8
+428,DEBE3D04YY500007lJ,428,"Germany,Berlin,Charlottenburg-Wilmersdorf,Kaiserin-Augusta-Allee",31001_1010,1900,,683.3893274982612,21.412,,2.8
+429,DEBE3D04YY50000ITl,429,"Germany,Berlin,Charlottenburg-Wilmersdorf,Goslarer Ufer",31001_1000,,,255.8701960033376,24.589,,2.8
+431,DEBE3D04YY500006cf,431,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2520,2013,,65.39174249625451,3.089,,2.8
+433,DEBE3D04YY50002czx,433,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,2005,,12.413930000085756,4.075,,2.8
+435,DEBE3D04YY50000HNE,435,"Germany,Berlin,Charlottenburg-Wilmersdorf,Nordhauser Straße",31001_1010,1900,,256.6199744982356,19.086,,2.8
+439,DEBE3D04YY50000Day,439,"Germany,Berlin,Charlottenburg-Wilmersdorf,Kaiserin-Augusta-Allee",31001_1010,1900,,703.9018265203099,24.561,,2.8
+441,DEBE3D04YY50000ATs,441,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2520,2013,,798.9781459988559,49.554,,2.8
+444,DEBE3D04YY50000EDa,444,"Germany,Berlin,Charlottenburg-Wilmersdorf,Nordhauser Straße",31001_2111,1955,,638.2643054977393,12.902,,2.8
+446,DEBE3D04YY50000Goq,446,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2140,,,50.62230350164983,0.729,,2.8
+447,DEBE3D04YY50000JC1,447,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2130,2005,,28.09239200005191,3.516,,2.8
+448,DEBE3D04YY500009Rh,448,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2111,2013,,47.24192650199612,3.301,,2.8
+449,DEBE3D04YY50000CeB,449,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2100,1925,,272.13027848951447,6.979,,2.8
+450,DEBE3D04YY50000QE4,450,"Germany,Berlin,Charlottenburg-Wilmersdorf,Kaiserin-Augusta-Allee",31001_1010,,,779.2016189923577,22.643,,2.8
+453,DEBE3D04YY50000Gth,453,"Germany,Berlin,Charlottenburg-Wilmersdorf,Kaiserin-Augusta-Allee",31001_1010,1900,,659.29500150407,22.652,,2.8
+454,DEBE3D04YY500002tQ,454,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2140,2013,,446.6980639955359,13.807,,2.8
+455,DEBE3D04YY5000026V,455,"Germany,Berlin,Charlottenburg-Wilmersdorf,Kaiserin-Augusta-Allee",31001_1010,1900,,726.8723134973169,23.616,,2.8
+456,DEBE3D04YY500006ly,456,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Kaiserin-Augusta-Allee",31001_1010,,,670.0307919963345,22.488,,2.8
+457,DEBE3D04YY50000I2X,457,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2460,,,203.6675569988157,5.05,,2.8
+459,DEBE3D04YY50000JwH,459,"Germany,Berlin,Charlottenburg-Wilmersdorf,Goslarer Ufer",31001_1000,,,255.87528050223605,24.638,,2.8
+461,DEBE3D04YY50000Qsu,461,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2142,2013,,177.8320289982784,13.233,,2.8
+462,DEBE3D04YY50000Lir,462,"Germany,Berlin,Charlottenburg-Wilmersdorf,Kaiserin-Augusta-Allee",31001_1010,1900,,226.2250070031326,23.138,,2.8
+464,DEBE3D04YY50000B0s,464,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2612,1905,,22.212488998354615,2.845,,2.8
+465,DEBE3D04YY50000JDA,465,"Germany,Berlin,Charlottenburg-Wilmersdorf,Goslarer Platz",31001_1000,1905,,318.7413339982174,22.083,,2.8
+466,DEBE3D04YY50002bqG,466,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,2013,,110.6696779952743,3.135,,2.8
+467,DEBE3D04YY50000Hwb,467,"Germany,Berlin,Charlottenburg-Wilmersdorf,Kaiserin-Augusta-Allee",31001_1010,1905,,718.6498350094546,23.661,,2.8
+473,DEBE3D04YY50000AF7,473,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2460,1900,,130.64478549934137,2.77,,2.8
+477,DEBE3D04YY50002cH0,477,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,1985,,129.28107200001455,4.606,,2.8
+478,DEBE3D04YY50000AW4,478,"Germany,Berlin,Charlottenburg-Wilmersdorf,Nordhauser Straße",31001_1010,,,161.7476999965067,25.396,,2.8
+479,DEBE3D04YY50000OXX,479,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2142,2013,,25.66198800087046,2.367,,2.8
+481,DEBE3D04YY50000Dc4,481,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2523,2013,,69.1263884956381,4.947,,2.8
+482,DEBE3D04YY50000OVV,482,"Germany,Berlin,Charlottenburg-Wilmersdorf,Nordhauser Straße",31001_1010,1955,,288.9227079929931,17.179,,2.8
+486,DEBE3D04YY50000GVc,486,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2612,2013,,52.25625850320197,4.32,,2.8
+487,DEBE3D04YY50000FwN,487,"Germany,Berlin,Charlottenburg-Wilmersdorf,Ilsenburger Straße",31001_2111,1905,,290.65884400143324,22.702,,2.8
+489,DEBE3D04YY50000NIM,489,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_1010,1955,,75.63661650214418,21.96,,2.8
+490,DEBE3D04YY50000K6K,490,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2120,1925,,157.22416200238217,8.03,,2.8
+491,DEBE3D04YY50000PxG,491,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2100,1905,,167.18808499578196,4.117,,2.8
+493,DEBE3D04YY50000PiB,493,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2520,2013,,716.702439496317,9.163,,2.8
+494,DEBE3D04YY50002cXq,494,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,2013,,10.193312001166317,3.308,,2.8
+495,DEBE3D04YY500006sf,495,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2140,2013,,149.8010325013883,0.246,,2.8
+496,DEBE3D04YY50000O2q,496,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2054,2005,,2287.601147021629,8.328,,2.8
+500,DEBE3D04YY5000087h,500,"Germany,Berlin,Charlottenburg-Wilmersdorf,Nordhauser Straße",31001_1010,1955,,268.36168050132943,16.859,,2.8
+501,DEBE3D00YY2oD0000h,501,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,1905,,2.870845000589937,19.294,,2.8
+502,DEBE3D04YY50000MHu,502,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2520,2013,,1001.0649470115525,22.715,,2.8
+503,DEBE3D00YY2ZI0002e,503,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,2005,,55.3392374996817,3.359,,2.8
+511,DEBE3D04YY50002bkN,511,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,2005,,2.656646500064819,2.343,,2.8
+513,DEBE3D04YY50002cBn,513,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,2013,,78.41116699942802,3.0,,2.8
+515,DEBE3D00YY2ZI0002d,515,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,2005,,87.52170799928805,7.428,,2.8
+517,DEBE3D04YY500007Pe,517,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2140,2013,,807.0721464961322,0.143,,2.8
+518,DEBE3D04YY50002cq9,518,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,2013,,88.26985899576044,0.663,,2.8
+522,DEBE3D04YY50000Rgr,522,"Germany,Berlin,Charlottenburg-Wilmersdorf,Kaiserin-Augusta-Allee",31001_1010,2005,,626.1483720006124,24.765,,2.8
+526,DEBE3D04YY50000FPK,526,"Germany,Berlin,Charlottenburg-Wilmersdorf,Nordhauser Straße",31001_1010,1905,,533.9891320011723,21.852,,2.8
+528,DEBE3D04YY50000Mea,528,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Goslarer Platz",31001_2100,1905,,544.5830040003896,14.056,,2.8
+529,DEBE3D04YY50000BEo,529,"Germany,Berlin,Charlottenburg-Wilmersdorf,Sömmeringstraße",31001_1010,2013,,237.08417450106964,23.409,,2.8
+530,DEBE3D04YY500006HB,530,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Ilsenburger Straße",31001_1010,1905,,1015.0106575030487,26.366,,2.8
+531,DEBE3D04YY50000G7s,531,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Kaiserin-Augusta-Allee",31001_1010,2005,,1481.481863002175,20.757,,2.8
+532,DEBE3D04YY50000MQx,532,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Ilsenburger Straße",31001_1010,1900,,761.3056394913231,21.157,,2.8
+538,DEBE3D04ALk800000U,538,"Germany,Berlin,Charlottenburg-Wilmersdorf,Darwinstraße",31001_2020,,,772.6539504970581,22.208,,2.8
+541,DEBE3D04YY50000F6c,541,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Nordhauser Straße",31001_1010,1900,,844.77251149089,21.362,,2.8
+542,DEBE3D04YY50000PRQ,542,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2621,,,39.984231002034214,5.41,,2.8
+544,DEBE3D04YY500009qS,544,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2143,1905,,27.513517002146656,4.999,,2.8
+546,DEBE3D04YY50000HXT,546,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2120,2013,,291.83247950506797,5.902,,2.8
+549,DEBE3D04YY500009XJ,549,"Germany,Berlin,Charlottenburg-Wilmersdorf,Sömmeringstraße",31001_1010,2013,,231.97697899566924,23.489,,2.8
+550,DEBE3D04YY50002bXH,550,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,1900,,2.196218499743048,15.087,,2.8
+551,DEBE3D04YY50000KBD,551,"Germany,Berlin,Charlottenburg-Wilmersdorf,Sömmeringstraße",31001_1010,2013,,234.65832100142805,20.24,,2.8
+552,DEBE3D04YY500009id,552,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2143,1905,,120.64691499115797,5.512,,2.8
+553,DEBE3D04YY50000Fou,553,"Germany,Berlin,Charlottenburg-Wilmersdorf,Quedlinburger Straße",31001_2120,2013,,49.679463000001135,4.129,,2.8
+557,DEBE3D04YY500003m9,557,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2600,2005,,30.966008999766807,21.273,,2.8
+559,DEBE3D04YY500002zq,559,"Germany,Berlin,Charlottenburg-Wilmersdorf,/,Goslarer Ufer",31001_2020,2005,,12255.960481986562,34.936,,2.8
+560,DEBE3D04YY50000B9M,560,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2520,2013,,1009.110278006441,22.946,,2.8
+0,DEBE3D04YY50000QZa,0,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2143,2005,,82.536502499688,5.939,,2.8
+1,DEBE3D04YY500007XO,1,"Germany,Berlin,Charlottenburg-Wilmersdorf,Keplerstraße",31001_2200,,,1017.2191759982327,9.933,,2.8
+2,DEBE3D04YY500003Z4,2,"Germany,Berlin,Charlottenburg-Wilmersdorf,Gaußstraße",31001_2143,,,3806.410526002819,8.727,,2.8
+3,DEBE3D04YY500005hc,3,"Germany,Berlin,Charlottenburg-Wilmersdorf,Gaußstraße",31001_2020,,,295.9402159894995,8.196,,2.8
+4,DEBE3D04YY500006ii,4,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2143,,,114.62300000359653,3.014,,2.8
+8,DEBE3D04YY50000NYV,8,"Germany,Berlin,Charlottenburg-Wilmersdorf,Gaußstraße",31001_2054,,,2526.0812329677024,13.186,,2.8
+9,DEBE3D04YY50002bqh,9,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,,,22.252695999687532,4.064,,2.8
+12,DEBE3D04AL2vw0000z,12,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,,,18.53613299759993,4.772,,2.8
+14,DEBE3D04YY500008Fe,14,"Germany,Berlin,Charlottenburg-Wilmersdorf,Gaußstraße",31001_2020,,,1143.2588129988762,14.833,,2.8
+16,DEBE3D04YY500007sX,16,"Germany,Berlin,Charlottenburg-Wilmersdorf,Gaußstraße",31001_2143,,,4043.4639934864126,8.752,,2.8
+19,DEBE3D04YY50002coP,19,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,2005,,42.14665999647879,3.649,,2.8
+21,DEBE3D00YYdM00008z,21,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,,,30.933973500892424,4.734,,2.8
+26,DEBE3D04YY50000JJU,26,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2142,,,106.51374100304149,4.847,,2.8
+36,DEBE3D04YY500002hN,36,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2523,,,84.06344749986245,3.892,,2.8
+37,DEBE3D04YY50000OcC,37,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2120,2005,,263.76033050451014,4.957,,2.8
+40,DEBE3D04YY50000RJv,40,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2120,,,299.2956839973697,10.482,,2.8
+41,DEBE3D04YY500003W8,41,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2143,,,16662.95087554562,17.022,,2.8
+42,DEBE3D04YY50000NMQ,42,"Germany,Berlin,Charlottenburg-Wilmersdorf,Lise-Meitner-Straße",31001_2200,,,868.5573534953658,15.502,,2.8
+51,DEBE3D04YY500001CZ,51,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_1010,2005,,139.95636550055846,4.39,,2.8
+52,DEBE3D04YY50000LhN,52,"Germany,Berlin,Charlottenburg-Wilmersdorf,Lise-Meitner-Straße",31001_2540,2005,,547.0590239999838,13.103,,2.8
+55,DEBE3D04YY50000LLG,55,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2143,2005,,108.33228000120033,5.261,,2.8
+56,DEBE3D04YY50000OKi,56,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2143,2005,,217.9611484980165,3.91,,2.8
+58,DEBE3D04YY50000Rj0,58,"Germany,Berlin,Charlottenburg-Wilmersdorf,Gaußstraße",31001_2571,,,626.7419864846732,9.051,,2.8
+62,DEBE3D04YY50000Nti,62,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2621,1905,,19.04914550117693,2.425,,2.8
+68,DEBE3D04YY50000LMs,68,"Germany,Berlin,Charlottenburg-Wilmersdorf,Gaußstraße",31001_2143,,,6665.066169995393,11.007,,2.8
+72,DEBE3D04YY50000RCt,72,"Germany,Berlin,Charlottenburg-Wilmersdorf,Gaußstraße",31001_2054,,,714.0199694913802,10.775,,2.8
+73,DEBE3D04YY50000Ono,73,"Germany,Berlin,Charlottenburg-Wilmersdorf,Lise-Meitner-Straße",31001_1022,1905,,390.52122350160226,20.539,,2.8
+74,DEBE3D04YY50000Out,74,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2620,2005,,114.93880150631551,3.216,,2.8
+76,DEBE3D04YY500003H4,76,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2142,,,89.48376499739378,11.968,,2.8
+77,DEBE3D04YY50000R0d,77,"Germany,Berlin,Charlottenburg-Wilmersdorf,Lise-Meitner-Straße",31001_2020,,,3246.9861805091714,11.379,,2.8
+78,DEBE3D04YY50000L7H,78,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2142,,,101.40228950200321,8.68,,2.8
+79,DEBE3D04YY500007M4,79,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_1010,2005,,70.868404498306,2.969,,2.8
+80,DEBE3D00YYNv0000C7,80,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,,,25.81647300359461,3.0,,2.8
+81,DEBE3D04YY5000071d,81,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2200,,,369.21935799598305,7.727,,2.8
+82,DEBE3D00YYdM00008y,82,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,,,53.87725199933627,4.71,,2.8
+86,DEBE3D00YYeK0000ug,86,"Germany,Berlin,Charlottenburg-Wilmersdorf,Gaußstraße",31001_2143,,,2919.8901180049916,9.933,,2.8
+91,DEBE3D04AL2vw0000u,91,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2520,,,4.261577000087058,1.587,,2.8
+92,DEBE3D04YY50002cec,92,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,,,18.43276749796425,5.09,,2.8
+93,DEBE3D04YY50000MAu,93,"Germany,Berlin,Charlottenburg-Wilmersdorf,Lise-Meitner-Straße",31001_2054,2005,,3268.5423734910823,9.719,,2.8
+95,DEBE3D04YY50002cOx,95,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,2005,,2.8581694993034943,12.813,,2.8
+98,DEBE3D04YY50002cHu,98,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,,,14.36117199981203,4.769,,2.8
+100,DEBE3D04YY50002ccC,100,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,,,7.435831499905762,2.731,,2.8
+101,DEBE3D04YY50002cUy,101,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,,,98.46179649820957,5.242,,2.8
+102,DEBE3D04AL2vw00011,102,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,,,12.169158499570786,5.773,,2.8
+103,DEBE3D04YY50002bbG,103,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,,,11.583408499014002,3.108,,2.8
+104,DEBE3D04YY50002bf6,104,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,1905,,10.433009000718556,2.81,,2.8
+105,DEBE3D04YY50002bX7,105,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,2005,,23.244531499139104,6.786,,2.8
+108,DEBE3D04YY50002co9,108,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,1905,,10.991026000713799,2.863,,2.8
+109,DEBE3D04YY50002d0o,109,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,,,66.38874199224377,0.286,,2.8
+110,DEBE3D04YY50002cu4,110,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,,,75.84063198290997,5.422,,2.8
+111,DEBE3D04YY50002cal,111,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,1905,,11.687734499551958,3.169,,2.8
+112,DEBE3D04YY50002c0R,112,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,,,18.48823750002524,4.951,,2.8
+114,DEBE3D04YY50000Afw,114,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2142,,,292.8635925068847,5.587,,2.8
+115,DEBE3D04YY50000A1M,115,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2200,,,89.80442800483812,7.187,,2.8
+116,DEBE3D04YY50000Cu4,116,"Germany,Berlin,Charlottenburg-Wilmersdorf,Lise-Meitner-Straße",31001_2143,,,2871.5306804987313,7.672,,2.8
+117,DEBE3D04YY50000Mw0,117,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2500,,,65.4397440018316,5.362,,2.8
+123,DEBE3D04YY50000D8T,123,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2523,2005,,3.964743000637582,1.468,,2.8
+124,DEBE3D04YY50000Iit,124,"Germany,Berlin,Charlottenburg-Wilmersdorf,Gaußstraße",31001_2571,,,206.2817139996347,5.727,,2.8
+125,DEBE3D04YY50000M5q,125,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2200,2005,,195.6120260032465,4.42,,2.8
+126,DEBE3D04YY50000EMa,126,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2000,2005,,56.7356124990688,3.082,,2.8
+128,DEBE3D04YY50002cy1,128,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,,,24.331410502711076,5.372,,2.8
+129,DEBE3D04YY500005Q9,129,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_1010,2005,,12.396005501495964,2.611,,2.8
+130,DEBE3D04YY50000Ll0,130,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2143,2005,,1171.3894144889664,9.432,,2.8
+131,DEBE3D04YY50000EA1,131,"Germany,Berlin,Charlottenburg-Wilmersdorf,Olbersstraße",31001_2143,,,1684.4891605002695,7.893,,2.8
+150,DEBE3D04YY50002bfE,150,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,,,69.11584949892747,3.0,,2.8
+153,DEBE3D04YY50000RcL,153,"Germany,Berlin,Charlottenburg-Wilmersdorf,Lise-Meitner-Straße",31001_1010,1905,,1213.490472505134,26.509,,2.8
+155,DEBE3D04YY500002eT,155,"Germany,Berlin,Charlottenburg-Wilmersdorf,Lise-Meitner-Straße",31001_1022,1905,,365.22378700342597,26.138,,2.8
+162,DEBE3D04YY50002c2v,162,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,1905,,6.911799000233906,2.97,,2.8
+164,DEBE3D04YY50000L9h,164,"Germany,Berlin,Charlottenburg-Wilmersdorf,Olbersstraße",31001_1010,1905,,636.6152889988907,15.348,,2.8
+170,DEBE3D04YY50000BfJ,170,"Germany,Berlin,Charlottenburg-Wilmersdorf,Goslarer Ufer",31001_2000,2005,,1792.0830184954839,9.057,,2.8
+172,DEBE3D04YY50002cZf,172,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,,,73.0914275138319,4.998,,2.8
+180,DEBE3D04YY50002btv,180,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,2005,,20.282453998136244,5.933,,2.8
+194,DEBE3D04YY50000Dil,194,"Germany,Berlin,Charlottenburg-Wilmersdorf,Keplerstraße",31001_2200,,,853.5974310028727,19.41,,2.8
+201,DEBE3D04YY50000O01,201,"Germany,Berlin,Charlottenburg-Wilmersdorf,Olbersstraße",31001_1010,1905,,936.2133684934204,18.509,,2.8
+209,DEBE3D04YY50002cGe,209,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,1905,,8.451329998841409,2.868,,2.8
+211,DEBE3D04YY50002brW,211,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,,,38.284845501676315,4.648,,2.8
+213,DEBE3D04YY50002bZq,213,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,,,15.977964999380081,3.054,,2.8
+214,DEBE3D04YY50002d0K,214,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,1905,,10.528476499835163,3.044,,2.8
+216,DEBE3D04YY50002cOH,216,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,,,18.541662998640213,4.572,,2.8
+219,DEBE3D04YY50002bzH,219,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,1905,,11.313048499173663,2.936,,2.8
+226,DEBE3D04YY50002bvX,226,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,,,7.847768999982916,5.137,,2.8
+228,DEBE3D04AL2vw00010,228,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,,,12.213997000676235,5.093,,2.8
+229,DEBE3D04YY50002cc9,229,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,,,75.736724994211,4.715,,2.8
+232,DEBE3D04YY50002bvp,232,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,,,24.959216507318672,4.672,,2.8
+233,DEBE3D04YY50002ca0,233,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,,,53.996728003568485,5.152,,2.8
+234,DEBE3D04YY50002c2C,234,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,,,18.369567504413023,4.567,,2.8
+235,DEBE3D04YY50002cL7,235,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,1905,,11.279119999545301,3.118,,2.8
+236,DEBE3D04YY50002aTJ,236,"Germany,Berlin,Charlottenburg-Wilmersdorf",51001_1001,,,97.97094749931254,28.968,,2.8
+244,DEBE3D04YY50000F8S,244,"Germany,Berlin,Charlottenburg-Wilmersdorf,Goslarer Ufer",31001_2120,2005,,936.4465050007675,7.034,,2.8
+245,DEBE3D04YY50002ciJ,245,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,1905,,11.614369499532916,2.93,,2.8
+249,DEBE3D04YY50000Qwb,249,"Germany,Berlin,Charlottenburg-Wilmersdorf,Olbersstraße",31001_1010,1905,,1661.4546879887796,14.054,,2.8
+251,DEBE3D04AL54V00006,251,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,,,22.285021499657805,4.503,,2.8
+252,DEBE3D04YY50002cNv,252,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,,,201.06723900049403,3.22,,2.8
+256,DEBE3D04YY500003sF,256,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2143,2005,,243.18619101354108,5.693,,2.8
+260,DEBE3D04YY50002cGN,260,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,,,120.74573000237874,3.898,,2.8
+262,DEBE3D04YY50002bjq,262,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,,,36.72225900203531,4.597,,2.8
+263,DEBE3D04YY50002cMh,263,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,,,142.400384997655,0.516,,2.8
+267,DEBE3D04AL54V00003,267,"Germany,Berlin,Charlottenburg-Wilmersdorf,Gaußstraße",31001_2054,,,1320.5013190227235,7.582,,2.8
+268,DEBE3D04YY50000I3M,268,"Germany,Berlin,Charlottenburg-Wilmersdorf,Lise-Meitner-Straße",31001_1010,1905,,686.2826699985338,15.5,,2.8
+269,DEBE3D04YY50002bTt,269,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,,,39.476162997456875,4.325,,2.8
+276,DEBE3D04AL54V00000,276,"Germany,Berlin,Charlottenburg-Wilmersdorf,Gaußstraße",31001_2100,,,1535.2188184999127,7.963,,2.8
+277,DEBE3D04YY50000FEZ,277,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2571,,,30.310528001235788,2.941,,2.8
+278,DEBE3D04AL2vw0000q,278,"Germany,Berlin,Charlottenburg-Wilmersdorf,Gaußstraße",31001_2143,,,5631.721669490307,11.08,,2.8
+280,DEBE3D04YY500005p2,280,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2142,,,49.73878700053943,4.553,,2.8
+282,DEBE3D04YY50000PWf,282,"Germany,Berlin,Charlottenburg-Wilmersdorf",31001_2120,,,101.63836099511124,12.012,,2.8
+293,DEBE3D00YYNv0000Bv,293,"Germany,Berlin,Charlottenburg-Wilmersdorf,Lise-Meitner-Straße",31001_1130,,,1595.8773939815078,15.498,,2.8
+296,DEBE3D04YY50002cJh,296,"Germany,Berlin,Charlottenburg-Wilmersdorf",51009_1610,,,29.05294550584845,4.767,,2.8
