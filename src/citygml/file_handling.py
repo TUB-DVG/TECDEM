@@ -112,92 +112,121 @@ def get_building_type(file_path):
 
 
 def get_floor_area(file_path):
-    """" 
+    """
+    Extract floor area for buildings, including interior and exterior surfaces.
+    
     Parameters: 
-
     file_path: A string representing the path to the XML file containing the building data.
     
-    Returns
-
+    Returns:
     floor_list: A list of tuples, where each tuple consists of a building identifier and its corresponding floor area. 
     The floor area is either a float representing the calculated area or an empty string if the area cannot be determined.
     """
-     # Parse the XML file
     tree = ET.parse(file_path)
     root = tree.getroot()
-    # Find all buildings and get the data 
     floor_list = []
+    
     for building in root.findall('.//{*}Building'):
         building_id = building.get('{http://www.opengis.net/gml}id')
-        bp_gC = getGroundSurfaceCoorOfBuild(building, ns)
-        bp_gC_2d = [(x, y) for x, y, z in bp_gC]
-        polygon = Polygon(bp_gC_2d)
-        floor_area = polygon.area 
-
+        total_area = 0
         
-        for co_bp_E in building.findall('.//{*}consistsOfBuildingPart', ns):
-            bp_E = co_bp_E.find('.//{*}BuildingPart', ns)
-            bp_gC = getGroundSurfaceCoorOfBuild(bp_E, ns)
-            building_part_id = bp_E.get('{http://www.opengis.net/gml}id')
-            bp_gC_2d = [(x, y) for x, y, z in bp_gC]
-            polygon = Polygon(bp_gC_2d)
-            floor_area += polygon.area
-        floor_list.append((building_id, floor_area))
-                
+        # Process main building
+        total_area += calculate_building_area(building)
+        
+        # Process building parts
+        for bp_element in building.findall('.//{*}consistsOfBuildingPart', ns):
+            bp = bp_element.find('.//{*}BuildingPart', ns)
+            total_area += calculate_building_area(bp)
+        
+        floor_list.append((building_id, total_area))
+    
     return floor_list
 
+def calculate_building_area(element):
+    """
+    Calculate the area of a building or building part, including interior and exterior surfaces.
+    """
+    area = 0
+    ground_surface = element.find('.//{*}boundedBy/.//{*}GroundSurface', ns)
+    
+    if ground_surface is not None:
+        area += calculate_surface_area(ground_surface)
+    
+    # Process all other surfaces (including interior)
+    for surface in element.findall('.//{*}boundedBy/.//{*}Surface', ns):
+        area += calculate_surface_area(surface)
+    
+    return area
+
+def calculate_surface_area(surface_element):
+    """
+    Calculate the area of a single surface element.
+    """
+    polygon = surface_element.find('.//gml:Polygon', ns)
+    if polygon is None:
+        return 0
+    
+    exterior = polygon.find('.//gml:exterior', ns)
+    interior = polygon.findall('.//gml:interior', ns)
+    
+    area = 0
+    if exterior is not None:
+        area += calculate_ring_area(exterior)
+    
+    for inner_ring in interior:
+        area -= calculate_ring_area(inner_ring)
+    
+    return area
+
+def calculate_ring_area(ring_element):
+    """
+    Calculate the area of a single ring (exterior or interior).
+    """
+    coords = []
+    pos_list = ring_element.find('.//gml:posList', ns)
+    if pos_list is not None:
+        coords = gs.get_3dPosList_from_str(pos_list.text)
+    else:
+        pos_elements = ring_element.findall('.//gml:pos', ns)
+        for pos in pos_elements:
+            coords.append([float(x) for x in pos.text.split()])
+    
+    if coords:
+        return polygon_area(coords)
+    return 0
+
 def get_storeys_above(file_path):
-    # Get the number of storeys above ground 
-    # Parse the XML file
     tree = ET.parse(file_path)
     root = tree.getroot()
 
-    # Find all buildings
     building_height_list = []
     for building in root.findall('.//{*}Building'):
-        # Get all IDs and yoc 
         building_id = building.get('{http://www.opengis.net/gml}id')
         sag_node = building.find('.//{*}storeysAboveGround', ns)
-        if sag_node is None:
-            storeys_above_ground = ""
-        else:
-            storeys_above_ground = building.find('bldg:storeysAboveGround', ns).text
+        storeys_above_ground = sag_node.text if sag_node is not None else ""
         building_height_list.append((building_id, storeys_above_ground))
                 
     return building_height_list 
 
-
 def get_height(file_path):
-     # Parse the XML file
     tree = ET.parse(file_path)
     root = tree.getroot()
 
-    # Find all buildings
     building_height_list = []
     for building in root.findall('.//{*}Building'):
-        # Get all IDs and yoc 
         building_id = building.get('{http://www.opengis.net/gml}id')
         height_node = building.find('.//{*}measuredHeight', ns)
-        if height_node is not None:
-            building_height = height_node.text
-        else:
-            building_height = ""
+        building_height = height_node.text if height_node is not None else ""
         building_height_list.append((building_id, building_height))
                 
     return building_height_list
 
-
-# Function to calculate the area of a polygon given its vertices
 def polygon_area(coords):
     """
     Calculate the area of a polygon given its vertices.
 
-    The function uses the 'Shoelace formula' to compute the area of a non-self-intersecting polygon
-    whose vertices are described by a list of coordinates. The coordinates are provided as a list
-    of lists or tuples, where each inner list or tuple contains the x and y coordinates of a vertex.
-
     Parameters:
-    coords (list): A list of [x, y z] representing each vertex of the polygon, in order.
+    coords (list): A list of [x, y, z] representing each vertex of the polygon, in order.
 
     Returns:
     float: The absolute area of the polygon.
@@ -206,84 +235,75 @@ def polygon_area(coords):
     area = 0.0
     for i in range(n):
         j = (i + 1) % n
-        area += coords[i][0] * coords[j][1]
-        area -= coords[j][0] * coords[i][1]
-    area = abs(area) / 2.0
-    return area 
-
+        area += coords[i][0] * coords[j][1] - coords[j][0] * coords[i][1]
+    return abs(area) / 2.0
 
 def getGroundSurfaceCoorOfBuild(element, nss):
-    """returns the ground surface coordinates from an element in a citygml file
-    Function take and adapted from: https://gitlab.e3d.rwth-aachen.de/e3d-software-tools/cityldt/-/blob/main/LDTselection.py?ref_type=heads
     """
+    Returns the ground surface coordinates from an element in a CityGML file.
+    Adapted from: https://gitlab.e3d.rwth-aachen.de/e3d-software-tools/cityldt/-/blob/main/LDTselection.py
+    """
+    if element is None:
+        return ''
 
-    # LoD0
-    if element is not None:
-        for tagName in ['bldg:lod0FootPrint', 'bldg:lod0RoofEdge']:
-            LoD_zero_E = element.find(tagName, nss)
-            if LoD_zero_E != None:
-                posList_E = LoD_zero_E.find('.//{*}gml:posList', nss)
-                
-                if posList_E != None:
-                    return gs.get_3dPosList_from_str(posList_E.text)
+    # Check LoD0
+    for tagName in ['bldg:lod0FootPrint', 'bldg:lod0RoofEdge']:
+        LoD_zero_E = element.find(tagName, nss)
+        if LoD_zero_E is not None:
+            return extract_coordinates(LoD_zero_E, nss)
 
-                else:                           # case hamburg lod2 2020
-                    pos_Es = LoD_zero_E.findall('.//{*}gml:pos', nss)
-                    polygon = []
-                    for pos_E in pos_Es:
-                        polygon.append(pos_E.text)
-                    polyStr = ' '.join(polygon)
-                    return gs.get_3dPosList_from_str(polyStr)
+    # Check GroundSurface
+    groundSurface_E = element.find('.//{*}boundedBy/.//{*}GroundSurface', nss)
+    if groundSurface_E is not None:
+        return extract_coordinates(groundSurface_E, nss)
 
-        groundSurface_E = element.find('.//{*}boundedBy/.//{*}GroundSurface', nss)
-        if groundSurface_E != None:
-            posList_E = groundSurface_E.find('.//gml:posList', nss)       # searching for list of coordinates
+    # Check LoD1
+    geometry = element.find('bldg:lod1Solid', nss)
+    if geometry is not None:
+        return extract_lod1_coordinates(geometry, nss)
 
-            if posList_E != None:           # case aachen lod2
-                return gs.get_3dPosList_from_str(posList_E.text)
-                
-            else:                           # case hamburg lod2 2020
-                pos_Es = groundSurface_E.findall('.//gml:pos', nss)
-                polygon = []
-                for pos_E in pos_Es:
-                    polygon.append(pos_E.text)
-                polyStr = ' '.join(polygon)
-                return gs.get_3dPosList_from_str(polyStr)
+    return ''
+
+def extract_coordinates(element, nss):
+    posList_E = element.find('.//{*}gml:posList', nss)
+    if posList_E is not None:
+        return gs.get_3dPosList_from_str(posList_E.text)
     
-        #  checking if no groundSurface element has been found
-        else:               # case for lod1 files
-            geometry = element.find('bldg:lod1Solid', nss)
-            if geometry != None:
-                poly_Es = geometry.findall('.//gml:Polygon', nss)
-                all_poylgons = []
-                for poly_E in poly_Es:
-                    polygon = []
-                    posList_E = element.find('.//gml:posList', nss)       
-                    # searching for list of coordinates
-                    if posList_E != None:
-                        polyStr = posList_E.text
-                    else:
-                        pos_Es = poly_E.findall('.//gml:pos', nss)       
-                        # searching for individual coordinates in polygon
-                        for pos_E in pos_Es:
-                            polygon.append(pos_E.text)
-                        polyStr = ' '.join(polygon)
-                    coor_list = gs.get_3dPosList_from_str(polyStr)
-                    all_poylgons.append(coor_list)
-                
-                # to get the groundSurface polygon, the average height of each polygon is calculated 
-                # and the polygon with the lowest average height is considered the groundsurface
-                averages = []
-                for polygon in all_poylgons:
-                    # need to get polygon with lowest z coordinate here
-                    average = 0
-                    for i in range(len(polygon)-1):
-                        average -=- polygon[i][2]
-                    averages.append(average/(len(polygon)-1))
+    pos_Es = element.findall('.//{*}gml:pos', nss)
+    if pos_Es:
+        polygon = [pos_E.text for pos_E in pos_Es]
+        polyStr = ' '.join(polygon)
+        return gs.get_3dPosList_from_str(polyStr)
+    
+    return ''
 
-                return all_poylgons[averages.index(min(averages))]
-            else:
-                return ''
+def extract_lod1_coordinates(geometry, nss):
+    poly_Es = geometry.findall('.//gml:Polygon', nss)
+    all_polygons = []
+    for poly_E in poly_Es:
+        polyStr = extract_polygon_string(poly_E, nss)
+        if polyStr:
+            all_polygons.append(gs.get_3dPosList_from_str(polyStr))
+    
+    if all_polygons:
+        return find_lowest_polygon(all_polygons)
+    
+    return ''
+
+def extract_polygon_string(poly_E, nss):
+    posList_E = poly_E.find('.//gml:posList', nss)
+    if posList_E is not None:
+        return posList_E.text
+    
+    pos_Es = poly_E.findall('.//gml:pos', nss)
+    if pos_Es:
+        return ' '.join([pos_E.text for pos_E in pos_Es])
+    
+    return ''
+
+def find_lowest_polygon(polygons):
+    averages = [sum(point[2] for point in polygon) / len(polygon) for polygon in polygons]
+    return polygons[averages.index(min(averages))]
 
 # Function to parse the CityGML file and calculate the area of a building at LoD3
 def calculate_lod3_building_area(file_path):
@@ -306,7 +326,6 @@ def calculate_lod3_building_area(file_path):
     gml_ids = []
     for building in root.findall('.//{*}Building'):
             gml_ids.append(building.get('{http://www.opengis.net/gml}id'))
-    print(gml_ids)
 
     total_area = 0
 
