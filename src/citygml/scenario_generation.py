@@ -76,8 +76,8 @@ def parse_building_types(df: pd.DataFrame, default_building_type: str ="SFH"):
     # 1169 = Sozialeinrichtung 
     gml_ids = {1000: ["TH", "SFH", "MFH", "AB"]}
     alkis_ids = {1121: ["TH"], 
-                 1221: ["MFH", "AB"], 
-                 1231: ["MFH", "AB"], 
+                 1221: ["MFH", "AB"],
+                 1231: ["MFH", "AB"],
                  1331: ["SFH"], 
                  1321: ["TH"]}
     citygml_alkis = {
@@ -88,16 +88,16 @@ def parse_building_types(df: pd.DataFrame, default_building_type: str ="SFH"):
         31001_1022: ["IWU Health and Care"],
         31001_2000: ["IWU Trade Buildings"],
         31001_2010: ["IWU Trade Buildings"],
-        31001_2020: ["IWU Office", "Administrative", "or Official building"],
-        31001_2030: ["IWU Office", "Administrative", "or Official building"],
-        31001_2050: ["IWU Office", "Administrative", "or Official building"],
+        31001_2020: ["IWU Office, Administrative or Government Buildings"],
+        31001_2030: ["IWU Office, Administrative or Government Buildings"],
+        31001_2050: ["IWU Office, Administrative or Government Buildings"],
         31001_2054: ["IWU Trade Buildings"],
         31001_2055: ["IWU Trade Buildings"],
-        31001_2071: ["IWU Hotels", "Boarding", "Restaurants or Catering"],
-        31001_2083: ["IWU Hotels", "Boarding", "Restaurants or Catering"],
-        31001_2100: ["IWU Production", "Workshop", "Warehouse or Operations"],
-        31001_2111: ["IWU Production", "Workshop", "Warehouse or Operations"],
-        31001_2120: ["IWU Production", "Workshop", "Warehouse or Operations"],
+        31001_2071: ["IWU Hotels, Boarding, Restaurants or Catering"],
+        31001_2083: ["IWU Hotels, Boarding, Restaurants or Catering"],
+        31001_2100: ["IWU Production, Workshop, Warehouse or Operations"],
+        31001_2111: ["IWU Production, Workshop, Warehouse or Operations"],
+        31001_2120: ["IWU Production, Workshop, Warehouse or Operations"],
         31001_2310: ["IWU Trade Buildings"],
         31001_2460: ["IWU Transport"],
         31001_2461: ["IWU Transport"],
@@ -108,24 +108,23 @@ def parse_building_types(df: pd.DataFrame, default_building_type: str ="SFH"):
         31001_2521: ["IWU Technical and Utility (supply and disposal)"],
         31001_2522: ["IWU Technical and Utility (supply and disposal)"],
         31001_2523: ["IWU Technical and Utility (supply and disposal)"],
-        31001_2540: ["IWU Office", "Administrative", "or Official building"],
+        31001_2540: ["IWU Office, Administrative or Government Buildings"],
         31001_2571: ["IWU Technical and Utility (supply and disposal)"],
         31001_2591: ["IWU Technical and Utility (supply and disposal)"],
         31001_2600: ["IWU Technical and Utility (supply and disposal)"],
-        31001_3010: ["IWU Office", "Administrative", "or Official building"],
-        31001_3015: ["IWU Office", "Administrative", "or Official building"],
+        31001_3010: ["IWU Office, Administrative or Government Buildings"],
+        31001_3015: ["IWU Office, Administrative or Government Buildings"],
         31001_3020: ["IWU Research and University Teaching"],
-        31001_3021: ["IWU School", "Day Nursery and other Care"],
+        31001_3021: ["IWU School, Day Nursery and other Care"],
         31001_3023: ["IWU Research and University Teaching"],
         31001_3041: ["IWU Culture and Leisure"],
         31001_3044: ["IWU Culture and Leisure"],
         31001_3060: ["IWU Health and Care"],
-        31001_3065: ["IWU School", "Day Nursery and other Care"],
+        31001_3065: ["IWU School, Day Nursery and other Care"],
         31001_3211: ["IWU Sports Facilities"],
         51006_1440: ["IWU Sports Facilities"]
     }
 
-   
    # Check if the building type is contained in the GML or ALKIS Codes
    # Rule Based mapping of the building type
 
