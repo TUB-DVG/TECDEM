@@ -81,10 +81,10 @@ def parse_building_types(df: pd.DataFrame, default_building_type: str ="SFH"):
                  1331: ["SFH"], 
                  1321: ["TH"]}
     citygml_alkis = {
-        31001_1000: ["SF", "MFH", "TH", "AB"],
-        31001_1010: ["SF", "MFH", "TH", "AB"],
-        31001_1120: ["SF", "MFH", "TH", "AB"],
-        31001_1130: ["SF", "MFH", "TH", "AB"],
+        31001_1000: ["SFH", "MFH", "TH", "AB"],
+        31001_1010: ["SFH", "MFH", "TH", "AB"],
+        31001_1120: ["SFH", "MFH", "TH", "AB"],
+        31001_1130: ["SFH", "MFH", "TH", "AB"],
         31001_1022: ["IWU Health and Care"],
         31001_2000: ["IWU Trade Buildings"],
         31001_2010: ["IWU Trade Buildings"],
