@@ -31,15 +31,22 @@ def create_scenario(sheet_file: str, scenario_name: str,
     }
     model_df.rename(columns=rename_dict, inplace=True)
     model_df["year"] = model_df["year"].astype("Int64")
+    clean_data = model_df.dropna(subset = ['area', 'year', 'building'])
+    # Dop data where area os 0
+    clean_data = clean_data[clean_data["area"] != 0]
+    clean_data = clean_data[clean_data["building"] != '-']
+    clean_data.reset_index(drop = True, inplace = True)
+    clean_data.loc[:,"id"]    = clean_data.index
+    # Clean the data 
     scenario_folder = scenario_folder
     scenario_path = os.path.join(scenario_folder, f'{scenario_name}.csv')   
     try: 
-        model_df.to_csv(scenario_path, index=False, sep=";")
+        clean_data.to_csv(scenario_path, index=False, sep=";")
     except OSError:
         cwd_path = os.path.dirname(os.getcwd())
         scenario_folder = scenario_folder
         scenario_path = os.path.join(cwd_path, scenario_folder, f'{scenario_name}.csv')
-        model_df.to_csv(scenario_path, index=False, sep=";")
+        clean_data.to_csv(scenario_path, index=False, sep=";")
 
     return scenario_path
 
