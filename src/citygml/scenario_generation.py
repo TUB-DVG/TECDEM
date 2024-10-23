@@ -125,152 +125,43 @@ def parse_building_types(df: pd.DataFrame, default_building_type: str ="SFH"):
         51006_1440: ["IWU Sports Facilities"]
     }
 
-   # Check if the building type is contained in the GML or ALKIS Codes
-   # Rule Based mapping of the building type
-
     df_copy = df.copy()
-    # Fehler, da unterschiedliche types vorliegen, e.g. int64 oder float 
     df_copy["building_type_gml"] = df_copy["building_type_gml"].astype(int)
-    
-    conditions = [ 
-                ( df_copy["building_type_gml"] == 1000) & (df_copy["area"] <= 140),
-                (df_copy["building_type_gml"] == 1000) & (df_copy["area"] > 140) & (df_copy["area"] <= 280),
-                (df_copy["building_type_gml"] == 1000) & (df_copy["area"] > 280) & (df_copy["area"] <= 800),
-                (df_copy["building_type_gml"] == 1000) & (df_copy["area"] > 800),
-                ( df_copy["building_type_gml"] == 1121), 
-                ( df_copy["building_type_gml"] == 1221 ) &(df_copy["area"] <= 800),
-                ( df_copy["building_type_gml"] == 1221 ) &( 800 < df_copy["area"]),
-                ( df_copy["building_type_gml"] == 1231 ) &(df_copy["area"] <= 800),
-                ( df_copy["building_type_gml"] == 1231 ) &( 800 < df_copy["area"]),  
-                ( df_copy["building_type_gml"] == 1331),
-                ( df_copy["building_type_gml"] == 1321), 
-                ( df_copy["building_type_gml"] == 31001_1000)& (df_copy["area"] <= 140),
-                ( df_copy["building_type_gml"] == 31001_1000) & (df_copy["area"] > 140) & (df_copy["area"] <= 280),
-                ( df_copy["building_type_gml"] == 31001_1000) & (df_copy["area"] > 280) & (df_copy["area"] <= 800),
-                ( df_copy["building_type_gml"] == 31001_1000) & (df_copy["area"] > 800),
-                ( df_copy["building_type_gml"] == 31001_1010)& (df_copy["area"] <= 140),
-                ( df_copy["building_type_gml"] == 31001_1010) & (df_copy["area"] > 140) & (df_copy["area"] <= 280),
-                ( df_copy["building_type_gml"] == 31001_1010) & (df_copy["area"] > 280) & (df_copy["area"] <= 800),
-                ( df_copy["building_type_gml"] == 31001_1010) & (df_copy["area"] > 800),
-                ( df_copy["building_type_gml"] == 31001_1120) & (df_copy["area"] <= 140),
-                ( df_copy["building_type_gml"] == 31001_1120) & (df_copy["area"] > 140) & (df_copy["area"] <= 280),
-                ( df_copy["building_type_gml"] == 31001_1120) & (df_copy["area"] > 280) & (df_copy["area"] <= 800),
-                ( df_copy["building_type_gml"] == 31001_1120) & (df_copy["area"] > 800),
-                ( df_copy["building_type_gml"] == 31001_1130) & (df_copy["area"] <= 140),
-                ( df_copy["building_type_gml"] == 31001_1130) & (df_copy["area"] > 140) & (df_copy["area"] <= 280),
-                ( df_copy["building_type_gml"] == 31001_1130) & (df_copy["area"] > 280) & (df_copy["area"] <= 800),
-                ( df_copy["building_type_gml"] == 31001_1130) & (df_copy["area"] > 800),
-                ( df_copy["building_type_gml"] == 31001_1022),
-                ( df_copy["building_type_gml"] == 31001_2000),
-                ( df_copy["building_type_gml"] == 31001_2010),
-                ( df_copy["building_type_gml"] == 31001_2020),
-                ( df_copy["building_type_gml"] == 31001_2030),
-                ( df_copy["building_type_gml"] == 31001_2050),
-                ( df_copy["building_type_gml"] == 31001_2054),
-                ( df_copy["building_type_gml"] == 31001_2055),
-                ( df_copy["building_type_gml"] == 31001_2071),
-                ( df_copy["building_type_gml"] == 31001_2083),
-                ( df_copy["building_type_gml"] == 31001_2100),
-                ( df_copy["building_type_gml"] == 31001_2111),
-                ( df_copy["building_type_gml"] == 31001_2120),
-                ( df_copy["building_type_gml"] == 31001_2310),
-                ( df_copy["building_type_gml"] == 31001_2460),
-                ( df_copy["building_type_gml"] == 31001_2461),
-                ( df_copy["building_type_gml"] == 31001_2462),
-                ( df_copy["building_type_gml"] == 31001_2463),
-                ( df_copy["building_type_gml"] == 31001_2500),
-                ( df_copy["building_type_gml"] == 31001_2520),
-                ( df_copy["building_type_gml"] == 31001_2521),
-                ( df_copy["building_type_gml"] == 31001_2522),
-                ( df_copy["building_type_gml"] == 31001_2523),
-                ( df_copy["building_type_gml"] == 31001_2540),
-                ( df_copy["building_type_gml"] == 31001_2571),
-                ( df_copy["building_type_gml"] == 31001_2591),
-                ( df_copy["building_type_gml"] == 31001_2600),
-                ( df_copy["building_type_gml"] == 31001_3010),
-                ( df_copy["building_type_gml"] == 31001_3015),
-                ( df_copy["building_type_gml"] == 31001_3020),
-                ( df_copy["building_type_gml"] == 31001_3021),
-                ( df_copy["building_type_gml"] == 31001_3023),
-                ( df_copy["building_type_gml"] == 31001_3041),
-                ( df_copy["building_type_gml"] == 31001_3044),
-                ( df_copy["building_type_gml"] == 31001_3060),
-                ( df_copy["building_type_gml"] == 31001_3065),
-                ( df_copy["building_type_gml"] == 31001_3211),
-                ( df_copy["building_type_gml"] == 51006_1440) ]
-                
-    
-    choices = [gml_ids[1000][0],
-            gml_ids[1000][1], 
-            gml_ids[1000][2],
-            gml_ids[1000][3], 
-            alkis_ids[1121][0],
-            alkis_ids[1221][0], 
-            alkis_ids[1221][1],
-            alkis_ids[1231][0], 
-            alkis_ids[1231][1],
-            alkis_ids[1331][0],
-            alkis_ids[1321][0], 
-            citygml_alkis[31001_1000][0],
-            citygml_alkis[31001_1000][1],
-            citygml_alkis[31001_1000][2],
-            citygml_alkis[31001_1000][3],
-            citygml_alkis[31001_1010][0],
-            citygml_alkis[31001_1010][1],
-            citygml_alkis[31001_1010][2],
-            citygml_alkis[31001_1010][3],
-            citygml_alkis[31001_1120][0],
-            citygml_alkis[31001_1120][1],
-            citygml_alkis[31001_1120][2],
-            citygml_alkis[31001_1120][3],
-            citygml_alkis[31001_1130][0],
-            citygml_alkis[31001_1130][1],
-            citygml_alkis[31001_1130][2],
-            citygml_alkis[31001_1130][3],
-            citygml_alkis[31001_1022][0],
-            citygml_alkis[31001_2000][0],
-            citygml_alkis[31001_2010][0],
-            citygml_alkis[31001_2020][0],
-            citygml_alkis[31001_2030][0],
-            citygml_alkis[31001_2050][0],
-            citygml_alkis[31001_2054][0],
-            citygml_alkis[31001_2055][0],
-            citygml_alkis[31001_2071][0],
-            citygml_alkis[31001_2083][0],
-            citygml_alkis[31001_2100][0],
-            citygml_alkis[31001_2111][0],
-            citygml_alkis[31001_2120][0],
-            citygml_alkis[31001_2310][0],
-            citygml_alkis[31001_2460][0],
-            citygml_alkis[31001_2461][0],
-            citygml_alkis[31001_2462][0],
-            citygml_alkis[31001_2463][0],
-            citygml_alkis[31001_2500][0],
-            citygml_alkis[31001_2520][0],
-            citygml_alkis[31001_2521][0],
-            citygml_alkis[31001_2522][0],
-            citygml_alkis[31001_2523][0],
-            citygml_alkis[31001_2540][0],
-            citygml_alkis[31001_2571][0],
-            citygml_alkis[31001_2591][0],
-            citygml_alkis[31001_2600][0],
-            citygml_alkis[31001_3010][0],
-            citygml_alkis[31001_3015][0],
-            citygml_alkis[31001_3020][0],
-            citygml_alkis[31001_3021][0],
-            citygml_alkis[31001_3023][0],
-            citygml_alkis[31001_3041][0],
-            citygml_alkis[31001_3044][0],
-            citygml_alkis[31001_3060][0],
-            citygml_alkis[31001_3065][0],
-            citygml_alkis[31001_3211][0],
-            citygml_alkis[51006_1440][0]
-            ]
-        
-        
-    # As default, set the most likely type in a given model 
-    df_copy["building"] = np.select(conditions, choices, default=default_building_type)
 
+    def get_building_type(row):
+        gml_code = row["building_type_gml"]
+        area = row["area"]
+
+        if gml_code in gml_ids:
+            if area <= 140:
+                return gml_ids[gml_code][0]
+            elif area <= 280:
+                return gml_ids[gml_code][1]
+            elif area <= 800:
+                return gml_ids[gml_code][2]
+            else:
+                return gml_ids[gml_code][3]
+        elif gml_code in alkis_ids:
+            if gml_code == 1221 or gml_code == 1231:
+                return alkis_ids[gml_code][0] if area <= 800 else alkis_ids[gml_code][1]
+            else:
+                return alkis_ids[gml_code][0]
+        elif gml_code in citygml_alkis:
+            if gml_code in [31001_1000, 31001_1010, 31001_1120, 31001_1130]:
+                if area <= 140:
+                    return citygml_alkis[gml_code][0]
+                elif area <= 280:
+                    return citygml_alkis[gml_code][1]
+                elif area <= 800:
+                    return citygml_alkis[gml_code][2]
+                else:
+                    return citygml_alkis[gml_code][3]
+            else:
+                return citygml_alkis[gml_code][0]
+        else:
+            return default_building_type
+
+    df_copy["building"] = df_copy.apply(get_building_type, axis=1)
 
     return df_copy
    
