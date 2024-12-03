@@ -1,0 +1,18 @@
+﻿type;heated_area_factor
+SFH;1.00
+MFH;1.00
+AB;1.00
+TH;1.00
+IWU Hotels, Boarding, Restaurants or Catering;0.93
+IWU Office, Administrative or Government Buildings;0.9
+IWU Trade Buildings;0.8
+IWU Technical and Utility (supply and disposal);0.81
+IWU School, Day Nursery and other Care;0.95
+IWU Health and Care;0.94
+IWU Sports Facilities;0.89
+IWU Transport;0.64
+IWU Culture and Leisure;0.89
+IWU Research and University Teaching;0.9
+IWU Generalized (1) Services building;0.89
+IWU Generalized (2) Production buildings;0.86
+IWU Production, Workshop, Warehouse or Operations;0.87
