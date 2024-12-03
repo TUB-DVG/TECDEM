@@ -4,7 +4,7 @@ import lxml.etree as ET
 import pandas as pd 
 import shapely
 from shapely.geometry import Polygon
-import citygml.geometric_strings as gs
+import geometric_strings as gs
 
 
 # Define the namespaces used in the CityGML file
