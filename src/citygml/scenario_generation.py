@@ -75,18 +75,21 @@ def heated_area(df: pd.DataFrame):
     Calculates the heated area of a building, based on the area and the type of building. 
     Factors are provided in src\auxilary\heated_area.csv
     Factors are calculated on DATA NWG, where the factor is EBF (Energiebezugsfläche) / NRF (Nettoraumfläche). 
+    Net floor area is calculated after Kaden
     """
     df_copy = df.copy()
-    # How to calculate ground floor area? 
+    df_copy.rename(columns={'area': 'base_area'}, inplace=True)
+    # How to calculate net floor area? 
     # After Kaden: https://mediatum.ub.tum.de/doc/1210304/1210304.pdf page 81
     # reduction factor for buildings with equally to or more than 3 floors is 0.76
     # reduction factor for buildings with less than 3 floors is 08
-    df_copy["ground_floor_area"] = df_copy.apply(lambda row: row["area"] * 0.76 if row["storeys_above_ground"] >= 3 else row["area"] * 0.8, axis=1)
+    df_copy["net_floor_area"] = df_copy.apply(lambda row: row["base_area"] * 0.76 if row["storeys_above_ground"] >= 3 else row["base_area"] * 0.8, axis=1)
 
 
     # Read in the heated area factor
     heated_area_factors = pd.read_csv(r"src\auxilary\heated_area.csv", sep=";")
-    df_copy["heated_area"] = df_copy["area"].multiply(heated_area_factors["heated_area_factor"].astype(float))
+    df_copy["area"] = df_copy["net_floor_area"].multiply(heated_area_factors["heated_area_factor"].astype(float))
+    breakpoint()
     return df_copy 
 
 
