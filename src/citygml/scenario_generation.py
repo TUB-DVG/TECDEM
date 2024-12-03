@@ -22,8 +22,9 @@ def create_scenario(sheet_file: str, scenario_name: str,
     df = pd.read_csv(sheet_file, na_values="")
     df = calculate_area(df)
     df = parse_building_types(df, default_building_type)
+    df = heated_area(df)
 
-    model_df = df.filter(["dg_id", "building", "year_of_construction", "renovation_status", "retrofit", "area"])
+    model_df = df.filter(["dg_id", "building", "year_of_construction", "renovation_status", "retrofit", "area", "heated_area"])
     rename_dict = {
         "dg_id" : "id",
         "year_of_construction" : "year",
@@ -32,7 +33,8 @@ def create_scenario(sheet_file: str, scenario_name: str,
     model_df.rename(columns=rename_dict, inplace=True)
     model_df["year"] = model_df["year"].astype("Int64")
     scenario_folder = scenario_folder
-    scenario_path = os.path.join(scenario_folder, f'{scenario_name}.csv')   
+    scenario_path = os.path.join(scenario_folder, f'{scenario_name}.csv') 
+    breakpoint()
     try: 
         model_df.to_csv(scenario_path, index=False, sep=";")
     except OSError:
@@ -66,6 +68,26 @@ def calculate_area(df, floor_height:float = 2.8):
     df_copy['area'] = np.select(conditions, choices, default=df_copy['floor_area'])
     
     return df_copy
+
+
+def heated_area(df: pd.DataFrame):
+    """
+    Calculates the heated area of a building, based on the area and the type of building. 
+    Factors are provided in src\auxilary\heated_area.csv
+    Factors are calculated on DATA NWG, where the factor is EBF (Energiebezugsfläche) / NRF (Nettoraumfläche). 
+    """
+    df_copy = df.copy()
+    # How to calculate ground floor area? 
+    # After Kaden: https://mediatum.ub.tum.de/doc/1210304/1210304.pdf page 81
+    # reduction factor for buildings with equally to or more than 3 floors is 0.76
+    # reduction factor for buildings with less than 3 floors is 08
+    df_copy["ground_floor_area"] = df_copy.apply(lambda row: row["area"] * 0.76 if row["storeys_above_ground"] >= 3 else row["area"] * 0.8, axis=1)
+
+
+    # Read in the heated area factor
+    heated_area_factors = pd.read_csv(r"src\auxilary\heated_area.csv", sep=";")
+    df_copy["heated_area"] = df_copy["area"].multiply(heated_area_factors["heated_area_factor"].astype(float))
+    return df_copy 
 
 
 def parse_building_types(df: pd.DataFrame, default_building_type: str ="SFH"):
