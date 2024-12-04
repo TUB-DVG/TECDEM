@@ -2,3 +2,5 @@ venv
 .venv
 src/districtgenerator
 experiments/file_handling.ipynb
+data/evaluation/SimStadt/Loadprofile 
+data/evaluation/SimStadt/HeatHourly
