@@ -88,7 +88,10 @@ def heated_area(df: pd.DataFrame):
 
 
     # Read in the heated area factor
-    heated_area_factors = pd.read_csv(r"src\auxilary\heated_area.csv", sep=";")
+    root_folder = os.path.abspath(os.path.join(os.getcwd(), os.pardir))
+    auxillary_data = os.path.join(root_folder, "src" , "auxilary", "heated_area.csv")
+
+    heated_area_factors = pd.read_csv(auxillary_data, sep=";")
     df_copy["area"] = df_copy["net_floor_area"].multiply(heated_area_factors["heated_area_factor"].astype(float))
     breakpoint()
     return df_copy 
