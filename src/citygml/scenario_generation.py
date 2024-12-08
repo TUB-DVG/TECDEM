@@ -92,8 +92,8 @@ def heated_area(df: pd.DataFrame):
     auxillary_data = os.path.join(root_folder, "src" , "auxilary", "heated_area.csv")
 
     heated_area_factors = pd.read_csv(auxillary_data, sep=";")
-    df_copy["area"] = df_copy["net_floor_area"].multiply(heated_area_factors["heated_area_factor"].astype(float))
-    breakpoint()
+    df_copy_temp = df_copy.merge(heated_area_factors, how='left', left_on='building', right_on='type')
+    df_copy["area"] = df_copy_temp["net_floor_area"] * df_copy_temp["heated_area_factor"].astype(float)
     return df_copy 
 
 
