@@ -24,11 +24,12 @@ def create_scenario(sheet_file: str, scenario_name: str,
     df = parse_building_types(df, default_building_type)
     df = heated_area(df)
 
-    model_df = df.filter(["dg_id", "building", "year_of_construction", "renovation_status", "retrofit", "area", "heated_area"])
+    model_df = df.filter(["dg_id", "building", "year_of_construction", "renovation_status", "retrofit", "area", "heated_area", "gml_id"])
     rename_dict = {
         "dg_id" : "id",
         "year_of_construction" : "year",
         "renovation_status": "retrofit",
+        "gml_id": "gml_id"
     }
     model_df.rename(columns=rename_dict, inplace=True)
     model_df["year"] = model_df["year"].astype("Int64")
