@@ -2,10 +2,10 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from citydpc import Dataset
-    from citydpc.core.obejct.abstractBuilding import AbstractBuilding
+    from citygml.dataset import Dataset
+    from citygml.core.object.abstractBuilding import AbstractBuilding
 
-from citydpc.tools.partywall import get_party_walls
+from citygml.tools.partywall import get_party_walls
 import pandas as pd
 
 

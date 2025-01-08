@@ -6,6 +6,7 @@ import shapely
 from shapely.geometry import Polygon
 import geometric_strings as gs
 
+# Kann ersetzt werden 
 
 # Define the namespaces used in the CityGML file
 ns = {

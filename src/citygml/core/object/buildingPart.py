@@ -1,4 +1,4 @@
-from citydpc.core.obejct.abstractBuilding import AbstractBuilding
+from citygml.core.object.abstractBuilding import AbstractBuilding
 
 
 class BuildingPart(AbstractBuilding):

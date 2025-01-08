@@ -2,11 +2,11 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from citydpc.core.obejct.surfacegml import SurfaceGML
-    from citydpc.core.obejct.geometry import GeometryGML
+    from citygml.core.object.surfacegml import SurfaceGML
+    from citygml.core.object.geometry import GeometryGML
 
-from citydpc.core.obejct.address import CoreAddress
-from citydpc.logger import logger
+from citygml.core.object.address import CoreAddress
+from citygml.logger import logger
 
 import numpy as np
 from scipy.spatial import ConvexHull

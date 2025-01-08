@@ -2,23 +2,24 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from citydpc.dataset import Dataset
-    from citydpc.core.obejct.address import CoreAddress
-    from citydpc.core.obejct.abstractBuilding import AbstractBuilding
+    from citygml.dataset import Dataset
+    from citygml.core.object.address import CoreAddress
+    from citygml.core.object.abstractBuilding import AbstractBuilding
 
 
 import lxml.etree as ET
 import numpy as np
 import matplotlib.path as mplP
 
-from citydpc.logger import logger
-from citydpc.tools.cityATB import _border_check, check_building_for_border_and_address
-from citydpc.core.obejct.building import Building
-from citydpc.core.obejct.buildingPart import BuildingPart
-from citydpc.core.obejct.surfacegml import SurfaceGML
-from citydpc.core.obejct.fileUtil import CityFile
-from citydpc.core.obejct.geometry import GeometryGML
-from citydpc.tools.partywall import get_party_walls
+from citygml.logger import logger
+from citygml.tools.cityATB import _border_check, check_building_for_border_and_address
+from citygml.tools.partywall import get_party_walls
+from citygml.core.object.building import Building
+from citygml.core.object.buildingPart import BuildingPart
+from citygml.core.object.surfacegml import SurfaceGML
+from citygml.core.object.fileUtil import CityFile
+from citygml.core.object.geometry import GeometryGML
+
 
 
 def load_buildings_from_xml_file(
@@ -72,6 +73,7 @@ def load_buildings_from_xml_file(
     if "energy" in nsmap:
         if nsmap["energy"] == "http://www.sig3d.org/citygml/2.0/energy/1.0":
             ades.append("energyADE")
+        # ToDo: add other ADEs
 
     # find gml envelope and check for compatability
     fileSRSName = None

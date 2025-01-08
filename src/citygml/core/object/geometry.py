@@ -2,9 +2,9 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from citydpc.core.obejct.surfacegml import SurfaceGML
+    from citygml.core.object.surfacegml import SurfaceGML
 
-from citydpc.logger import logger
+from citygml.logger import logger
 
 
 class GeometryGML:

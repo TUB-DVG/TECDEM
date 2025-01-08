@@ -4,7 +4,7 @@ import numpy as np
 from numpy import linalg as LA
 from itertools import tee, chain
 
-from citydpc.logger import logger
+from citygml.logger import logger
 
 
 class SurfaceGML(object):

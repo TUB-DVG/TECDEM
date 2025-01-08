@@ -2,21 +2,21 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from citydpc.dataset import Dataset
-    from citydpc.core.obejct.abstractBuilding import AbstractBuilding
+    from src.citygml.dataset import Dataset
+    from src.citygml.core.object.abstractBuilding import AbstractBuilding
 
 import json
 import numpy as np
 import matplotlib.path as mplP
 
-from citydpc.core.obejct.building import Building
-from citydpc.core.obejct.buildingPart import BuildingPart
-from citydpc.core.obejct.surfacegml import SurfaceGML
-from citydpc.core.obejct.fileUtil import CityFile
-from citydpc.core.obejct.geometry import GeometryGML
-from citydpc.tools.cityATB import _border_check, check_building_for_border_and_address
-from citydpc.logger import logger
-from citydpc.tools.partywall import get_party_walls
+from src.citygml.core.object.building import Building
+from src.citygml.core.object.buildingPart import BuildingPart
+from src.citygml.core.object.surfacegml import SurfaceGML
+from src.citygml.core.object.fileUtil import CityFile
+from src.citygml.core.object.geometry import GeometryGML
+from src.citygml.util.cityATB import _border_check, check_building_for_border_and_address
+from src.citygml.logger import logger
+from src.citygml.util.partywall import get_party_walls
 
 
 def load_buildings_from_json_file(
