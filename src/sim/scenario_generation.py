@@ -1,41 +1,92 @@
 # functions takes the Sheet generated from city gml and turns it into a District Generator Model 
 #from districtgenerator.classes.datahandler import Datahandler 
 # change import statement https://github.com/RWTH-EBC/districtgenerator/issues/6 
+import logging as log
+
 import os 
 import pandas as pd 
 import numpy as np
+import re
+
+BUILDING_FUNCTIONS = {
+    1000: ["TH", "SFH", "MFH", "AB"],
+    1121: ["TH"],
+    1221: ["MFH", "AB"],
+    1231: ["MFH", "AB"],
+    1331: ["SFH"],
+    1321: ["TH"],
+    1022: ["IWU Health and Care"],
+
+    2000: ["IWU Trade Buildings"],
+    2010: ["IWU Trade Buildings"],
+    2020: ["IWU Office, Administrative or Government Buildings"],
+    2030: ["IWU Office, Administrative or Government Buildings"],
+    2050: ["IWU Office, Administrative or Government Buildings"],
+    2054: ["IWU Trade Buildings"],
+    2055: ["IWU Trade Buildings"],
+    2071: ["IWU Hotels, Boarding, Restaurants or Catering"],
+    2083: ["IWU Hotels, Boarding, Restaurants or Catering"],
+    2100: ["IWU Production, Workshop, Warehouse or Operations"],
+    2111: ["IWU Production, Workshop, Warehouse or Operations"],
+    2120: ["IWU Production, Workshop, Warehouse or Operations"],
+    2310: ["IWU Trade Buildings"],  
+    2460: ["IWU Transport"],
+    2461: ["IWU Transport"],
+    2462: ["IWU Transport"],
+    2463: ["IWU Transport"],
+    2500: ["IWU Technical and Utility (supply and disposal)"],
+    2520: ["IWU Technical and Utility (supply and disposal)"],
+    2521: ["IWU Technical and Utility (supply and disposal)"],
+    2522: ["IWU Technical and Utility (supply and disposal)"],
+    2523: ["IWU Technical and Utility (supply and disposal)"],
+    2540: ["IWU Office, Administrative or Government Buildings"],
+    2571: ["IWU Technical and Utility (supply and disposal)"],
+    2591: ["IWU Technical and Utility (supply and disposal)"],
+    2600: ["IWU Technical and Utility (supply and disposal)"],
+    3010: ["IWU Office, Administrative or Government Buildings"],
+    3015: ["IWU Office, Administrative or Government Buildings"],
+    3020: ["IWU Research and University Teaching"],
+    3021: ["IWU School, Day Nursery and other Care"],
+    3023: ["IWU Research and University Teaching"],
+    3041: ["IWU Culture and Leisure"],
+    3044: ["IWU Culture and Leisure"],
+    3060: ["IWU Health and Care"],
+    3065: ["IWU School, Day Nursery and other Care"],
+    3211: ["IWU Sports Facilities"],
+    1440: ["IWU Sports Facilities"], 
+}
 
 
 def create_scenario(sheet_file: str, scenario_name: str,
                     default_building_type: str ="SFH", 
-                    scenario_folder: str = "src\districtgenerator\data\scenarios") -> str:
+                    scenario_folder: str = "src/districtgenerator/data/scenarios") -> str:
     """ 
     Takes the sheet name and creates a scenario 
-    Calculates the area of a building
+    Calculates the groundArea of a building
     Estimate the type, if non is conatained within the 
     gml file a default building type is used, options are [SFH, MFH, TH, AB]
     height of floors is considered 3.15 
-    Expected output dataframe with content: id;building;year;retrofit;area
+    Expected output dataframe with content: id;building;year;retrofit;groundArea
     """
     if not os.path.exists(sheet_file):
         raise FileNotFoundError(f"File not found: {sheet_file}")
     df = pd.read_csv(sheet_file, na_values="")
-    df = calculate_area(df)
+    df = calculate_groundArea(df)
     df = parse_building_types(df, default_building_type)
-    df = heated_area(df)
+    df = heated_groundArea(df)
 
-    model_df = df.filter(["dg_id", "building", "year_of_construction", "renovation_status", "retrofit", "area", "heated_area", "gml_id"])
+    model_df = df.filter(["dg_id", "building", "yearOfConstruction",
+                          "renovation_status", "retrofit", "groundArea", "heated_groundArea", "gml_id"])
     rename_dict = {
         "dg_id" : "id",
-        "year_of_construction" : "year",
+        "yearOfConstruction" : "year",
         "renovation_status": "retrofit",
         "gml_id" : "gml_id"
     }
     model_df.rename(columns=rename_dict, inplace=True)
     model_df["year"] = model_df["year"].astype("Int64")
     scenario_folder = scenario_folder
-    scenario_path = os.path.join(scenario_folder, f'{scenario_name}.csv') 
-    breakpoint()
+    scenario_path = os.path.join(scenario_folder, f'{scenario_name}.csv')
     try: 
         model_df.to_csv(scenario_path, index=False, sep=";")
     except OSError:
@@ -47,7 +98,7 @@ def create_scenario(sheet_file: str, scenario_name: str,
     return scenario_path
 
     
-def calculate_area(df, floor_height:float = 2.8):
+def calculate_groundArea(df, floor_height:float = 2.8):
     # In DG is is assumed that the average floor height is 3.15 m 
     # https://de.wikipedia.org/wiki/Raumh%C3%B6he 
     # Assume 20cm for floor height and 260cm for minimum height -> 280cm is more realistic 
@@ -55,254 +106,139 @@ def calculate_area(df, floor_height:float = 2.8):
     floor_height = floor_height
     df_copy = df.copy()
 
-    # Create a new column 'area' based on the conditions
+    # Create a new column 'groundArea' based on the conditions
     conditions = [
-        df_copy['storeys_above_ground'].notna(),  # Check if storeys_above_ground is not NaN
-        df_copy['height'].notna()        # Check if measured_height is not NaN
+        df_copy['storeysAboveGround'].notna(),  # Check if storeys_above_ground is not NaN
+        df_copy['measuredHeight'].notna(), # Check if measured_height is not NaN
+        df_copy['storeyHeightsAboveGround'].isna() # Check if storeyHeightsAboveGround is not NaN
     ]
-
+    
     choices = [
-        df_copy['floor_area'] * df_copy['storeys_above_ground'],  # storeys_above_ground * floor_area
-        df_copy['floor_area'] * round(df_copy['height'] / floor_height)       # measured_height * floor_area
+        df_copy['groundArea'] * df_copy['storeysAboveGround'],  # storeys_above_ground * floor_groundArea
+        df_copy['groundArea'] * round(df_copy['measuredHeight'] / df_copy['storeyHeightsAboveGround']), 
+        df_copy['groundArea'] * round(df_copy['measuredHeight'] / floor_height)       # measured_height * floor_groundArea
     ]
 
-    df_copy['area'] = np.select(conditions, choices, default=df_copy['floor_area'])
+    df_copy['groundArea'] = np.select(conditions, choices, default=df_copy['groundArea'])
     
     return df_copy
 
 
-def heated_area(df: pd.DataFrame):
+def heated_groundArea(df: pd.DataFrame):
     """
-    Calculates the heated area of a building, based on the area and the type of building. 
-    Factors are provided in src\auxilary\heated_area.csv
+    Calculates the heated groundArea of a building, based on the groundArea and the type of building. 
+    Factors are provided in src/auxilary/heated_groundArea.csv
     Factors are calculated on DATA NWG, where the factor is EBF (Energiebezugsfläche) / NRF (Nettoraumfläche). 
-    Net floor area is calculated after Kaden
+    Net floor groundArea is calculated after Kaden
     """
     df_copy = df.copy()
-    df_copy.rename(columns={'area': 'base_area'}, inplace=True)
-    # How to calculate net floor area? 
+    df_copy.rename(columns={'groundArea': 'groundArea'}, inplace=True)
+    # How to calculate net floor groundArea? 
     # After Kaden: https://mediatum.ub.tum.de/doc/1210304/1210304.pdf page 81
     # reduction factor for buildings with equally to or more than 3 floors is 0.76
     # reduction factor for buildings with less than 3 floors is 08
-    df_copy["net_floor_area"] = df_copy.apply(lambda row: row["base_area"] * 0.76 if row["storeys_above_ground"] >= 3 else row["base_area"] * 0.8, axis=1)
+    df_copy["netFloorgroundArea"] = df_copy.apply(lambda row: row["groundArea"] * 0.76 if row["storeysAboveGround"] >= 3 else row["groundArea"] * 0.8, axis=1)
 
 
-    # Read in the heated area factor
+    # Read in the heated groundArea factor
     root_folder = os.path.abspath(os.path.join(os.getcwd(), os.pardir))
-    auxillary_data = os.path.join(root_folder, "src" , "auxilary", "heated_area.csv")
+    auxillary_data = os.path.join(root_folder , "auxilary", "heated_area.csv")
 
-    heated_area_factors = pd.read_csv(auxillary_data, sep=";")
-    df_copy_temp = df_copy.merge(heated_area_factors, how='left', left_on='building', right_on='type')
-    df_copy["area"] = df_copy_temp["net_floor_area"] * df_copy_temp["heated_area_factor"].astype(float)
-    return df_copy 
+    heated_groundArea_factors = pd.read_csv(auxillary_data, sep=";")
+    df_copy_temp = df_copy.merge(heated_groundArea_factors, how='left', left_on='building', right_on='type')
+    df_copy["groundArea"] = df_copy_temp["netFloorgroundArea"] * df_copy_temp["heated_area_factor"].astype(float)
+    return df_copy
 
 
-def parse_building_types(df: pd.DataFrame, default_building_type: str ="SFH"):
-    # Function returns the building type, according to GML / ALkis code and size (if code refers to two Tabula Archetypes)
-    # Typical sizes according to Tabula are here: src\auxilary\building_sizes.csv 
-    # The Alkis and GML Codes are provided in src\auxilary\building_function_data.csv 
-    # To-Do Figure out Codes that are not included in Alkis or GML Functions, e.g. 1169 
-    # 1169 = Sozialeinrichtung 
-    gml_ids = {1000: ["TH", "SFH", "MFH", "AB"]}
-    alkis_ids = {1121: ["TH"], 
-                 1221: ["MFH", "AB"],
-                 1231: ["MFH", "AB"],
-                 1331: ["SFH"], 
-                 1321: ["TH"]}
-    citygml_alkis = {
-        31001_1000: ["SFH", "MFH", "TH", "AB"],
-        31001_1010: ["SFH", "MFH", "TH", "AB"],
-        31001_1120: ["SFH", "MFH", "TH", "AB"],
-        31001_1130: ["SFH", "MFH", "TH", "AB"],
-        31001_1022: ["IWU Health and Care"],
-        31001_2000: ["IWU Trade Buildings"],
-        31001_2010: ["IWU Trade Buildings"],
-        31001_2020: ["IWU Office, Administrative or Government Buildings"],
-        31001_2030: ["IWU Office, Administrative or Government Buildings"],
-        31001_2050: ["IWU Office, Administrative or Government Buildings"],
-        31001_2054: ["IWU Trade Buildings"],
-        31001_2055: ["IWU Trade Buildings"],
-        31001_2071: ["IWU Hotels, Boarding, Restaurants or Catering"],
-        31001_2083: ["IWU Hotels, Boarding, Restaurants or Catering"],
-        31001_2100: ["IWU Production, Workshop, Warehouse or Operations"],
-        31001_2111: ["IWU Production, Workshop, Warehouse or Operations"],
-        31001_2120: ["IWU Production, Workshop, Warehouse or Operations"],
-        31001_2310: ["IWU Trade Buildings"],
-        31001_2460: ["IWU Transport"],
-        31001_2461: ["IWU Transport"],
-        31001_2462: ["IWU Transport"],
-        31001_2463: ["IWU Transport"],
-        31001_2500: ["IWU Technical and Utility (supply and disposal)"],
-        31001_2520: ["IWU Technical and Utility (supply and disposal)"],
-        31001_2521: ["IWU Technical and Utility (supply and disposal)"],
-        31001_2522: ["IWU Technical and Utility (supply and disposal)"],
-        31001_2523: ["IWU Technical and Utility (supply and disposal)"],
-        31001_2540: ["IWU Office, Administrative or Government Buildings"],
-        31001_2571: ["IWU Technical and Utility (supply and disposal)"],
-        31001_2591: ["IWU Technical and Utility (supply and disposal)"],
-        31001_2600: ["IWU Technical and Utility (supply and disposal)"],
-        31001_3010: ["IWU Office, Administrative or Government Buildings"],
-        31001_3015: ["IWU Office, Administrative or Government Buildings"],
-        31001_3020: ["IWU Research and University Teaching"],
-        31001_3021: ["IWU School, Day Nursery and other Care"],
-        31001_3023: ["IWU Research and University Teaching"],
-        31001_3041: ["IWU Culture and Leisure"],
-        31001_3044: ["IWU Culture and Leisure"],
-        31001_3060: ["IWU Health and Care"],
-        31001_3065: ["IWU School, Day Nursery and other Care"],
-        31001_3211: ["IWU Sports Facilities"],
-        51006_1440: ["IWU Sports Facilities"]
-    }
+def normalize_function_code(code_value):
+    """
+    Extract the trailing numeric portion of the function code, if it exists.
+    Examples:
+      - '31001_2310'  -> 2310
+      - '2310'        -> 2310
+      - '31001_1000'  -> 1000
+    If no digits found, returns None.
+    """
+    if pd.isnull(code_value):
+        return None
 
-   # Check if the building type is contained in the GML or ALKIS Codes
-   # Rule Based mapping of the building type
+    code_str = str(code_value).strip()
+    try:
+        return int(float(code_str))
+    except ValueError:
+        pass
+
+    match = re.search(r"(\d+(?:\.\d+)?)$", code_str)
+    if match:
+        try:
+            return int(float(match.group(1)))
+        except ValueError:
+            return None
+
+    return None
+
+def get_building_subtype(candidates, groundArea):
+    """
+    Given a list of possible building types (candidates) and the ground area,
+    decide which one is appropriate. For purely residential codes (e.g. 1000),
+    we choose from TH/SFH/MFH/AB based on area thresholds. Otherwise,
+    if only one candidate is in the list, we return it directly.
+    """
+    # Check for the typical residential codes:
+    if any(t in ["TH", "SFH", "MFH", "AB"] for t in candidates):
+        # Example logic: smaller area -> Townhouse, medium area -> SFH, etc.
+        # You can adapt these thresholds to match your real definitions:
+        if groundArea <= 140:
+            return "TH"
+        elif 140 < groundArea <= 280:
+            return "SFH"
+        elif 280 < groundArea <= 800:
+            return "MFH"
+        else:
+            return "AB"
+
+    # If the code is not purely residential or does not require sub-selection:
+    if len(candidates) == 1:
+        return candidates[0]
+
+    # If multiple remain, pick the first or define more complex rules:
+    return candidates[0]
+
+
+def parse_building_types(df: pd.DataFrame, default_building_type: str = "SFH") -> pd.DataFrame:
+    """
+    Parses the building 'function' in the DataFrame.
+    1) Normalizes the GML/ALKIS code to an integer suffix (e.g. 31001_2310 -> 2310).
+    2) Looks up a list of candidate building types from BUILDING_FUNCTIONS.
+    3) Uses groundArea to select the correct subtype if necessary.
+    4) Falls back to default_building_type if the code is unknown or invalid.
+    Returns a copy of df with a new column: 'building'.
+    """
 
     df_copy = df.copy()
-    # Fehler, da unterschiedliche types vorliegen, e.g. int64 oder float 
-    df_copy["building_type_gml"] = df_copy["building_type_gml"].astype(int)
-    
-    conditions = [ 
-                ( df_copy["building_type_gml"] == 1000) & (df_copy["area"] <= 140),
-                (df_copy["building_type_gml"] == 1000) & (df_copy["area"] > 140) & (df_copy["area"] <= 280),
-                (df_copy["building_type_gml"] == 1000) & (df_copy["area"] > 280) & (df_copy["area"] <= 800),
-                (df_copy["building_type_gml"] == 1000) & (df_copy["area"] > 800),
-                ( df_copy["building_type_gml"] == 1121), 
-                ( df_copy["building_type_gml"] == 1221 ) &(df_copy["area"] <= 800),
-                ( df_copy["building_type_gml"] == 1221 ) &( 800 < df_copy["area"]),
-                ( df_copy["building_type_gml"] == 1231 ) &(df_copy["area"] <= 800),
-                ( df_copy["building_type_gml"] == 1231 ) &( 800 < df_copy["area"]),  
-                ( df_copy["building_type_gml"] == 1331),
-                ( df_copy["building_type_gml"] == 1321), 
-                ( df_copy["building_type_gml"] == 31001_1000)& (df_copy["area"] <= 140),
-                ( df_copy["building_type_gml"] == 31001_1000) & (df_copy["area"] > 140) & (df_copy["area"] <= 280),
-                ( df_copy["building_type_gml"] == 31001_1000) & (df_copy["area"] > 280) & (df_copy["area"] <= 800),
-                ( df_copy["building_type_gml"] == 31001_1000) & (df_copy["area"] > 800),
-                ( df_copy["building_type_gml"] == 31001_1010)& (df_copy["area"] <= 140),
-                ( df_copy["building_type_gml"] == 31001_1010) & (df_copy["area"] > 140) & (df_copy["area"] <= 280),
-                ( df_copy["building_type_gml"] == 31001_1010) & (df_copy["area"] > 280) & (df_copy["area"] <= 800),
-                ( df_copy["building_type_gml"] == 31001_1010) & (df_copy["area"] > 800),
-                ( df_copy["building_type_gml"] == 31001_1120) & (df_copy["area"] <= 140),
-                ( df_copy["building_type_gml"] == 31001_1120) & (df_copy["area"] > 140) & (df_copy["area"] <= 280),
-                ( df_copy["building_type_gml"] == 31001_1120) & (df_copy["area"] > 280) & (df_copy["area"] <= 800),
-                ( df_copy["building_type_gml"] == 31001_1120) & (df_copy["area"] > 800),
-                ( df_copy["building_type_gml"] == 31001_1130) & (df_copy["area"] <= 140),
-                ( df_copy["building_type_gml"] == 31001_1130) & (df_copy["area"] > 140) & (df_copy["area"] <= 280),
-                ( df_copy["building_type_gml"] == 31001_1130) & (df_copy["area"] > 280) & (df_copy["area"] <= 800),
-                ( df_copy["building_type_gml"] == 31001_1130) & (df_copy["area"] > 800),
-                ( df_copy["building_type_gml"] == 31001_1022),
-                ( df_copy["building_type_gml"] == 31001_2000),
-                ( df_copy["building_type_gml"] == 31001_2010),
-                ( df_copy["building_type_gml"] == 31001_2020),
-                ( df_copy["building_type_gml"] == 31001_2030),
-                ( df_copy["building_type_gml"] == 31001_2050),
-                ( df_copy["building_type_gml"] == 31001_2054),
-                ( df_copy["building_type_gml"] == 31001_2055),
-                ( df_copy["building_type_gml"] == 31001_2071),
-                ( df_copy["building_type_gml"] == 31001_2083),
-                ( df_copy["building_type_gml"] == 31001_2100),
-                ( df_copy["building_type_gml"] == 31001_2111),
-                ( df_copy["building_type_gml"] == 31001_2120),
-                ( df_copy["building_type_gml"] == 31001_2310),
-                ( df_copy["building_type_gml"] == 31001_2460),
-                ( df_copy["building_type_gml"] == 31001_2461),
-                ( df_copy["building_type_gml"] == 31001_2462),
-                ( df_copy["building_type_gml"] == 31001_2463),
-                ( df_copy["building_type_gml"] == 31001_2500),
-                ( df_copy["building_type_gml"] == 31001_2520),
-                ( df_copy["building_type_gml"] == 31001_2521),
-                ( df_copy["building_type_gml"] == 31001_2522),
-                ( df_copy["building_type_gml"] == 31001_2523),
-                ( df_copy["building_type_gml"] == 31001_2540),
-                ( df_copy["building_type_gml"] == 31001_2571),
-                ( df_copy["building_type_gml"] == 31001_2591),
-                ( df_copy["building_type_gml"] == 31001_2600),
-                ( df_copy["building_type_gml"] == 31001_3010),
-                ( df_copy["building_type_gml"] == 31001_3015),
-                ( df_copy["building_type_gml"] == 31001_3020),
-                ( df_copy["building_type_gml"] == 31001_3021),
-                ( df_copy["building_type_gml"] == 31001_3023),
-                ( df_copy["building_type_gml"] == 31001_3041),
-                ( df_copy["building_type_gml"] == 31001_3044),
-                ( df_copy["building_type_gml"] == 31001_3060),
-                ( df_copy["building_type_gml"] == 31001_3065),
-                ( df_copy["building_type_gml"] == 31001_3211),
-                ( df_copy["building_type_gml"] == 51006_1440) ]
-                
-    
-    choices = [gml_ids[1000][0],
-            gml_ids[1000][1], 
-            gml_ids[1000][2],
-            gml_ids[1000][3], 
-            alkis_ids[1121][0],
-            alkis_ids[1221][0], 
-            alkis_ids[1221][1],
-            alkis_ids[1231][0], 
-            alkis_ids[1231][1],
-            alkis_ids[1331][0],
-            alkis_ids[1321][0], 
-            citygml_alkis[31001_1000][0],
-            citygml_alkis[31001_1000][1],
-            citygml_alkis[31001_1000][2],
-            citygml_alkis[31001_1000][3],
-            citygml_alkis[31001_1010][0],
-            citygml_alkis[31001_1010][1],
-            citygml_alkis[31001_1010][2],
-            citygml_alkis[31001_1010][3],
-            citygml_alkis[31001_1120][0],
-            citygml_alkis[31001_1120][1],
-            citygml_alkis[31001_1120][2],
-            citygml_alkis[31001_1120][3],
-            citygml_alkis[31001_1130][0],
-            citygml_alkis[31001_1130][1],
-            citygml_alkis[31001_1130][2],
-            citygml_alkis[31001_1130][3],
-            citygml_alkis[31001_1022][0],
-            citygml_alkis[31001_2000][0],
-            citygml_alkis[31001_2010][0],
-            citygml_alkis[31001_2020][0],
-            citygml_alkis[31001_2030][0],
-            citygml_alkis[31001_2050][0],
-            citygml_alkis[31001_2054][0],
-            citygml_alkis[31001_2055][0],
-            citygml_alkis[31001_2071][0],
-            citygml_alkis[31001_2083][0],
-            citygml_alkis[31001_2100][0],
-            citygml_alkis[31001_2111][0],
-            citygml_alkis[31001_2120][0],
-            citygml_alkis[31001_2310][0],
-            citygml_alkis[31001_2460][0],
-            citygml_alkis[31001_2461][0],
-            citygml_alkis[31001_2462][0],
-            citygml_alkis[31001_2463][0],
-            citygml_alkis[31001_2500][0],
-            citygml_alkis[31001_2520][0],
-            citygml_alkis[31001_2521][0],
-            citygml_alkis[31001_2522][0],
-            citygml_alkis[31001_2523][0],
-            citygml_alkis[31001_2540][0],
-            citygml_alkis[31001_2571][0],
-            citygml_alkis[31001_2591][0],
-            citygml_alkis[31001_2600][0],
-            citygml_alkis[31001_3010][0],
-            citygml_alkis[31001_3015][0],
-            citygml_alkis[31001_3020][0],
-            citygml_alkis[31001_3021][0],
-            citygml_alkis[31001_3023][0],
-            citygml_alkis[31001_3041][0],
-            citygml_alkis[31001_3044][0],
-            citygml_alkis[31001_3060][0],
-            citygml_alkis[31001_3065][0],
-            citygml_alkis[31001_3211][0],
-            citygml_alkis[51006_1440][0]
-            ]
-        
-        
-    # As default, set the most likely type in a given model 
-    df_copy["building"] = np.select(conditions, choices, default=default_building_type)
 
+    # Convert 'function' to integer suffix
+    df_copy["normalized_function"] = df_copy["function"].apply(normalize_function_code)
+
+    # Identify any invalid codes
+    invalid_mask = df_copy["normalized_function"].isna()
+    if invalid_mask.any():
+        invalid_codes = df_copy.loc[invalid_mask, "function"].unique()
+        log.warning(f"Warning: Dropping {len(invalid_codes)} buildings with invalid function codes: {invalid_codes}")
+        df_copy = df_copy.loc[~invalid_mask]
+
+    # Retrieve candidate types from the dictionary
+    df_copy["type_candidates"] = df_copy["normalized_function"].apply(
+        lambda x: BUILDING_FUNCTIONS.get(x, [default_building_type])
+    )
+
+    # Decide final subtype
+    df_copy["building"] = df_copy.apply(
+        lambda row: get_building_subtype(row["type_candidates"], row["groundArea"]),
+        axis=1
+    )
 
     return df_copy
-   
 
 
 
@@ -332,9 +268,9 @@ if __name__ == '__main__':
     
     # ids.to_csv(r'C:\Users\felix\Programmieren\tecdm\data\model_sheets\partialMierendorffInselLoD2.gml', index=False)
 
-    # Calculate and print the area
-    #area = calculate_lod3_building_area(file_path)
-    #print(f"The total area of the building at LoD3 is: {area} square units")
+    # Calculate and print the groundArea
+    #groundArea = calculate_lod3_building_groundArea(file_path)
+    #print(f"The total groundArea of the building at LoD3 is: {groundArea} square units")
 # Aus dem Sheet ein Model erstellen
 # Berechnung der Informationen 
 

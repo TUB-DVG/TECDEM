@@ -2,9 +2,9 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from src.citygml.core.obejct.building import Building
+    from src.citygml.core.object.building import Building
 
-from src.citygml.logger import logger
+from citygml.logger import logger
 import math
 
 
