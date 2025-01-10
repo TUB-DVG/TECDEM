@@ -2,10 +2,10 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from citydpc.dataset import Dataset
-    from citydpc.core.obejct.abstractBuilding import AbstractBuilding
+    from src.citygml.dataset import Dataset
+    from src.citygml.core.object.abstractBuilding import AbstractBuilding
 
-
+import logging as log
 import numpy as np
 import math
 from shapely import geometry as slyGeom
@@ -26,6 +26,10 @@ def get_party_walls(dataset: Dataset) -> list[str, str, str, str, float, list]:
         returns a list of all detected party walls as a list of
         [id of b0, id of w0, id of b1, id of w1, area, list of collision coordinates]
     """
+    # The code fails with building parts due to missing wall surfaces:
+    # 1. When checking building parts, the code tries to access wall surfaces via get_surfaces()
+    # 2. If a building part has no wall surfaces defined, it triggers the AttributeError in _find_party_walls()
+    # 3. Need to add proper error handling for building parts without wall surfaces instead of just logging warnings
     all_party_walls = []
     updNumOfWalls = []
     for i, building_0 in enumerate(dataset.get_building_list()):
@@ -144,8 +148,15 @@ def _find_party_walls(
     """
     np.set_printoptions(suppress=True)
     party_walls = []
-    b_0_surfaces = buildingLike_0.get_surfaces(["WallSurface", "ClosureSurface"])
-    b_1_surfaces = buildingLike_1.get_surfaces(["WallSurface", "ClosureSurface"])
+    try:
+        b_0_surfaces = buildingLike_0.get_surfaces(["WallSurface", "ClosureSurface"])
+    except AttributeError:
+        log.warning(f"Building {buildingLike_0} has no walls or closures")
+        return []
+    try:
+        b_1_surfaces = buildingLike_1.get_surfaces(["WallSurface", "ClosureSurface"])
+    except AttributeError:
+        return []
     # b_0_normvectors = _coor_dict_to_normvector_dict(b_0_surfaces)
     # b_1_normvectors = _coor_dict_to_normvector_dict(b_1_surfaces)
     for surface_0 in b_0_surfaces:

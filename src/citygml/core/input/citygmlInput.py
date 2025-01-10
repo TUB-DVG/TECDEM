@@ -147,6 +147,7 @@ def load_buildings_from_xml_file(
                 building_E, nsmap, new_building, cityGMLversion
             )
 
+            
             bps_in_bldg = building_E.findall(
                 "bldg:consistsOfBuildingPart/bldg:BuildingPart", nsmap
             )
