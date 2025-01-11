@@ -19,6 +19,7 @@ class Dataset:
         self._files = []
         self.srsName = None
         self.buildings = {}
+        self.building_parts = {}
         self.otherCityObjectMembers = []
         self.party_walls = None
 
@@ -54,6 +55,30 @@ class Dataset:
 
     def get_building_by_id(self, id: str) -> Building:
         return self.buildings[id]
+
+    def get_building_by_bbp_id(self, id: str) -> Building:
+        """" returns a building based on the id of a building part
+
+        Parameters
+        ----------
+        id : str
+            id of the building part
+
+        Returns
+        -------
+        Building
+            building that contains the building part
+        """
+ 
+        try:
+            building_id = self.building_parts[id]
+            return self.get_building_by_id(building_id)
+        except KeyError:
+            # First Option, split by the id
+            #for building in self.get_building_list():
+            #    if building.gml_id.split("/")[0] == id:
+            #        return building
+            return None
 
     def add_building(self, building: Building, force: bool = False) -> None:
         """add a building to the dataset

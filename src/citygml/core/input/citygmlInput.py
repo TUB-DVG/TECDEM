@@ -203,6 +203,9 @@ def load_buildings_from_xml_file(
         dataset.transform = {"scale": [1, 1, 1], "translate": [0, 0, 0]}
     if updatePartyWalls:
         dataset.party_walls = get_party_walls(dataset)
+    for building in dataset.get_building_list():
+            for building_part in building.get_building_parts():
+                dataset.building_parts[building_part.gml_id] = building.gml_id
     logger.info(f"finished loading buildings from CityGML file {filepath}")
 
 

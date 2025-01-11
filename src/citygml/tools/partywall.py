@@ -77,6 +77,11 @@ def get_party_walls(dataset: Dataset) -> list[str, str, str, str, float, list]:
             for poly_1 in polys_in_building_0[j + 1 :]:
                 p_1 = slyGeom.Polygon(poly_1["coor"])
                 if not p_0.intersection(p_1).is_empty:
+                    # Check if poly_0["parent"] is a building
+                    if isinstance(poly_0["parent"], str):
+                        poly_0["parent"] = dataset.get_building_by_bbp_id(poly_0["parent"])
+                    if isinstance(poly_1["parent"], str):
+                        poly_1["parent"] = dataset.get_building_by_bbp_id(poly_1["parent"])       
                     party_walls = _find_party_walls(poly_0["parent"], poly_1["parent"])
                     if party_walls != []:
                         all_party_walls.extend(party_walls)
@@ -96,9 +101,7 @@ def get_party_walls(dataset: Dataset) -> list[str, str, str, str, float, list]:
                     for poly_1 in building_1.get_surfaces(["GroundSurface"]):
                         p_1 = slyGeom.Polygon(poly_1.gml_surface_2array)
                         if not p_0.intersection(p_1).is_empty:
-                            party_walls = _find_party_walls(
-                                poly_0["parent"], building_1
-                            )
+                            party_walls = _find_party_walls(poly_0["parent"], building_1)
                             if party_walls != []:
                                 all_party_walls.extend(party_walls)
                             break
@@ -119,9 +122,7 @@ def get_party_walls(dataset: Dataset) -> list[str, str, str, str, float, list]:
                                 p_1 = slyGeom.Polygon(poly_1.gml_surface_2array)
                                 if not p_0.intersection(p_1).is_empty:
                                     # To-Do: building (or bp) with other building part
-                                    party_walls = _find_party_walls(
-                                        poly_0["parent"], b_part
-                                    )
+                                    party_walls = _find_party_walls(poly_0["parent"], b_part)
                                     if party_walls != []:
                                         all_party_walls.extend(party_walls)
                                     break
@@ -148,15 +149,9 @@ def _find_party_walls(
     """
     np.set_printoptions(suppress=True)
     party_walls = []
-    try:
-        b_0_surfaces = buildingLike_0.get_surfaces(["WallSurface", "ClosureSurface"])
-    except AttributeError:
-        log.warning(f"Building {buildingLike_0} has no walls or closures")
-        return []
-    try:
-        b_1_surfaces = buildingLike_1.get_surfaces(["WallSurface", "ClosureSurface"])
-    except AttributeError:
-        return []
+    b_0_surfaces = buildingLike_0.get_surfaces(["WallSurface", "ClosureSurface"])
+    b_1_surfaces = buildingLike_1.get_surfaces(["WallSurface", "ClosureSurface"])
+
     # b_0_normvectors = _coor_dict_to_normvector_dict(b_0_surfaces)
     # b_1_normvectors = _coor_dict_to_normvector_dict(b_1_surfaces)
     for surface_0 in b_0_surfaces:
