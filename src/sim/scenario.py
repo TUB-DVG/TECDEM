@@ -1,11 +1,13 @@
-import pandas as pd
 import logging as log
 
 import os 
-import pandas as pd 
-import numpy as np
 import re
+from collections import Counter
+from typing import Optional
+import math
 
+import pandas as pd
+import numpy as np
 
 # Building Functions obtained from https://www.berlin.de/sen/sbw/_assets/service/rechtsvorschriften/bereich-geoportal/liegenschaftskataster/alkis-ok_berlin.pdf
 BUILDING_FUNCTIONS = {
@@ -60,10 +62,20 @@ BUILDING_FUNCTIONS = {
     1440: ["IWU Sports Facilities"], 
 }
 
+ # Read in the heated groundArea factor
+ROOT_FOLDER = os.path.abspath(os.path.join(os.getcwd(), os.pardir))
+AUXILLARY_DATA = os.path.join(ROOT_FOLDER , "TECDEM", "src", "auxilary", "heated_area.csv")
+HEATED_GROUND_AREA_FACTOR = pd.read_csv(AUXILLARY_DATA, sep=";")
+HEATED_GROUND_AREA_FACTOR_DICT = {
+    type: heated_area_factor for type, heated_area_factor in zip(HEATED_GROUND_AREA_FACTOR["type"].tolist(), HEATED_GROUND_AREA_FACTOR["heated_area_factor"].tolist())
+}
+print(HEATED_GROUND_AREA_FACTOR_DICT)
+
 class Building():
     """Represents a building and allows aggregation of building parts."""
     
-    def __init__(self, id: str, ground_area: float = 0.0, building_func: str = None) -> None:
+    def __init__(self, id: str, ground_area: float = 0.0, building_func: str = None,
+                 measured_height: float = None, storeys_above_ground: int = None) -> None:
         """
         Initialize a new building.
         
@@ -75,12 +87,26 @@ class Building():
             Ground area of the building (default is 0.0).
         building_func : str, optional
             The building function/type (default is None).
+        measured_height : float, optional
+            The measured height of the building (default is None).
+        storeys_above_ground : int, optional
+            The number of storeys above ground (default is None).
+        floor_area : float, optional
+            The floor area of the building (default is None). 
+            Is calculated from the ground area and the storeys above ground, as well as the measured height.
         """
         self.id = id
         self.building_parts = []  # List to hold aggregated building parts
         self.is_building_part = False
         self.ground_area = ground_area
         self.building_func = building_func
+        self.building_type = None
+        self.measured_height = measured_height
+        self.storeys_above_ground = storeys_above_ground
+        self.floor_area = None
+        self.heated_ground_area = None
+        self.heated_area_factor = None
+
 
     def add_building_part(self, part: "Building"):
         """Adds a building part to this building."""
@@ -122,8 +148,9 @@ class Scenario:
         self.buildings = {}
         self.default_building_type = default_building_type
         self.scenario_folder = scenario_folder
-        self.aggregate_parts = aggregate_parts  # New flag
+        self.aggregate_parts = aggregate_parts
         self.df = None
+        self.clean_data = None
 
     def load_sheet(self):
         """Loads the CSV file into a DataFrame."""
@@ -131,37 +158,50 @@ class Scenario:
             raise FileNotFoundError(f"File not found: {self.sheet_file}")
         self.df = pd.read_csv(self.sheet_file, na_values="", sep=",", decimal=".")
 
-    def calculate_ground_area(self):
-        """Calculates ground area using the helper function."""
-        if self.df is None:
-            raise ValueError("DataFrame not loaded.")
-        self.df = calculate_groundArea(self.df)
 
-    def parse_building_types(self):
+    def parse_building_types(self, building: Building):
         """Parses building types using the helper function."""
-        if self.df is None:
-            raise ValueError("DataFrame not loaded.")
-        self.df = parse_building_types(self.df, self.default_building_type)
+        building.building_type = normalize_function_code(building.building_func)
 
-    def compute_heated_ground_area(self):
+
+    def compute_heated_ground_area(self, building: Building):
         """Computes heated ground area using the helper function."""
-        if self.df is None:
-            raise ValueError("DataFrame not loaded.")
-        self.df = heated_groundArea(self.df)
+        calculate_groundArea_from_parts(building)
+
 
     def generate_model_dataframe(self) -> pd.DataFrame:
         """Generates a DataFrame in the expected model format."""
-        model_df = self.df.filter(["dg_id", "building", "yearOfConstruction",
-                                   "renovation_status", "retrofit", "groundArea",
-                                   "heated_groundArea", "gml_id"]).copy()
-        rename_dict = {
-            "dg_id": "id",
-            "yearOfConstruction": "year",
-            "renovation_status": "retrofit",
-            "heated_groundArea": "area"
-        }
-        model_df.rename(columns=rename_dict, inplace=True)
-        model_df["year"] = model_df["year"].astype("Int64")
+        # Generate a dataframe with the expected columns
+        model_list = []
+        for building_id, building in self.buildings.items(): 
+            building_dict = {
+                "id": building_id,
+                "building": building.building_type,
+                "groundArea": building.ground_area,
+                "area": building.heated_ground_area,
+                "gml_id": building.id
+            }
+            model_list.append(building_dict)
+        model_df = pd.DataFrame(model_list)
+        model_df = self.add_year_of_construction(model_df, default_year = 1900)
+        model_df = self.add_retrofit_status(model_df, default_retrofit = 0)
+        return model_df
+
+
+    def add_retrofit_status(self, model_df: pd.DataFrame, default_retrofit: int = 0):
+        """Adds the retrofit status to the model DataFrame."""
+        try:
+            model_df["retrofit"] = model_df["retrofit"].fillna(default_retrofit).astype("Int64")
+        except Exception:
+            model_df["retrofit"] = default_retrofit
+        return model_df
+    
+    def add_year_of_construction(self, model_df: pd.DataFrame, default_year: int = 1900):
+        """Adds the year of construction to the model DataFrame."""
+        try:
+            model_df["year"] = model_df["year"].fillna(default_year).astype("Int64")
+        except Exception:
+            model_df["year"] = default_year
         return model_df
 
     def save_scenario(self, model_df: pd.DataFrame) -> str:
@@ -178,11 +218,16 @@ class Scenario:
     def process_buildings(self):
         """Processes each building row to handle building parts based on the aggregate_parts flag."""
         buildings = {}
-        for _, row in self.df.iterrows():
+        # Only process buildings that are not building parts
+        # Add Building parts to the building
+        for _, row in self.df[self.df["isBP"] == False].iterrows():
             bldg_id = row["gml_id"]
             ground_area = row["groundArea"]
-            building_func = row.get("building")  
-            building = Building(id=bldg_id, ground_area=ground_area, building_func=building_func)
+            measured_height = row["measuredHeight"]
+            storeys_above_ground = row["storeysAboveGround"]
+            building_func = row["function"]
+            building = Building(id=bldg_id, ground_area=ground_area, building_func=building_func,
+                                 measured_height=measured_height, storeys_above_ground=storeys_above_ground)
             
             # Parse building_parts column, assuming it's a stringified list of part IDs
             parts_raw = row.get("building_parts", "[]")
@@ -192,10 +237,13 @@ class Scenario:
                 part_ids = []
             try:
                 for part_id in part_ids:
-                    clean_part_id = part_id.strip("'").strip('"')
-                    part_row = self.df[self.df["gml_id"] == clean_part_id]
+                    part_row = self.df[self.df["gml_id"] == part_id]
                     part_area = float(part_row["groundArea"].iloc[0])
-                    part = Building(id=clean_part_id, ground_area=part_area)
+                    part_measured_height = float(part_row["measuredHeight"].iloc[0])    
+                    part_storeys_above_ground = float(part_row["storeysAboveGround"].iloc[0])
+                    part = Building(id=part_id, ground_area=part_area, building_func=building_func,
+                                    measured_height=part_measured_height, storeys_above_ground=part_storeys_above_ground)
+                    part.is_building_part = True
                     building.add_building_part(part)
             except Exception:
                 log.info(f"No building parts found for {part_ids, bldg_id}")
@@ -205,7 +253,7 @@ class Scenario:
             else:
                 building.propagate_function_to_parts()
             
-            buildings[bldg_id] = building
+            self.buildings[bldg_id] = building
         
 
         for bldg_id, bldg in buildings.items():
@@ -213,126 +261,154 @@ class Scenario:
         
         return buildings
 
+    def clean_up_scenario(self, df: pd.DataFrame) -> pd.DataFrame:
+        """Cleans up the scenario by removing unnecessary columns and rows."""
+        clean_data = df.dropna(subset = ['area', 'year', 'building'])
+        # Dop data where area os 0
+        clean_data = clean_data[clean_data["area"] != 0]
+        clean_data = clean_data[clean_data["building"] != '-']
+        clean_data.reset_index(drop = True, inplace = True)
+        clean_data.loc[:,"id"]    = clean_data.index
+        # Clean the data
+        self.clean_data = clean_data
+        return clean_data
+
+
     def create_scenario(self) -> str:
         """High-level method to execute all steps and create the scenario CSV file."""
         self.load_sheet()
          # Process buildings according to the aggregate_parts flag
         self.process_buildings()
-        self.calculate_ground_area()
-        self.parse_building_types()
-        self.compute_heated_ground_area()
+        for building in self.buildings.values():
+            calculate_groundArea_from_parts(building)
+            parse_building_types_from_parts(building)
+            calculate_heated_groundArea_from_parts(building)
 
        
-
+        # Generate model dataframe
+        # Clean up, so it follows the expected format from DistrictGenerator
         model_df = self.generate_model_dataframe()
-        scenario_path = self.save_scenario(model_df)
+        clean_data = self.clean_up_scenario(model_df)
+        scenario_path = self.save_scenario(clean_data)
         return scenario_path
 
 
 
-
-
-def create_scenario(sheet_file: str, scenario_name: str,
-                    default_building_type: str ="SFH", 
-                    scenario_folder: str = "src/districtgenerator/data/scenarios") -> str:
-    """ 
-    Takes the sheet name and creates a scenario 
-    Calculates the groundArea of a building
-    Estimate the type, if non is conatained within the 
-    gml file a default building type is used, options are [SFH, MFH, TH, AB]
-    height of floors is considered 3.15 
-    Expected output dataframe with content: id;building;year;retrofit;groundArea
+def calculate_groundArea_from_parts(Building, floor_height: float = 2.8):
     """
-    if not os.path.exists(sheet_file):
-        raise FileNotFoundError(f"File not found: {sheet_file}")
-    df = pd.read_csv(sheet_file, na_values="", sep=",", decimal=".")
-    df = calculate_groundArea(df)
-    df = heated_groundArea(df)
-    df = parse_building_types(df, default_building_type)
-    
+    Calculates the floor area of a building, based on its ground area, measured height,
+    and/or the number of storeys above ground. Handles building parts by recursively
+    summing their floor areas.
 
-    model_df = df.filter(["dg_id", "building", "yearOfConstruction",
-                          "renovation_status", "retrofit", "area", 
-                          "groundArea", "heated_groundArea", "gml_id"])
-    rename_dict = {
-        "dg_id" : "id",
-        "yearOfConstruction" : "year",
-        "renovation_status": "retrofit",
-        "gml_id" : "gml_id"
-    }
-    model_df.rename(columns=rename_dict, inplace=True)
-    model_df["year"] = model_df["year"].astype("Int64")
-    scenario_folder = scenario_folder
-    scenario_path = os.path.join(scenario_folder, f'{scenario_name}.csv')
-    try: 
-        model_df.to_csv(scenario_path, index=False, sep=";")
-    except OSError:
-        cwd_path = os.path.dirname(os.getcwd())
-        scenario_folder = scenario_folder
-        scenario_path = os.path.join(cwd_path, scenario_folder, f'{scenario_name}.csv')
-        model_df.to_csv(scenario_path, index=False, sep=";")
+    Parameters
+    ----------
+    Building : Building
+        The Building object whose floor area is being calculated.
+    floor_height : float, optional
+        The assumed floor height (in meters) used as a fallback if storeys_above_ground
+        is unavailable. By default, 2.8.
 
-    return scenario_path
+    Returns
+    -------
+    float
+        The calculated floor area for this Building. 
+        If it has parts, returns the sum of each part's floor area.
+        If no valid numeric data is available, returns 0.0 and logs a warning.
 
-    
-def calculate_groundArea(df, floor_height:float = 2.8):
-    # In DG is is assumed that the average floor height is 3.15 m 
-    # https://de.wikipedia.org/wiki/Raumh%C3%B6he 
-    # Assume 20cm for floor height and 260cm for minimum height -> 280cm is more realistic 
-    # See also: https://www.immobiliensachverstaendige-netzwerk.de/immobilienbegriffe-verstaendlich-gemacht/geschosshoehe 
-    df_copy = df.copy()
-    # Log which calculation method is being used for each building
-    original_areas = df_copy[~(
-        df_copy['storeysAboveGround'].notna() |
-        (df_copy['measuredHeight'].notna() & df_copy['storeyHeightsAboveGround'].notna()) |
-        df_copy['measuredHeight'].notna()
-    )]
-    if not original_areas.empty:
-        log.info(f"{len(original_areas)} buildings using original groundArea")
-        
-    # conditions for the groundArea calculation
-    conditions = [
-        df_copy['storeysAboveGround'].notna(),  # Check if storeys_above_ground is not NaN
-        (df_copy['measuredHeight'].notna() & df_copy['storeyHeightsAboveGround'].notna()), # Check if both height values exist
-        df_copy['measuredHeight'].notna() # Check if only measured height exists
-    ]
-    
-    choices = [
-        df_copy['groundArea'] * df_copy['storeysAboveGround'],  # storeys_above_ground * floor_groundArea
-        df_copy['groundArea'] * (df_copy['measuredHeight'] / df_copy['storeyHeightsAboveGround']).round(), 
-        df_copy['groundArea'] * (df_copy['measuredHeight'] / floor_height).round()  # measured_height * floor_groundArea
-    ]
-
-    # Keep original groundArea as default if no conditions are met
-    df_copy['floorArea'] = np.select(conditions, choices, default=df_copy['groundArea'])
-    return df_copy
-
-
-def heated_groundArea(df: pd.DataFrame):
+    Notes
+    -----
+    - If Building.building_parts is non-empty, this function recursively sums up the
+      parts' floor areas.
+    - If both measured_height and storeys_above_ground are valid (non-NaN), we compute
+      the floor area by multiplying ground_area by the ratio of measured_height to 
+      storeys_above_ground (rounded to the nearest integer).
+    - If only storeys_above_ground is valid, the floor area is ground_area multiplied
+      by storeys_above_ground.
+    - If only measured_height is valid, floor area is ground_area multiplied by 
+      measured_height / floor_height (rounded to the nearest integer).
+    - If neither is valid, we log a warning and default the floor_area to 0.0.
     """
-    Calculates the heated groundArea of a building, based on the groundArea and the type of building. 
-    Factors are provided in src/auxilary/heated_groundArea.csv
-    Factors are calculated on DATA NWG, where the factor is EBF (Energiebezugsfläche) / NRF (Nettoraumfläche). 
-    Net floor groundArea is calculated after Kaden
+
+    # If this building contains parts, recursively compute the parts' floor areas
+    if Building.building_parts:
+        Building.floor_area = sum(
+            calculate_groundArea_from_parts(part, floor_height) 
+            for part in Building.building_parts
+        )
+        return Building.floor_area
+    
+    # Check for valid numeric values & None fields 
+    valid_height  = (Building.measured_height is not None 
+                     and not math.isnan(Building.measured_height))
+    valid_storeys = (Building.storeys_above_ground is not None 
+                     and not math.isnan(Building.storeys_above_ground))
+    
+    if valid_height and valid_storeys:
+        ratio = round((Building.measured_height / Building.storeys_above_ground), 0)
+        Building.floor_area = Building.ground_area * ratio
+    elif valid_storeys:
+        Building.floor_area = Building.ground_area * Building.storeys_above_ground
+    elif valid_height:
+        ratio = round((Building.measured_height / floor_height), 0)
+        Building.floor_area = Building.ground_area * ratio
+
+    else:
+        # Neither height nor storeys are available -> fall back to orignal area
+        log.warning(
+            f"No valid storey or height data found for building {Building.id}. "
+            f"Setting floor_area= {Building.ground_area}"
+        )
+        Building.floor_area = Building.ground_area
+
+    return Building.floor_area
+
+
+def calculate_heated_groundArea_from_parts(Building):
     """
-    df_copy = df.copy()
-    df_copy.rename(columns={'groundArea': 'groundArea'}, inplace=True)
-    # How to calculate net floor groundArea? 
-    # After Kaden: https://mediatum.ub.tum.de/doc/1210304/1210304.pdf page 81
-    # reduction factor for buildings with equally to or more than 3 floors is 0.76
-    # reduction factor for buildings with less than 3 floors is 08
-    df_copy["netFloorgroundArea"] = df_copy.apply(lambda row: row["floorArea"] * 0.76 if row["storeysAboveGround"] >= 3 else row["floorArea"] * 0.8, axis=1)
+    Calculates the heated ground area of a building based on its building parts.
+
+    The heated ground area is calculated by multiplying the floor area by a heating factor
+    that varies by building type. For buildings with parts, it recursively calculates
+    and sums the heated ground area of all parts.
+
+    Parameters
+    ----------
+    Building : Building
+        The building object to calculate heated ground area for
+
+    Returns
+    -------
+    float
+        The total heated ground area in square meters
+
+    Notes
+    -----
+    - Uses the HEATED_GROUND_AREA_FACTOR_DICT to look up heating factors by building type
+    - For buildings with parts, recursively calculates and sums the parts' heated areas
+    - If no heated area factor is set, looks it up based on the building type
+    """
+    ### There is an error in this function
+    if not Building.heated_area_factor:
+        Building.heated_area_factor = lookup_heated_area_factor(Building)
+
+    if Building.building_parts:
+        Building.heated_ground_area = sum(calculate_heated_groundArea_from_parts(part) for part in Building.building_parts)
+        return Building.heated_ground_area
+    else:
+        Building.heated_ground_area = Building.floor_area * Building.heated_area_factor
+        log.info(f"Heated ground area for building {Building.id}: {Building.heated_ground_area} = {Building.floor_area} * {Building.heated_area_factor}")   
+        return Building.heated_ground_area
 
 
-    # Read in the heated groundArea factor
-    root_folder = os.path.abspath(os.path.join(os.getcwd(), os.pardir))
-    auxillary_data = os.path.join(root_folder , "TECDEM", "src", "auxilary", "heated_area.csv")
-
-    heated_groundArea_factors = pd.read_csv(auxillary_data, sep=";")
-    df_copy_temp = df_copy.merge(heated_groundArea_factors, how='left', left_on='building', right_on='type')
-    df_copy["area"] = df_copy_temp["netFloorgroundArea"] * df_copy_temp["heated_area_factor"].astype(float)
-    return df_copy
-
+def lookup_heated_area_factor(Building):
+    """
+    Lookup the heated area factor for a building type.
+    """
+    if not Building.building_type:
+        log.warning(f"No building type found for building {Building.id}. Skipping heated area factor lookup.")
+        return None
+    Building.heated_area_factor = HEATED_GROUND_AREA_FACTOR_DICT.get(Building.building_type, 1)
+    return Building.heated_area_factor
 
 def normalize_function_code(code_value):
     """
@@ -390,58 +466,69 @@ def get_building_subtype(candidates, floorArea, default_building_type: str = "SF
     return candidates[0]
 
 
-def parse_building_types(df: pd.DataFrame, default_building_type: str = "SFH") -> pd.DataFrame:
+def parse_building_types_from_parts(Building, 
+                                    default_building_type: str = "SFH",
+                                    total_area: Optional[float] = None):
     """
-    Parses the building 'function' in the DataFrame.
-    1) Normalizes the GML/ALKIS code to an integer suffix (e.g. 31001_2310 -> 2310).
-    2) Looks up a list of candidate building types from BUILDING_FUNCTIONS.
-    3) Uses groundArea to select the correct subtype if necessary.
-    4) Falls back to default_building_type if the code is unknown or invalid.
-    Returns a copy of df with a new column: 'building'.
+    Parse and assign building types for a building and its parts.
+
+    Parameters
+    ----------
+    Building : Building
+        The Building object to process.
+    default_building_type : str, optional
+        Default building type if none can be determined, by default "SFH".
+    total_area : Optional[float], optional
+        The total floor area to use for type determination, by default None.
+        If None, this function will use Building.floor_area. 
+        When the building has parts, we pass the parent's total area 
+        so that all parts consider the same total area.
+
+    Returns
+    -------
+    str
+        The determined building type in DistrictGenerator naming scheme.
     """
+    total_area_for_building = total_area if total_area is not None else Building.floor_area
 
-    df_copy = df.copy()
+    if Building.building_parts:
+        # Recursively parse building types for each part, 
+        # passing the parent's total_area_for_building
+        type_list = []
+        for part in Building.building_parts:
+            subtype = parse_building_types_from_parts(
+                part, 
+                default_building_type=default_building_type, 
+                total_area=total_area_for_building
+            )
+            type_list.append(subtype)
 
-    # Convert 'function' to integer suffix
-    df_copy["normalized_function"] = df_copy["function"].apply(normalize_function_code)
+        if len(set(type_list)) > 1:
+            log.warning(
+                f"Warning: Multiple building types found in building parts of '{Building.id}': "
+                f"{type_list}. Returning majority type."
+            )
+            Building.building_type = Counter(type_list).most_common(1)[0][0]
+        else:
+            Building.building_type = type_list[0]
 
-    # Identify any invalid codes
-    invalid_mask = df_copy["normalized_function"].isna()
-    if invalid_mask.any():
-        invalid_codes = df_copy.loc[invalid_mask, "function"].unique()
-        log.warning(f"Warning: Dropping {len(invalid_codes)} buildings with invalid function codes: {invalid_codes}")
-        df_copy = df_copy.loc[~invalid_mask]
+        return Building.building_type
 
-    # Retrieve candidate types from the dictionary
-    df_copy["type_candidates"] = df_copy["normalized_function"].apply(
-        lambda x: BUILDING_FUNCTIONS.get(x, [default_building_type])
-    )
-
-    # Decide final subtype
-    df_copy["building"] = df_copy.apply(
-        lambda row: get_building_subtype(row["type_candidates"], row["floorArea"]),
-        axis=1
-    )
-    breakpoint()
-    return df_copy
-
-
-def clean_scenario(df: pd.DataFrame):
-    """ 
-    Cleans the scenario data, by removing buildings with a ground area of 0.
-    """
-
-def set_yoc(path:str, yoc:int, retrofit:int):
-    """
-    Sets the year of construction and the retrofit status of a building.
-    #To-Do: Replace
-    """
-    df = pd.read_csv(path, na_values="", sep=";")
-    df["year"] = yoc
-    df["retrofit"] = retrofit 
-    df.to_csv(path, index=False, sep=";")
-    return None
-
+    else:
+        building_code = normalize_function_code(Building.building_func)
+        building_type_candidates = BUILDING_FUNCTIONS.get(building_code, [default_building_type])
+        if building_type_candidates:
+            Building.building_type = str(
+                get_building_subtype(
+                    candidates=building_type_candidates,
+                    floorArea=total_area_for_building, 
+                    default_building_type=default_building_type
+                )
+            )
+            return Building.building_type
+        else:
+            Building.building_type = str(building_type_candidates)
+            return Building.building_type
 
 
 
