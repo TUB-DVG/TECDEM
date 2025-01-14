@@ -5,6 +5,8 @@
 import os
 import pandas as pd
 import json
+import geopandas as gpd
+
 
 from citygml.dataset import Dataset
 from citygml.core.input.citygmlInput import load_buildings_from_xml_file
@@ -13,6 +15,7 @@ from citygml.tools.partywall import get_party_walls
 from citygml.tools.geometry_analysis import get_building_geometry_analysis
 from sim.scenario_generation import create_scenario
 from sim.scenario import Scenario
+from spatial.block import Block
 
 
 class DataHandler:
@@ -111,6 +114,16 @@ class DataHandler:
         scenario_csv_path = scenario.create_scenario()
         print(f"Scenario created: {scenario_csv_path}")
         return scenario_csv_path
+    
+    def merge_block(self, path_to_block_data:str, path_to_year_range_data:str):
+        block_data = gpd.read_file(path_to_block_data)
+        for index, row in block_data.iterrows():
+            block = Block(id = row['blknr'], geometry=row['geometry'],
+                          area=row['area'], inhabitants=row['ewk'])
+            block.get_buildings(self.gml_dataset)
+            block.calculate_average_building_age(path_to_year_range_data)
+            #block.load_year_range(path_to_year_range_data)
+
 
     def get_dataset(self) -> Dataset:
         """
@@ -137,6 +150,8 @@ if __name__ == "__main__":
     #datahandler.load_dataset()
     #datahandler.save_dataset()
     #datahandler.save_geometry_analysis()
+    datahandler.merge_block(path_to_block_data=r"C:\Users\felix\Programmieren\DVG\TECDEM\data\block_data\00_block_shape.shp",
+                            path_to_year_range_data=r"C:\Users\felix\Programmieren\DVG\TECDEM\data\berlin\02_Gebäudealter.csv")
     datahandler.create_scenario()
     datahandler.validate_gml_file()
     datahandler.validate_simulation_sheet()
