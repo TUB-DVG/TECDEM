@@ -101,7 +101,7 @@ class DataHandler:
             default_building_type=default_building_type,
             aggregate_parts=aggregate_parts, 
         )
-        # TODO Implementation of a scenario from dataset version:
+        # TODO: Implementation of a scenario from dataset version:
             # We use the citygml Dataset
         #    scenario = Scenario(
         #        scenario_name=self.scenario_name,
@@ -117,12 +117,11 @@ class DataHandler:
     
     def merge_block(self, path_to_block_data:str, path_to_year_range_data:str):
         block_data = gpd.read_file(path_to_block_data)
+        # TODO: Figure out how to cacluate this quicker
         for index, row in block_data.iterrows():
             block = Block(id = row['blknr'], geometry=row['geometry'],
                           area=row['area'], inhabitants=row['ewk'])
-            block.get_buildings(self.gml_dataset)
-            block.calculate_average_building_age(path_to_year_range_data)
-            #block.load_year_range(path_to_year_range_data)
+            block.merge_block_data(path_to_year_range_data, self.gml_dataset)
 
 
     def get_dataset(self) -> Dataset:
@@ -147,11 +146,11 @@ if __name__ == "__main__":
     #             os.path.join(os.path.dirname(os.path.dirname(__file__)), "data/examples/gml_data/LoD2_33_385_5820_1_BE.gml"),
     #             os.path.join(os.path.dirname(os.path.dirname(__file__)), "data/examples/gml_data/LoD2_33_385_5821_1_BE.gml")]
     datahandler = DataHandler(gml_files , "test")
-    #datahandler.load_dataset()
-    #datahandler.save_dataset()
-    #datahandler.save_geometry_analysis()
+    datahandler.load_dataset()
     datahandler.merge_block(path_to_block_data=r"C:\Users\felix\Programmieren\DVG\TECDEM\data\block_data\00_block_shape.shp",
                             path_to_year_range_data=r"C:\Users\felix\Programmieren\DVG\TECDEM\data\berlin\02_Gebäudealter.csv")
+    datahandler.save_dataset()
+    datahandler.save_geometry_analysis()
     datahandler.create_scenario()
     datahandler.validate_gml_file()
     datahandler.validate_simulation_sheet()
