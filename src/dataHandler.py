@@ -13,6 +13,8 @@ from citygml.core.input.citygmlInput import load_buildings_from_xml_file
 from citygml.tools.datasetToDataFrame import getDataFrame
 from citygml.tools.partywall import get_party_walls
 from citygml.tools.geometry_analysis import get_building_geometry_analysis
+from citygml.tools.cityATB import search_dataset
+
 from sim.scenario_generation import create_scenario
 from sim.scenario import Scenario
 from spatial.block import Block
@@ -24,7 +26,8 @@ class DataHandler:
     and can directly create a scenario from that Dataset.
     """
 
-    def __init__(self, path_to_gml_file, scenario_name: str, scenario_folder: str = "data/scenario_sheets"):
+    def __init__(self, path_to_gml_file, scenario_name: str,
+                 scenario_folder: str = "data/scenario_sheets", border_coordinates: list[float] = None):
         """
         Parameters
         ----------
@@ -39,32 +42,58 @@ class DataHandler:
         self.scenario_name = scenario_name
         self.scenario_folder = scenario_folder
         self.gml_dataset = Dataset(name=scenario_name)
+        self.reduced_dataset = None
+        self.border_coordinates = border_coordinates
 
     def load_dataset(self):
         """
         Loads GML file(s) into self.gml_dataset.
+
+        This method loads one or multiple CityGML files into the dataset object.
+        If border coordinates are specified, only buildings within those coordinates
+        will be loaded. Party walls between adjacent buildings are also detected
+        and attached to the dataset.
+
+        Parameters
+        ----------
+        None
+
+        Returns
+        -------
+        None
+
+        Notes
+        -----
+        The loaded data is stored in self.gml_dataset. Party walls are stored in
+        self.gml_dataset.party_walls.
         """
+        # TODO: Add loading of dataset with border coordinates
         if isinstance(self.path_to_gml_file, list):
             for file_path in self.path_to_gml_file:
                 load_buildings_from_xml_file(self.gml_dataset, file_path)
         else:
             load_buildings_from_xml_file(self.gml_dataset, self.path_to_gml_file)
 
-        # Optionally attach party walls if relevant
         self.gml_dataset.party_walls = get_party_walls(self.gml_dataset)
 
     def save_geometry_analysis(self):
         """
         Runs geometry analysis and saves the results to a JSON file.
         """
-        geometry_analysis = get_building_geometry_analysis(self.gml_dataset)
+        if self.reduced_dataset is not None:
+            geometry_analysis = get_building_geometry_analysis(self.reduced_dataset)
+        else:
+            geometry_analysis = get_building_geometry_analysis(self.gml_dataset)
         out_file = f"{self.scenario_name}_geometry_analysis.json"
         with open(out_file, "w", encoding="utf-8") as f:
-            json.dump(geometry_analysis, f)
+            json.dump(geometry_analysis, f, indent=4)
         print(f"Geometry analysis saved to {out_file}")
     
     def save_dataset(self):
-        df = getDataFrame(self.gml_dataset, includeFreeWalls=True, includeBP=True)
+        if self.reduced_dataset is not None:
+            df = getDataFrame(self.reduced_dataset, includeFreeWalls=True, includeBP=True)
+        else:
+            df = getDataFrame(self.gml_dataset, includeFreeWalls=True, includeBP=True)
         df.to_csv(f"{self.scenario_name}_detailed_dataset.csv", index=False)
 
 
@@ -129,6 +158,14 @@ class DataHandler:
         Returns the loaded Dataset object.
         """
         return self.gml_dataset
+
+
+    def select_subset_by_coordinates(self, coordinates: list[float]):
+        """
+        Selects a subset of the dataset by coordinates.
+        """
+        self.reduced_dataset = search_dataset(self.gml_dataset, coordinates)
+        return self.reduced_dataset
     
     def validate_gml_file(self):
         pass
@@ -139,14 +176,14 @@ class DataHandler:
 
 
 if __name__ == "__main__":
-    gml_files = [os.path.join(os.path.dirname(os.path.dirname(__file__)), "data/examples/gml_data/LoD2_33_384_5820_1_BE.gml")]
-    #"data/examples/gml_data/Block020023.gml")]
-                              #
-    #             os.path.join(os.path.dirname(os.path.dirname(__file__)), "data/examples/gml_data/LoD2_33_384_5821_1_BE.gml"),
-    #             os.path.join(os.path.dirname(os.path.dirname(__file__)), "data/examples/gml_data/LoD2_33_385_5820_1_BE.gml"),
-    #             os.path.join(os.path.dirname(os.path.dirname(__file__)), "data/examples/gml_data/LoD2_33_385_5821_1_BE.gml")]
-    datahandler = DataHandler(gml_files , "test")
+    gml_files = [os.path.join(os.path.dirname(os.path.dirname(__file__)), "data/examples/gml_data/LoD2_33_384_5820_1_BE.gml"),
+                 os.path.join(os.path.dirname(os.path.dirname(__file__)), "data/examples/gml_data/LoD2_33_384_5821_1_BE.gml"),
+                 os.path.join(os.path.dirname(os.path.dirname(__file__)), "data/examples/gml_data/LoD2_33_385_5820_1_BE.gml"),
+                 os.path.join(os.path.dirname(os.path.dirname(__file__)), "data/examples/gml_data/LoD2_33_385_5821_1_BE.gml")]
+    border_coordinates = gpd.read_file(os.path.join(os.path.dirname(os.path.dirname(__file__)), "data/examples/Mierendorff_shape/Mierendorff_shape.dbf")).to_crs("EPSG:25833").iloc[0].geometry.exterior.coords
+    datahandler = DataHandler(gml_files, scenario_name="test")
     datahandler.load_dataset()
+    #reduced_dataset = datahandler.select_subset_by_coordinates(border_coordinates)
     datahandler.merge_block(path_to_block_data=r"C:\Users\felix\Programmieren\DVG\TECDEM\data\block_data\00_block_shape.shp",
                             path_to_year_range_data=r"C:\Users\felix\Programmieren\DVG\TECDEM\data\berlin\02_Gebäudealter.csv")
     datahandler.save_dataset()
