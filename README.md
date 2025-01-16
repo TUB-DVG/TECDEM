@@ -32,7 +32,7 @@ Please refer to the experiments in the repository for examples of how to use TEC
 
 TECDEM utilizes [CityDPC](https://github.com/RWTH-E3D/CityDPC) componenets for geometry extraction and further processing. The strucuture of the project is displayed in the following diagram:
 
-![Project Structure](img/TECDEM_structure.png)
+<img src="img/TECDEM_structure_v01.png" alt="Project Structure" title="Project Structure">
 
 ## Roadmap
 

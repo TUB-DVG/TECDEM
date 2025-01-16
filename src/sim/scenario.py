@@ -69,13 +69,13 @@ HEATED_GROUND_AREA_FACTOR = pd.read_csv(AUXILLARY_DATA, sep=";")
 HEATED_GROUND_AREA_FACTOR_DICT = {
     type: heated_area_factor for type, heated_area_factor in zip(HEATED_GROUND_AREA_FACTOR["type"].tolist(), HEATED_GROUND_AREA_FACTOR["heated_area_factor"].tolist())
 }
-print(HEATED_GROUND_AREA_FACTOR_DICT)
 
 class Building():
     """Represents a building and allows aggregation of building parts."""
     
     def __init__(self, id: str, ground_area: float = 0.0, building_func: str = None,
-                 measured_height: float = None, storeys_above_ground: int = None) -> None:
+                 measured_height: float = None, storeys_above_ground: int = None,
+                   yearOfConstruction: int = None) -> None:
         """
         Initialize a new building.
         
@@ -94,6 +94,8 @@ class Building():
         floor_area : float, optional
             The floor area of the building (default is None). 
             Is calculated from the ground area and the storeys above ground, as well as the measured height.
+        yearOfConstruction : int, optional
+            The year of construction of the building (default is None).
         """
         self.id = id
         self.building_parts = []  # List to hold aggregated building parts
@@ -106,7 +108,7 @@ class Building():
         self.floor_area = None
         self.heated_ground_area = None
         self.heated_area_factor = None
-
+        self.yearOfConstruction = yearOfConstruction
 
     def add_building_part(self, part: "Building"):
         """Adds a building part to this building."""
@@ -177,13 +179,15 @@ class Scenario:
             building_dict = {
                 "id": building_id,
                 "building": building.building_type,
+                "year": building.yearOfConstruction,
                 "groundArea": building.ground_area,
                 "area": building.heated_ground_area,
                 "gml_id": building.id
             }
             model_list.append(building_dict)
         model_df = pd.DataFrame(model_list)
-        model_df = self.add_year_of_construction(model_df, default_year = 1900)
+        # Uncomment to add year of construction
+        #model_df = self.add_year_of_construction(model_df, default_year = 1900)
         model_df = self.add_retrofit_status(model_df, default_retrofit = 0)
         return model_df
 
@@ -226,8 +230,10 @@ class Scenario:
             measured_height = row["measuredHeight"]
             storeys_above_ground = row["storeysAboveGround"]
             building_func = row["function"]
+            year_of_construction = row["yearOfConstruction"]
             building = Building(id=bldg_id, ground_area=ground_area, building_func=building_func,
-                                 measured_height=measured_height, storeys_above_ground=storeys_above_ground)
+                                 measured_height=measured_height, storeys_above_ground=storeys_above_ground,
+                                 yearOfConstruction=year_of_construction)
             
             # Parse building_parts column, assuming it's a stringified list of part IDs
             parts_raw = row.get("building_parts", "[]")
