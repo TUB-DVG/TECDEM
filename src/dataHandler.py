@@ -181,7 +181,7 @@ if __name__ == "__main__":
                  os.path.join(os.path.dirname(os.path.dirname(__file__)), "data/examples/gml_data/LoD2_33_385_5820_1_BE.gml"),
                  os.path.join(os.path.dirname(os.path.dirname(__file__)), "data/examples/gml_data/LoD2_33_385_5821_1_BE.gml")]
     border_coordinates = gpd.read_file(os.path.join(os.path.dirname(os.path.dirname(__file__)), "data/examples/Mierendorff_shape/Mierendorff_shape.dbf")).to_crs("EPSG:25833").iloc[0].geometry.exterior.coords
-    datahandler = DataHandler(gml_files, scenario_name="test")
+    datahandler = DataHandler(gml_files, scenario_name="Mierendorff")
     datahandler.load_dataset()
     #reduced_dataset = datahandler.select_subset_by_coordinates(border_coordinates)
     datahandler.merge_block(path_to_block_data=r"C:\Users\felix\Programmieren\DVG\TECDEM\data\block_data\00_block_shape.shp",

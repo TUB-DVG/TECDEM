@@ -34,15 +34,19 @@ def get_building_geometry_analysis(dataset: Dataset) -> dict:
         if building_id not in results:
             results[building_id] = {}
             results[building_id]["gml_id"] = building.gml_id
-        for wall_surface in building.get_surfaces(["WallSurface"]):
+        wall_surfaces = building.get_surfaces(["WallSurface"])
+        if not wall_surfaces:
+            logger.info(f"No wall surfaces found for building {building_id}")
+            continue
+        for wall_surface in wall_surfaces:
             direction = wall_surface.get_gml_orientation()
             results[building_id][direction] = {
                 "surface_id": wall_surface.polygon_id,
-                "total_wall_area": 0,
+                "total_wall_area": wall_surface.surface_area,
                 "connected_wall_area": 0,
-                "free_wall_area": 0
+                "free_wall_area": wall_surface.surface_area  # Initially all area is free
             }
-            results[building_id][direction]["total_wall_area"] += wall_surface.surface_area
+        
 
     if dataset.party_walls is None:
         dataset.party_walls = get_party_walls(dataset)
@@ -64,9 +68,12 @@ def get_building_geometry_analysis(dataset: Dataset) -> dict:
             for wall_surface in building.get_surfaces(["WallSurface"]):
                 if wall_surface.polygon_id == party_wall[1]:
                     direction = wall_surface.get_gml_orientation()
-                    results[building_id][direction]["connected_wall_area"] += party_wall[4]
+                    connected_area = party_wall[4]
+                    results[building_id][direction]["connected_wall_area"] += connected_area
                     results[building_id][direction]["free_wall_area"] = (
-                        wall_surface.surface_area - party_wall[4])
+                        results[building_id][direction]["total_wall_area"] - 
+                        results[building_id][direction]["connected_wall_area"]
+                    )
             
             try:
                 building_2 = dataset.get_building_by_id(building_id_2)
@@ -76,9 +83,12 @@ def get_building_geometry_analysis(dataset: Dataset) -> dict:
             for wall_surface in building_2.get_surfaces(["WallSurface"]):
                 if wall_surface.polygon_id == party_wall[3]:
                     direction = wall_surface.get_gml_orientation()
-                    results[building_id_2][direction]["connected_wall_area"] += party_wall[4]
+                    connected_area = party_wall[4]
+                    results[building_id_2][direction]["connected_wall_area"] += connected_area
                     results[building_id_2][direction]["free_wall_area"] = (
-                        wall_surface.surface_area - party_wall[4])
+                        results[building_id_2][direction]["total_wall_area"] - 
+                        results[building_id_2][direction]["connected_wall_area"]
+                    )
     
     return results
 
