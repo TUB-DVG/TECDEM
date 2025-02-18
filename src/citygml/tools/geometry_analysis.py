@@ -34,6 +34,10 @@ def get_building_geometry_analysis(dataset: Dataset) -> dict:
         if building_id not in results:
             results[building_id] = {}
             results[building_id]["gml_id"] = building.gml_id
+            results[building_id]["height"] = building.measuredHeight
+            results[building_id]["storeys_above_ground"] = building.storeysAboveGround
+            results[building_id]["storeys_below_ground"] = building.storeysBelowGround
+
         wall_surfaces = building.get_surfaces(["WallSurface"])
         if not wall_surfaces:
             logger.info(f"No wall surfaces found for building {building_id}")
