@@ -14,7 +14,7 @@ To install TECDEM, follow these steps:
 
 1. Clone this repository
 2. Run: `pip install -r requirements.txt`
-3. Navigate to the `src` folder and clone this fork of the [DistrictGenerator](https://github.com/c0nb4/districtgenerator) . Install it accordingly.
+3. Navigate to the `src` folder and clone this fork of the [DistrictGenerator](https://github.com/c0nb4/districtgenerator). Install it accordingly.
 
 For a complete list of dependencies, please refer to the `requirements.txt` file in the repository.
 
@@ -22,17 +22,18 @@ For a complete list of dependencies, please refer to the `requirements.txt` file
 
 Please refer to the experiments in the repository for examples of how to use TECDEM. Generally, usage is suggested as follows:
 
-1. Load the CityGML file into the tool
-2. Extract the information you need
+1. Load the CityGML file(s)
+2. Extract the information, e.g. year of construction of building type
 3. Save detailed information and geometry 
-4. Create s low level simulation scenario
-5. Enrich the archetype data from the simulation with the detailed geometry and information extracted from the input data
+4. Create low level simulation scenario
+5. Enrich the basic archetype with geometry
+6. Run the simulation
 
 ## Project Structure
 
 TECDEM utilizes [CityDPC](https://github.com/RWTH-E3D/CityDPC) componenets for geometry extraction and further processing. The strucuture of the project is displayed in the following diagram:
 
-![Project Structure](img/TECDEM_structure_v01.png)
+[Project Structure](img/TECDEM_structure_v01.png)
 
 ## Roadmap
 
