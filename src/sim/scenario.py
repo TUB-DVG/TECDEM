@@ -175,13 +175,13 @@ class Scenario:
         """Generates a DataFrame in the expected model format."""
         # Generate a dataframe with the expected columns
         model_list = []
-        for building_id, building in self.buildings.items(): 
+        for building_id, building in self.buildings.items():
             building_dict = {
                 "id": building_id,
                 "building": building.building_type,
                 "year": building.yearOfConstruction,
-                "groundArea": building.ground_area,
-                "area": building.heated_ground_area,
+                "groundArea": round(building.ground_area, 2),
+                "area": round(building.heated_ground_area, 2),
                 "gml_id": building.id
             }
             model_list.append(building_dict)
@@ -300,7 +300,7 @@ class Scenario:
 
 
 
-def calculate_groundArea_from_parts(Building, floor_height: float = 2.8):
+def calculate_groundArea_from_parts(Building, floor_height: float = 3.0):
     """
     Calculates the floor area of a building, based on its ground area, measured height,
     and/or the number of storeys above ground. Handles building parts by recursively
@@ -312,7 +312,7 @@ def calculate_groundArea_from_parts(Building, floor_height: float = 2.8):
         The Building object whose floor area is being calculated.
     floor_height : float, optional
         The assumed floor height (in meters) used as a fallback if storeys_above_ground
-        is unavailable. By default, 2.8.
+        is unavailable. By default, 3.0 meters, as CEA ( https://city-energy-analyst.readthedocs.io/en/stable/_modules/cea/globalvar.html)
 
     Returns
     -------
@@ -341,6 +341,8 @@ def calculate_groundArea_from_parts(Building, floor_height: float = 2.8):
             calculate_groundArea_from_parts(part, floor_height) 
             for part in Building.building_parts
         )
+        # This is the floor area of the building parts
+        print(Building.floor_area)
         return Building.floor_area
     
     # Check for valid numeric values & None fields 
@@ -349,14 +351,12 @@ def calculate_groundArea_from_parts(Building, floor_height: float = 2.8):
     valid_storeys = (Building.storeys_above_ground is not None 
                      and not math.isnan(Building.storeys_above_ground))
     
-    if valid_height and valid_storeys:
-        ratio = round((Building.measured_height / Building.storeys_above_ground), 0)
-        Building.floor_area = Building.ground_area * ratio
-    elif valid_storeys:
+    if valid_storeys:
         Building.floor_area = Building.ground_area * Building.storeys_above_ground
     elif valid_height:
         ratio = round((Building.measured_height / floor_height), 0)
         Building.floor_area = Building.ground_area * ratio
+
 
     else:
         # Neither height nor storeys are available -> fall back to orignal area
@@ -403,7 +403,7 @@ def calculate_heated_groundArea_from_parts(Building):
     else:
         Building.heated_ground_area = Building.floor_area * Building.heated_area_factor
         log.info(f"Heated ground area for building {Building.id}: {Building.heated_ground_area} = {Building.floor_area} * {Building.heated_area_factor}")   
-        return Building.heated_ground_area
+        return round(Building.heated_ground_area, 2)
 
 
 def lookup_heated_area_factor(Building):
